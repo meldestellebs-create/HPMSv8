@@ -687,6 +687,7 @@ body {
   <button class="tab-button" onclick="switchTab('quiz')">🎯 Berufswahl-Quiz</button>
   <button class="tab-button" onclick="switchTab('ausbildung')">🧭 Ausbildungs-Navigator</button>
   <button class="tab-button" onclick="switchTab('schule')">🎓 Schule und dann?</button>
+  <button class="tab-button" onclick="switchTab('berufliche-schulen')">Berufliche Schulen</button>
 </div>
 
 <!-- ==================== TAB 1: Bildungswege Tool ==================== -->
@@ -3723,5 +3724,109 @@ updateBerufeDisplay();
     </div>
   </div>
 </div>
+
+
+<!-- TAB 6: Berufliche Schulen (DUMMY Preview) -->
+<div id="berufliche-schulen-tab" class="tab-content">
+  <div class="split-container">
+    <div class="split-section left">
+      <div class="section-title">
+        <span class="section-number">1</span>
+        Dein Weg an eine berufliche Schule
+      </div>
+      <p class="section-subtitle">
+        Wähle deinen aktuellen Abschluss – wir zeigen dir passende Schularten und Angebote in Stuttgart.
+      </p>
+
+      <div class="select-wrapper">
+        <label class="select-label" for="bs-abschluss">Dein Abschluss</label>
+        <select id="bs-abschluss">
+          <option value="">Bitte wählen</option>
+          <option value="ohne">Ohne Abschluss</option>
+          <option value="hs">Hauptschulabschluss</option>
+          <option value="mr">Mittlere Reife</option>
+          <option value="fhr">Fachhochschulreife</option>
+          <option value="abi">Abitur</option>
+        </select>
+      </div>
+
+      <div class="visualization-area">
+        <div class="vis-title">Vorschau (Dummy)</div>
+        <div class="connection-visual">
+          <div class="endpoint">
+            <div class="endpoint-circle start">Dein
+Abschluss</div>
+            <div class="endpoint-label">Start</div>
+            <div class="endpoint-value">(Auswahl)</div>
+          </div>
+          <div class="connection-line">
+            <div class="connection-arrow"></div>
+          </div>
+          <div class="endpoint">
+            <div class="endpoint-circle target">Berufliche
+Schulen</div>
+            <div class="endpoint-label">Ergebnis</div>
+            <div class="endpoint-value">(Vorschau)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <p><strong>Hinweis:</strong> Das ist eine erste Dummy-Vorschau. In der finalen Version wird der Inhalt aus der PDF interaktiv (Filter, Schulen, Voraussetzungen).</p>
+      </div>
+    </div>
+
+    <div class="split-section right">
+      <div class="section-title">
+        <span class="section-number">2</span>
+        Schularten – Beispiele (Dummy)
+      </div>
+      <p class="section-subtitle">
+        Diese Karten zeigen, wie sich Angebote später anfühlen: klickbar, übersichtlich, mit Voraussetzungen.
+      </p>
+
+      <div class="results-container">
+        <div class="results-header">
+          Beispiel-Kacheln (nur Vorschau)
+        </div>
+        <div class="results-content">
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">A</div>
+              <h3 class="path-title">Berufliches Gymnasium</h3>
+              <div class="duration-badge">Abitur</div>
+            </div>
+            <p class="path-description">
+              Profile wie Technik, Wirtschaft oder Gesundheit/Soziales – je nach Schule.
+            </p>
+          </div>
+
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">B</div>
+              <h3 class="path-title">Berufskolleg</h3>
+              <div class="duration-badge">Fachhochschulreife</div>
+            </div>
+            <p class="path-description">
+              Vollzeit oder Teilzeit – oft mit starkem Praxisbezug und klaren Zugangsvoraussetzungen.
+            </p>
+          </div>
+
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">C</div>
+              <h3 class="path-title">Berufsschule (duale Ausbildung)</h3>
+              <div class="duration-badge">Berufsabschluss</div>
+            </div>
+            <p class="path-description">
+              Betrieb + Schule – viele Fachrichtungen. Später zeigen wir dir: Welche Schule ist zuständig und welche Berufe passen.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
