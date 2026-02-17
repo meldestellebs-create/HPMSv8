@@ -3826,6 +3826,162 @@ Schulen</div>
       </div>
     </div>
   </div>
+
+  <div style="max-width: 1500px; margin: 0 auto; padding: 40px 20px;">
+    <div class="header" style="margin-bottom: 40px;">
+      <h1 style="font-size: 2rem;">🧩 Alles auf einen Blick</h1>
+      <p>Vorschau für die spätere Matrix-Ansicht: Filter auswählen → passende Schularten/Fachrichtungen sehen.</p>
+    </div>
+
+    <div class="results-container">
+      <div class="results-header">
+        Filter (Dummy)
+      </div>
+      <div class="results-content">
+        <div class="split-container" style="grid-template-columns: 1fr 1fr 1fr; min-height: auto;">
+          <div class="split-section" style="padding: 0; background: transparent;">
+            <div class="select-wrapper" style="margin-bottom: 0;">
+              <label class="select-label" for="matrix-abschluss">Vorhandener Abschluss</label>
+              <select id="matrix-abschluss">
+                <option value="">Alle</option>
+                <option value="ohne">Ohne Abschluss</option>
+                <option value="hs">Hauptschulabschluss</option>
+                <option value="mr">Mittlere Reife</option>
+                <option value="fhr">Fachhochschulreife</option>
+                <option value="abi">Abitur</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="split-section" style="padding: 0; background: transparent;">
+            <div class="select-wrapper" style="margin-bottom: 0;">
+              <label class="select-label" for="matrix-schulart">Schulart</label>
+              <select id="matrix-schulart">
+                <option value="">Alle</option>
+                <option value="berufsschule">Berufsschule</option>
+                <option value="berufsfachschule">Berufsfachschule</option>
+                <option value="berufskolleg">Berufskolleg</option>
+                <option value="berufliches-gymnasium">Berufliches Gymnasium</option>
+                <option value="fachschule">Fachschule / Meisterschule</option>
+                <option value="zweiter-bildungsweg">Zweiter Bildungsweg</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="split-section" style="padding: 0; background: transparent;">
+            <div class="select-wrapper" style="margin-bottom: 0;">
+              <label class="select-label" for="matrix-fachrichtung">Fachrichtung</label>
+              <select id="matrix-fachrichtung">
+                <option value="">Alle</option>
+                <option value="technik">Technik</option>
+                <option value="wirtschaft">Wirtschaft & Verwaltung</option>
+                <option value="gesundheit">Gesundheit / Soziales</option>
+                <option value="gestaltung">Gestaltung / Medien</option>
+                <option value="agrar">Agrar / Landwirtschaft</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div style="height: 25px;"></div>
+
+        <div class="vis-title" style="text-align: left; margin-bottom: 12px;">Ergebnis (Dummy-Kacheln)</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px;">
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">1</div>
+              <h3 class="path-title">Berufsschule</h3>
+              <div class="duration-badge">Technik</div>
+            </div>
+            <div class="path-steps">
+              <span class="step">Ausbildungsvertrag</span><span class="arrow">→</span><span class="step">Berufsschule</span>
+            </div>
+          </div>
+
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">2</div>
+              <h3 class="path-title">Berufsfachschule</h3>
+              <div class="duration-badge">Gesundheit</div>
+            </div>
+            <div class="path-steps">
+              <span class="step">Hauptschulabschluss</span><span class="arrow">→</span><span class="step">Vollzeit</span>
+            </div>
+          </div>
+
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">3</div>
+              <h3 class="path-title">Berufskolleg I</h3>
+              <div class="duration-badge">Wirtschaft</div>
+            </div>
+            <div class="path-steps">
+              <span class="step">Mittlere Reife</span><span class="arrow">→</span><span class="step">Grundbildung</span>
+            </div>
+          </div>
+
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">4</div>
+              <h3 class="path-title">Berufskolleg II</h3>
+              <div class="duration-badge">FH-Reife</div>
+            </div>
+            <div class="path-steps">
+              <span class="step">BK I</span><span class="arrow">→</span><span class="step">Fachhochschulreife</span>
+            </div>
+          </div>
+
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">5</div>
+              <h3 class="path-title">Berufliches Gymnasium</h3>
+              <div class="duration-badge">Technik</div>
+            </div>
+            <div class="path-steps">
+              <span class="step">Mittlere Reife</span><span class="arrow">→</span><span class="step">Abitur</span>
+            </div>
+          </div>
+
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">6</div>
+              <h3 class="path-title">Fachschule / Meisterschule</h3>
+              <div class="duration-badge">Weiterbildung</div>
+            </div>
+            <div class="path-steps">
+              <span class="step">Berufsabschluss</span><span class="arrow">→</span><span class="step">Aufstieg</span>
+            </div>
+          </div>
+
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">7</div>
+              <h3 class="path-title">Zweiter Bildungsweg</h3>
+              <div class="duration-badge">Oberschule</div>
+            </div>
+            <div class="path-steps">
+              <span class="step">Ausbildung</span><span class="arrow">→</span><span class="step">Hochschulreife</span>
+            </div>
+          </div>
+
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">8</div>
+              <h3 class="path-title">Gestaltung / Medien</h3>
+              <div class="duration-badge">Design</div>
+            </div>
+            <div class="path-steps">
+              <span class="step">Mittlere Reife</span><span class="arrow">→</span><span class="step">Vollzeit</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-box" style="margin-top: 25px;">
+          <p><strong>Was kommt als Nächstes?</strong> In Schritt 4 ersetzen wir die Dummy-Kacheln durch die echte „Alles auf einen Blick“-Matrix aus der PDF und machen sie filterbar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 </body>
