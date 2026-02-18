@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bildungswege Baden-Württemberg - Interaktives Tool</title>
+<title>Bildungswege Baden-Württemberg - Interaktives Tool – step5b</title>
 <style>
 * { 
   margin: 0; 
@@ -3803,7 +3803,148 @@ updateBerufeDisplay();
     </div>
 
     <div>
-      <h2 style="color: var(--primary-blue); margin-bottom: 18px;">Alle Schulen in Stuttgart</h2>
+      
+      <h2 style="color: var(--primary-blue); margin: 10px 0 18px 0;">Mehr Überblick</h2>
+      <p style="color: var(--text-gray); margin-bottom: 18px;">Die folgenden Karten fassen typische Einstiegssituationen zusammen (Ausgangslage) und zeigen dir passende Wege an beruflichen Schulen in Stuttgart.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 18px;">
+
+        <div class="path-card">
+          <div class="path-card-header">
+            <div class="path-number-badge">A</div>
+            <h3 class="path-title">Ohne Abschluss</h3>
+            <div class="duration-badge">Einstieg</div>
+          </div>
+          <p class="path-description">Wenn du noch keinen Abschluss hast, gibt es Vollzeit-Angebote zur Sprachförderung, Berufsorientierung und zum Erwerb bzw. zur Verbesserung des Hauptschulabschlusses.</p>
+          <div class="path-steps">
+            <span class="step">VABO (Deutsch/Orientierung)</span>
+            <span class="arrow">→</span>
+            <span class="step">AVdual</span>
+            <span class="arrow">→</span>
+            <span class="step">Hauptschulabschluss / Ausbildung</span>
+          </div>
+          <div class="path-note"><strong>Beispiele:</strong> Vorqualifizierungsjahr (VABO), Ausbildungsvorbereitung dual (AVdual), ggf. 1‑jährige Berufsfachschule als Einstieg.</div>
+        </div>
+
+        <div class="path-card">
+          <div class="path-card-header">
+            <div class="path-number-badge">B</div>
+            <h3 class="path-title">Mit Hauptschulabschluss</h3>
+            <div class="duration-badge">Aufbau</div>
+          </div>
+          <p class="path-description">Mit Hauptschulabschluss kannst du direkt in die duale Ausbildung starten oder schulische Wege nutzen, um den mittleren Bildungsabschluss zu erreichen.</p>
+          <div class="path-steps">
+            <span class="step">Duale Ausbildung</span>
+            <span class="arrow">oder</span>
+            <span class="step">2‑jährige Berufsfachschule</span>
+            <span class="arrow">→</span>
+            <span class="step">Mittlerer Abschluss</span>
+          </div>
+          <div class="path-note"><strong>Zusatzwege:</strong> Unter bestimmten Voraussetzungen kann der mittlere Bildungsabschluss auch über die Berufsausbildung (z. B. Modell 9+3/„93“) erreichbar sein.</div>
+        </div>
+
+        <div class="path-card">
+          <div class="path-card-header">
+            <div class="path-number-badge">C</div>
+            <h3 class="path-title">Mit mittlerem Bildungsabschluss</h3>
+            <div class="duration-badge">FHR / Abi</div>
+          </div>
+          <p class="path-description">Mit mittlerem Abschluss hast du viele Optionen: Berufskollegs (auch mit Fachhochschulreife), berufliche Gymnasien (Abitur) und je nach Richtung duale Berufskollegs.</p>
+          <div class="path-steps">
+            <span class="step">Berufskolleg</span>
+            <span class="arrow">→</span>
+            <span class="step">Fachhochschulreife</span>
+            <span class="arrow">oder</span>
+            <span class="step">Berufliches Gymnasium</span>
+            <span class="arrow">→</span>
+            <span class="step">Abitur</span>
+          </div>
+          <div class="path-note"><strong>Hinweis:</strong> Viele Bildungsgänge haben Profilrichtungen (z. B. Technik, Wirtschaft, Gesundheit/Soziales) und teils zusätzliche Voraussetzungen.</div>
+        </div>
+
+        <div class="path-card">
+          <div class="path-card-header">
+            <div class="path-number-badge">D</div>
+            <h3 class="path-title">Mit Hochschulreife / Abitur</h3>
+            <div class="duration-badge">Dual & Plus</div>
+          </div>
+          <p class="path-description">Auch mit Abitur sind berufliche Schulen interessant: z. B. duale Berufskollegs/zusätzliche Qualifikationen parallel zur Ausbildung (abhängig vom Beruf).</p>
+          <div class="path-note"><strong>Praxis-Tipp:</strong> Prüfe bei der Schule, ob Zusatzqualifikationen oder Zusatzunterricht (z. B. in Richtung Fachhochschulreife) möglich sind.</div>
+        </div>
+
+        <div class="path-card">
+          <div class="path-card-header">
+            <div class="path-number-badge">E</div>
+            <h3 class="path-title">Zweiter Bildungsweg & Weiterbildung</h3>
+            <div class="duration-badge">nach Ausbildung</div>
+          </div>
+          <p class="path-description">Nach einer abgeschlossenen Berufsausbildung kannst du an beruflichen Schulen weiter aufbauen: mittlerer Abschluss, Fachhochschulreife oder (fachgebundene/allgemeine) Hochschulreife – plus Fach-/Meisterschulen.</p>
+          <div class="path-steps">
+            <span class="step">Berufsaufbauschule</span>
+            <span class="arrow">/</span>
+            <span class="step">1‑jähriges BK (FHR)</span>
+            <span class="arrow">/</span>
+            <span class="step">Berufsoberschule (TO/WO)</span>
+          </div>
+          <div class="path-note"><strong>Weiterbildung:</strong> Fachschulen (z. B. Technik/Organisation), Meisterschule und Akademie-Angebote können beruflich qualifizieren und Karrierewege öffnen.</div>
+        </div>
+
+        <div class="path-card">
+          <div class="path-card-header">
+            <div class="path-number-badge">F</div>
+            <h3 class="path-title">Anmeldung & Fristen</h3>
+            <div class="duration-badge">wichtig</div>
+          </div>
+          <p class="path-description">Für viele berufliche Vollzeitschulen gilt eine Anmeldefrist nach Ausgabe des Halbjahreszeugnisses (im Infoblatt: spätestens 1. März 2026). Häufig läuft die Bewerbung über BewO.</p>
+          <div class="path-note"><strong>Merke:</strong> Details und Ausnahmen stehen auf den Schulwebseiten; bei Fragen helfen Schule und Kontaktstellen weiter.</div>
+        </div>
+
+      </div>
+
+      <h2 style="color: var(--primary-blue); margin: 32px 0 18px 0;">Wichtige Informationen & Kontaktstellen</h2>
+      <p style="color: var(--text-gray); margin-bottom: 18px;">Wenn du unsicher bist (zuständige Schule, Anmeldung, Voraussetzungen), helfen diese Stellen weiter.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 18px;">
+
+        <div class="path-card">
+          <div class="path-card-header">
+            <div class="path-number-badge">K1</div>
+            <h3 class="path-title">Meldestelle (Stuttgart)</h3>
+            <div class="duration-badge">Zuweisung</div>
+          </div>
+          <p class="path-description">Berät, klärt die zuständige Berufsschule und übernimmt die Zuweisung zur passenden Schulart.</p>
+          <div class="path-note">
+            <strong>Ort:</strong> Gewerbliche Schule für Farbe und Gestaltung, Leobener Straße 97, 70469 Stuttgart (Feuerbach).<br>
+            <strong>Telefon:</strong> 0711 216-60277.<br>
+            <strong>Web/E-Mail:</strong> siehe Infoblatt (Meldestelle)
+          </div>
+        </div>
+
+        <div class="path-card">
+          <div class="path-card-header">
+            <div class="path-number-badge">K2</div>
+            <h3 class="path-title">Weitere Auskunftsstellen</h3>
+            <div class="duration-badge">Beratung</div>
+          </div>
+          <p class="path-description">Für schulische Fragen, Laufbahnberatung, Anerkennung von Abschlüssen sowie Ausbildung & Weiterbildung (Kammern/Arbeitsagentur).</p>
+          <div class="path-note">
+            <strong>Beispiele:</strong> Schulverwaltungsamt Stuttgart, Regierungspräsidium Stuttgart (Schule/Bildung), IHK Region Stuttgart, Handwerkskammer Region Stuttgart, Agentur für Arbeit (Berufsberatung), ZSL/Schulpsychologie, VDP Privatschulen.
+          </div>
+        </div>
+
+        <div class="path-card">
+          <div class="path-card-header">
+            <div class="path-number-badge">K3</div>
+            <h3 class="path-title">Gesundheit & Pflege (kurz)</h3>
+            <div class="duration-badge">zusätzlich</div>
+          </div>
+          <p class="path-description">Im Infoblatt sind zusätzliche Anbieter und Kontaktstellen rund um Pflege- und Gesundheitsberufe sowie Fort-/Weiterbildung aufgeführt.</p>
+          <div class="path-note"><strong>Tipp:</strong> Wenn du in Richtung Pflege/Gesundheit willst, nutze die Kontakte aus dem Infoblatt (u. a. Schule für Pflegeberufe, Klinikum-Akademie, Bildungszentren).</div>
+        </div>
+
+      </div>
+
+<h2 style="color: var(--primary-blue); margin-bottom: 18px;">Alle Schulen in Stuttgart</h2>
       <p style="color: var(--text-gray); margin-bottom: 18px;">Suche nach Name oder Stadtteil. Die Daten (Adresse, Telefon, Website, Schulleitung, E-Mail) stammen aus dem Infoblatt der Landeshauptstadt Stuttgart.</p>
 
       <div class="results-container" style="margin-top: 10px;">
@@ -4291,7 +4432,19 @@ updateBerufeDisplay();
     })();
   </script>
 </div>
-
+  <script>
+    (function() {
+      function dedupeTabs() {
+        const navs = Array.from(document.querySelectorAll('.tab-navigation'));
+        navs.forEach((n, i) => { if (i > 0) n.remove(); });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', dedupeTabs);
+      } else {
+        dedupeTabs();
+      }
+    })();
+  </script>
 
 </body>
 </html>
