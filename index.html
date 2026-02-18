@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bildungswege Baden-Württemberg - Interaktives Tool</title>
+<title>Bildungswege Baden-Württemberg - Interaktives Tool – step5a</title>
 <style>
 * { 
   margin: 0; 
@@ -672,6 +672,10 @@ body {
     border-bottom: 2px solid var(--border-color);
   }
 }
+
+      .school-offers ul { margin: 10px 0 0 18px; }
+      .school-offers li { margin: 4px 0; }
+      .offer-group-title { font-weight: 800; color: var(--primary-blue); margin-top: 12px; }
 </style>
 </head>
 <body>
@@ -3727,398 +3731,969 @@ updateBerufeDisplay();
 
 
 <!-- TAB 6: Berufliche Schulen (DUMMY Preview) -->
+
 <div id="berufliche-schulen-tab" class="tab-content">
-  <div class="split-container">
-    <div class="split-section left">
-      <div class="section-title">
-        <span class="section-number">1</span>
-        Dein Weg an eine berufliche Schule
-      </div>
-      <p class="section-subtitle">
-        Wähle deinen aktuellen Abschluss – wir zeigen dir passende Schularten und Angebote in Stuttgart.
-      </p>
-
-      <div class="select-wrapper">
-        <label class="select-label" for="bs-abschluss">Dein Abschluss</label>
-        <select id="bs-abschluss">
-          <option value="">Bitte wählen</option>
-          <option value="ohne">Ohne Abschluss</option>
-          <option value="hs">Hauptschulabschluss</option>
-          <option value="mr">Mittlere Reife</option>
-          <option value="fhr">Fachhochschulreife</option>
-          <option value="abi">Abitur</option>
-        </select>
-      </div>
-
-      <div class="visualization-area">
-        <div class="vis-title">Vorschau (Dummy)</div>
-        <div class="connection-visual">
-          <div class="endpoint">
-            <div class="endpoint-circle start">Dein
-Abschluss</div>
-            <div class="endpoint-label">Start</div>
-            <div class="endpoint-value">(Auswahl)</div>
-          </div>
-          <div class="connection-line">
-            <div class="connection-arrow"></div>
-          </div>
-          <div class="endpoint">
-            <div class="endpoint-circle target">Berufliche
-Schulen</div>
-            <div class="endpoint-label">Ergebnis</div>
-            <div class="endpoint-value">(Vorschau)</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="info-box">
-        <p><strong>Hinweis:</strong> Das ist eine erste Dummy-Vorschau. In der finalen Version wird der Inhalt aus der PDF interaktiv (Filter, Schulen, Voraussetzungen).</p>
-      </div>
-    </div>
-
-    <div class="split-section right">
-      <div class="section-title">
-        <span class="section-number">2</span>
-        Schularten – Beispiele (Dummy)
-      </div>
-      <p class="section-subtitle">
-        Diese Karten zeigen, wie sich Angebote später anfühlen: klickbar, übersichtlich, mit Voraussetzungen.
-      </p>
-
-      <div class="results-container">
-        <div class="results-header">
-          Beispiel-Kacheln (nur Vorschau)
-        </div>
-        <div class="results-content">
-          <div class="path-card">
-            <div class="path-card-header">
-              <div class="path-number-badge">A</div>
-              <h3 class="path-title">Berufliches Gymnasium</h3>
-              <div class="duration-badge">Abitur</div>
-            </div>
-            <p class="path-description">
-              Profile wie Technik, Wirtschaft oder Gesundheit/Soziales – je nach Schule.
-            </p>
-          </div>
-
-          <div class="path-card">
-            <div class="path-card-header">
-              <div class="path-number-badge">B</div>
-              <h3 class="path-title">Berufskolleg</h3>
-              <div class="duration-badge">Fachhochschulreife</div>
-            </div>
-            <p class="path-description">
-              Vollzeit oder Teilzeit – oft mit starkem Praxisbezug und klaren Zugangsvoraussetzungen.
-            </p>
-          </div>
-
-          <div class="path-card">
-            <div class="path-card-header">
-              <div class="path-number-badge">C</div>
-              <h3 class="path-title">Berufsschule (duale Ausbildung)</h3>
-              <div class="duration-badge">Berufsabschluss</div>
-            </div>
-            <p class="path-description">
-              Betrieb + Schule – viele Fachrichtungen. Später zeigen wir dir: Welche Schule ist zuständig und welche Berufe passen.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div style="max-width: 1500px; margin: 0 auto; padding: 40px 20px;">
-    <div class="header" style="margin-bottom: 40px;">
-      <h1 style="font-size: 2rem;">🧩 Alles auf einen Blick</h1>
-      <p>Vorschau für die spätere Matrix-Ansicht: Filter auswählen → passende Schularten/Fachrichtungen sehen.</p>
-    </div>
-
-    <div class="results-container">
-      <div class="results-header">
-        Filter (Dummy)
-      </div>
-      <div class="results-content">
-        <div class="split-container" style="grid-template-columns: 1fr 1fr 1fr; min-height: auto;">
-          <div class="split-section" style="padding: 0; background: transparent;">
-            <div class="select-wrapper" style="margin-bottom: 0;">
-              <label class="select-label" for="matrix-abschluss">Vorhandener Abschluss</label>
-              <select id="matrix-abschluss">
-                <option value="">Alle</option>
-                <option value="ohne">Ohne Abschluss</option>
-                <option value="hs">Hauptschulabschluss</option>
-                <option value="mr">Mittlere Reife</option>
-                <option value="fhr">Fachhochschulreife</option>
-                <option value="abi">Abitur</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="split-section" style="padding: 0; background: transparent;">
-            <div class="select-wrapper" style="margin-bottom: 0;">
-              <label class="select-label" for="matrix-schulart">Schulart</label>
-              <select id="matrix-schulart">
-                <option value="">Alle</option>
-                <option value="berufsschule">Berufsschule</option>
-                <option value="berufsfachschule">Berufsfachschule</option>
-                <option value="berufskolleg">Berufskolleg</option>
-                <option value="berufliches-gymnasium">Berufliches Gymnasium</option>
-                <option value="fachschule">Fachschule / Meisterschule</option>
-                <option value="zweiter-bildungsweg">Zweiter Bildungsweg</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="split-section" style="padding: 0; background: transparent;">
-            <div class="select-wrapper" style="margin-bottom: 0;">
-              <label class="select-label" for="matrix-fachrichtung">Fachrichtung</label>
-              <select id="matrix-fachrichtung">
-                <option value="">Alle</option>
-                <option value="technik">Technik</option>
-                <option value="wirtschaft">Wirtschaft & Verwaltung</option>
-                <option value="gesundheit">Gesundheit / Soziales</option>
-                <option value="gestaltung">Gestaltung / Medien</option>
-                <option value="agrar">Agrar / Landwirtschaft</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <div style="height: 25px;"></div>
-
-        <div class="vis-title" style="text-align: left; margin-bottom: 12px;">Ergebnis (Dummy-Kacheln)</div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px;">
-          <div class="path-card">
-            <div class="path-card-header">
-              <div class="path-number-badge">1</div>
-              <h3 class="path-title">Berufsschule</h3>
-              <div class="duration-badge">Technik</div>
-            </div>
-            <div class="path-steps">
-              <span class="step">Ausbildungsvertrag</span><span class="arrow">→</span><span class="step">Berufsschule</span>
-            </div>
-          </div>
-
-          <div class="path-card">
-            <div class="path-card-header">
-              <div class="path-number-badge">2</div>
-              <h3 class="path-title">Berufsfachschule</h3>
-              <div class="duration-badge">Gesundheit</div>
-            </div>
-            <div class="path-steps">
-              <span class="step">Hauptschulabschluss</span><span class="arrow">→</span><span class="step">Vollzeit</span>
-            </div>
-          </div>
-
-          <div class="path-card">
-            <div class="path-card-header">
-              <div class="path-number-badge">3</div>
-              <h3 class="path-title">Berufskolleg I</h3>
-              <div class="duration-badge">Wirtschaft</div>
-            </div>
-            <div class="path-steps">
-              <span class="step">Mittlere Reife</span><span class="arrow">→</span><span class="step">Grundbildung</span>
-            </div>
-          </div>
-
-          <div class="path-card">
-            <div class="path-card-header">
-              <div class="path-number-badge">4</div>
-              <h3 class="path-title">Berufskolleg II</h3>
-              <div class="duration-badge">FH-Reife</div>
-            </div>
-            <div class="path-steps">
-              <span class="step">BK I</span><span class="arrow">→</span><span class="step">Fachhochschulreife</span>
-            </div>
-          </div>
-
-          <div class="path-card">
-            <div class="path-card-header">
-              <div class="path-number-badge">5</div>
-              <h3 class="path-title">Berufliches Gymnasium</h3>
-              <div class="duration-badge">Technik</div>
-            </div>
-            <div class="path-steps">
-              <span class="step">Mittlere Reife</span><span class="arrow">→</span><span class="step">Abitur</span>
-            </div>
-          </div>
-
-          <div class="path-card">
-            <div class="path-card-header">
-              <div class="path-number-badge">6</div>
-              <h3 class="path-title">Fachschule / Meisterschule</h3>
-              <div class="duration-badge">Weiterbildung</div>
-            </div>
-            <div class="path-steps">
-              <span class="step">Berufsabschluss</span><span class="arrow">→</span><span class="step">Aufstieg</span>
-            </div>
-          </div>
-
-          <div class="path-card">
-            <div class="path-card-header">
-              <div class="path-number-badge">7</div>
-              <h3 class="path-title">Zweiter Bildungsweg</h3>
-              <div class="duration-badge">Oberschule</div>
-            </div>
-            <div class="path-steps">
-              <span class="step">Ausbildung</span><span class="arrow">→</span><span class="step">Hochschulreife</span>
-            </div>
-          </div>
-
-          <div class="path-card">
-            <div class="path-card-header">
-              <div class="path-number-badge">8</div>
-              <h3 class="path-title">Gestaltung / Medien</h3>
-              <div class="duration-badge">Design</div>
-            </div>
-            <div class="path-steps">
-              <span class="step">Mittlere Reife</span><span class="arrow">→</span><span class="step">Vollzeit</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="info-box" style="margin-top: 25px;">
-          <p><strong>Was kommt als Nächstes?</strong> In Schritt 4 ersetzen wir die Dummy-Kacheln durch die echte „Alles auf einen Blick“-Matrix aus der PDF und machen sie filterbar.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div style="max-width: 1500px; margin: 0 auto; padding: 40px 20px 60px;">
+
     <div class="header" style="margin-bottom: 40px;">
-      <h1 style="font-size: 2rem;">🏫 Alle Schulen in Stuttgart (Übersicht)</h1>
-      <p>Vorschau für das spätere Schul-Verzeichnis: suchen, filtern, und dann Kontaktdaten + Details pro Schule ansehen.</p>
+      <h1 style="font-size: 2rem;">Berufliche Schulen in Stuttgart</h1>
+      <p>Hier findest du einen Überblick über die Schularten im beruflichen System sowie die Kontaktdaten der 20 beruflichen Schulen der Landeshauptstadt Stuttgart.</p>
     </div>
 
-    <div class="results-container">
-      <div class="results-header">
-        Suche & Filter (Dummy)
+    <div style="margin-bottom: 55px;">
+      <h2 style="color: var(--primary-blue); margin-bottom: 18px;">Alles auf einen Blick</h2>
+      <p style="color: var(--text-gray); margin-bottom: 22px;">Dieser Überblick erklärt die Schularten. Er macht keine Aussage dazu, welche Schule welche Fachbereiche anbietet.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px;">
+        <div class="path-card">
+          <div class="path-card-header">
+            <div class="path-number-badge">A</div>
+            <h3 class="path-title">Berufsschule (duale Ausbildung)</h3>
+            <div class="duration-badge">Kernstück</div>
+          </div>
+          <p class="path-description">Praxis im Ausbildungsbetrieb und Theorie in der Berufsschule; Dauer meist 2 bis 3,5 Jahre.</p>
+        </div>
+
+        <div class="path-card">
+          <div class="path-card-header">
+            <div class="path-number-badge">B</div>
+            <h3 class="path-title">Berufsfachschule</h3>
+            <div class="duration-badge">Vollzeit/Teilzeit</div>
+          </div>
+          <p class="path-description">Schulische Ausbildung oder Vorbereitung; je nach Bildungsgang kann auch ein allgemeinbildender Abschluss erreichbar sein.</p>
+        </div>
+
+        <div class="path-card">
+          <div class="path-card-header">
+            <div class="path-number-badge">C</div>
+            <h3 class="path-title">Berufskolleg</h3>
+            <div class="duration-badge">Praxisnah</div>
+          </div>
+          <p class="path-description">Berufliche Grundbildung und weiterführende Abschlüsse; Angebote gibt es in Vollzeit und Teilzeit.</p>
+        </div>
+
+        <div class="path-card">
+          <div class="path-card-header">
+            <div class="path-number-badge">D</div>
+            <h3 class="path-title">Berufliches Gymnasium</h3>
+            <div class="duration-badge">Abitur</div>
+          </div>
+          <p class="path-description">Führt zur allgemeinen Hochschulreife und hat berufliche Profile/Schwerpunkte.</p>
+        </div>
+
+        <div class="path-card">
+          <div class="path-card-header">
+            <div class="path-number-badge">E</div>
+            <h3 class="path-title">Fachschule / Meisterschule</h3>
+            <div class="duration-badge">Weiterbildung</div>
+          </div>
+          <p class="path-description">Aufbauend auf Berufsabschluss und Berufspraxis; z. B. Techniker- oder Meisterabschlüsse (je nach Fachrichtung und Organisation).</p>
+        </div>
+
+        <div class="path-card">
+          <div class="path-card-header">
+            <div class="path-number-badge">F</div>
+            <h3 class="path-title">Zweiter Bildungsweg</h3>
+            <div class="duration-badge">Aufbau</div>
+          </div>
+          <p class="path-description">Wege wie Berufsaufbauschule oder Berufsoberschule können – mit entsprechenden Voraussetzungen – zu höheren Abschlüssen führen.</p>
+        </div>
       </div>
-      <div class="results-content">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: end;">
-          <div>
-            <label class="select-label" for="school-search">Suche (Name, Fachrichtung, Adresse)</label>
-            <input id="school-search" type="text" placeholder="z.B. IT, Wirtschaft, Feuerbach..."
-              style="width: 100%; padding: 16px 20px; border: 2px solid var(--border-color); border-radius: 12px; font-size: 1.05rem; background: var(--bg-white);"
-            />
-          </div>
-          <div>
-            <div class="select-label">Filterchips (Dummy)</div>
-            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-              <span class="beruf-tag" style="cursor: default;">gewerblich</span>
-              <span class="beruf-tag" style="cursor: default;">kaufmännisch</span>
-              <span class="beruf-tag" style="cursor: default;">Gesundheit & Soziales</span>
-              <span class="beruf-tag" style="cursor: default;">Landwirtschaft</span>
-            </div>
-          </div>
-        </div>
 
-        <div style="height: 25px;"></div>
-
-        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px;">
-          <div class="path-card">
-            <div class="path-card-header">
-              <div class="path-number-badge">01</div>
-              <h3 class="path-title">Beispielschule Gewerblich</h3>
-              <div class="duration-badge">gewerblich</div>
-            </div>
-            <p class="path-description">Adresse: Musterstraße 1, 70100 Stuttgart<br>Telefon: 0711 000000<br>Web: beispielschule-1.de</p>
-            <div style="display: flex; justify-content: flex-end;">
-              <button class="btn btn-secondary" style="flex: 0 0 auto; padding: 10px 16px; font-size: 0.95rem;">Details</button>
-            </div>
-          </div>
-
-          <div class="path-card">
-            <div class="path-card-header">
-              <div class="path-number-badge">02</div>
-              <h3 class="path-title">Beispielschule Kaufmännisch</h3>
-              <div class="duration-badge">kaufmännisch</div>
-            </div>
-            <p class="path-description">Adresse: Musterstraße 2, 70100 Stuttgart<br>Telefon: 0711 000000<br>Web: beispielschule-2.de</p>
-            <div style="display: flex; justify-content: flex-end;">
-              <button class="btn btn-secondary" style="flex: 0 0 auto; padding: 10px 16px; font-size: 0.95rem;">Details</button>
-            </div>
-          </div>
-
-          <div class="path-card">
-            <div class="path-card-header">
-              <div class="path-number-badge">03</div>
-              <h3 class="path-title">Beispielschule Gesundheit</h3>
-              <div class="duration-badge">Gesundheit</div>
-            </div>
-            <p class="path-description">Adresse: Musterstraße 3, 70100 Stuttgart<br>Telefon: 0711 000000<br>Web: beispielschule-3.de</p>
-            <div style="display: flex; justify-content: flex-end;">
-              <button class="btn btn-secondary" style="flex: 0 0 auto; padding: 10px 16px; font-size: 0.95rem;">Details</button>
-            </div>
-          </div>
-
-          <div class="path-card">
-            <div class="path-card-header">
-              <div class="path-number-badge">04</div>
-              <h3 class="path-title">Beispielschule Soziales</h3>
-              <div class="duration-badge">Soziales</div>
-            </div>
-            <p class="path-description">Adresse: Musterstraße 4, 70100 Stuttgart<br>Telefon: 0711 000000<br>Web: beispielschule-4.de</p>
-            <div style="display: flex; justify-content: flex-end;">
-              <button class="btn btn-secondary" style="flex: 0 0 auto; padding: 10px 16px; font-size: 0.95rem;">Details</button>
-            </div>
-          </div>
-
-          <div class="path-card">
-            <div class="path-card-header">
-              <div class="path-number-badge">05</div>
-              <h3 class="path-title">Beispielschule Landwirtschaft</h3>
-              <div class="duration-badge">Landwirtschaft</div>
-            </div>
-            <p class="path-description">Adresse: Musterstraße 5, 70100 Stuttgart<br>Telefon: 0711 000000<br>Web: beispielschule-5.de</p>
-            <div style="display: flex; justify-content: flex-end;">
-              <button class="btn btn-secondary" style="flex: 0 0 auto; padding: 10px 16px; font-size: 0.95rem;">Details</button>
-            </div>
-          </div>
-
-          <div class="path-card">
-            <div class="path-card-header">
-              <div class="path-number-badge">06</div>
-              <h3 class="path-title">Beispielschule Technik/IT</h3>
-              <div class="duration-badge">gewerblich</div>
-            </div>
-            <p class="path-description">Adresse: Musterstraße 6, 70100 Stuttgart<br>Telefon: 0711 000000<br>Web: beispielschule-6.de</p>
-            <div style="display: flex; justify-content: flex-end;">
-              <button class="btn btn-secondary" style="flex: 0 0 auto; padding: 10px 16px; font-size: 0.95rem;">Details</button>
-            </div>
-          </div>
-
-          <div class="path-card">
-            <div class="path-card-header">
-              <div class="path-number-badge">07</div>
-              <h3 class="path-title">Beispielschule Wirtschaft</h3>
-              <div class="duration-badge">kaufmännisch</div>
-            </div>
-            <p class="path-description">Adresse: Musterstraße 7, 70100 Stuttgart<br>Telefon: 0711 000000<br>Web: beispielschule-7.de</p>
-            <div style="display: flex; justify-content: flex-end;">
-              <button class="btn btn-secondary" style="flex: 0 0 auto; padding: 10px 16px; font-size: 0.95rem;">Details</button>
-            </div>
-          </div>
-
-          <div class="path-card">
-            <div class="path-card-header">
-              <div class="path-number-badge">08</div>
-              <h3 class="path-title">Beispielschule Pflege</h3>
-              <div class="duration-badge">Gesundheit</div>
-            </div>
-            <p class="path-description">Adresse: Musterstraße 8, 70100 Stuttgart<br>Telefon: 0711 000000<br>Web: beispielschule-8.de</p>
-            <div style="display: flex; justify-content: flex-end;">
-              <button class="btn btn-secondary" style="flex: 0 0 auto; padding: 10px 16px; font-size: 0.95rem;">Details</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="info-box" style="margin-top: 25px;">
-          <p><strong>Hinweis:</strong> In der finalen Version sind hier alle Schulen aus der PDF enthalten (inkl. echte Adressen, Ansprechpartner und Links).</p>
-        </div>
+      <div class="info-box" style="margin-top: 22px;">
+        <p><strong>Anmeldung:</strong> Für berufliche Vollzeitschulen müssen Anmeldungen nach Ausgabe des Halbjahreszeugnisses spätestens bis 1. März 2026 vorliegen.</p>
+        <p style="margin-top: 10px;"><strong>BewO:</strong> Für eine zweijährige Berufsfachschule, ein Berufskolleg oder ein dreijähriges Berufliches Gymnasium (öffentliche Trägerschaft) erfolgt die Bewerbung – mit wenigen Ausnahmen – über das Bewerberonlineverfahren (BewO).</p>
       </div>
     </div>
-  </div>
+
+    <div>
+      <h2 style="color: var(--primary-blue); margin-bottom: 18px;">Alle Schulen in Stuttgart</h2>
+      <p style="color: var(--text-gray); margin-bottom: 18px;">Suche nach Name oder Stadtteil. Die Daten (Adresse, Telefon, Website, E-Mail) stammen aus dem Infoblatt der Landeshauptstadt Stuttgart.</p>
+
+      <div class="results-container" style="margin-top: 10px;">
+        <div class="results-header">Suche</div>
+        <div class="results-content">
+          <label class="select-label" for="school-search">Suche</label>
+          <input id="school-search" type="text" placeholder="z. B. Feuerbach, Max-Eyth, Elektrotechnik, Berufskolleg…" style="width: 100%; padding: 16px 20px; border: 2px solid var(--border-color); border-radius: 12px; font-size: 1.05rem; background: var(--bg-white);">
+
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px;">
+            <div>
+              <label class="select-label" for="filter-type">Angebotsart</label>
+              <select id="filter-type" style="width: 100%; padding: 16px 20px; border: 2px solid var(--border-color); border-radius: 12px; font-size: 1.05rem; background: var(--bg-white);">
+                <option value="">Alle</option>
+              </select>
+            </div>
+            <div>
+              <label class="select-label" for="filter-field">Fachrichtung</label>
+              <select id="filter-field" style="width: 100%; padding: 16px 20px; border: 2px solid var(--border-color); border-radius: 12px; font-size: 1.05rem; background: var(--bg-white);">
+                <option value="">Alle</option>
+              </select>
+            </div>
+          </div>
+          <p style="margin: 10px 0 0 0; color: var(--text-gray);">Tipp: Wenn du filterst, werden nur Schulen mit passenden Angeboten angezeigt.</p>
+
+          <div id="school-search-count" style="margin-top: 12px; color: var(--text-gray); font-weight: 600;"></div>
+        </div>
+      </div>
+
+      <div id="schools-grid" style="margin-top: 18px; display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 18px;">
+        
+    <div class="path-card school-card" data-search="kaufmännische schule 1 kaufmännisch hasenbergstraße 26 70178 stuttgart west" data-school="Kaufmännische Schule 1">
+      <div class="path-card-header">
+        <div class="path-number-badge">01</div>
+        <h3 class="path-title">Kaufmännische Schule 1</h3>
+        <div class="duration-badge">kaufmännisch</div>
+      </div>
+      <p class="path-description" style="margin-bottom: 10px;">
+        Hasenbergstraße 26, 70178 Stuttgart (West)<br>
+        Telefon 0711 216-34000<br>
+        Web <a href="https://ks1-stuttgart.de" target="_blank" rel="noopener noreferrer">ks1-stuttgart.de</a>
+              <br>
+        E-Mail <a href="mailto:kaufmaennische.schule.1@stuttgart.de">kaufmaennische.schule.1@stuttgart.de</a>
+      </p>
+      <details class="school-details">
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
+        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+          
+          <div class="school-offers" data-school-offers="Kaufmännische Schule 1"></div>
 </div>
+      </details>
+    </div>
+    
+
+    <div class="path-card school-card" data-search="kaufmännische schule stuttgart-nord kaufmännisch heilbronner straße 155 70191 stuttgart nord" data-school="Kaufmännische Schule Stuttgart-Nord">
+      <div class="path-card-header">
+        <div class="path-number-badge">02</div>
+        <h3 class="path-title">Kaufmännische Schule Stuttgart-Nord</h3>
+        <div class="duration-badge">kaufmännisch</div>
+      </div>
+      <p class="path-description" style="margin-bottom: 10px;">
+        Heilbronner Straße 155, 70191 Stuttgart (Nord)<br>
+        Telefon 0711 216-92300<br>
+        Web <a href="https://ksn-stuttgart.de" target="_blank" rel="noopener noreferrer">ksn-stuttgart.de</a>
+              <br>
+        E-Mail <a href="mailto:ksn@stuttgart.de">ksn@stuttgart.de</a>
+      </p>
+      <details class="school-details">
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
+        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+          
+          <div class="school-offers" data-school-offers="Kaufmännische Schule Stuttgart-Nord"></div>
+</div>
+      </details>
+    </div>
+    
+
+    <div class="path-card school-card" data-search="louis-leitz-schule kaufmännisch wiener straße 51 70469 stuttgart feuerbach" data-school="Louis-Leitz-Schule">
+      <div class="path-card-header">
+        <div class="path-number-badge">03</div>
+        <h3 class="path-title">Louis-Leitz-Schule</h3>
+        <div class="duration-badge">kaufmännisch</div>
+      </div>
+      <p class="path-description" style="margin-bottom: 10px;">
+        Wiener Straße 51, 70469 Stuttgart (Feuerbach)<br>
+        Telefon 0711 216-25260<br>
+        Web <a href="https://louis-leitz-schule.de" target="_blank" rel="noopener noreferrer">louis-leitz-schule.de</a>
+              <br>
+        E-Mail <a href="mailto:louis-leitz-schule@stuttgart.de">louis-leitz-schule@stuttgart.de</a>
+      </p>
+      <details class="school-details">
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
+        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+          
+          <div class="school-offers" data-school-offers="Louis-Leitz-Schule"></div>
+</div>
+      </details>
+    </div>
+    
+
+    <div class="path-card school-card" data-search="johann-friedrich-von-cotta-schule kaufmännisch sickstraße 165 70190 stuttgart ost" data-school="Johann-Friedrich-von-Cotta-Schule">
+      <div class="path-card-header">
+        <div class="path-number-badge">04</div>
+        <h3 class="path-title">Johann-Friedrich-von-Cotta-Schule</h3>
+        <div class="duration-badge">kaufmännisch</div>
+      </div>
+      <p class="path-description" style="margin-bottom: 10px;">
+        Sickstraße 165, 70190 Stuttgart (Ost)<br>
+        Telefon 0711 216-60030<br>
+        Web <a href="https://cotta-schule.de" target="_blank" rel="noopener noreferrer">cotta-schule.de</a>
+              <br>
+        E-Mail <a href="mailto:cotta.schule@stuttgart.de">cotta.schule@stuttgart.de</a>
+      </p>
+      <details class="school-details">
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
+        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+          
+          <div class="school-offers" data-school-offers="Johann-Friedrich-von-Cotta-Schule"></div>
+</div>
+      </details>
+    </div>
+    
+
+    <div class="path-card school-card" data-search="wirtschaftsgymnasium west kaufmännisch rotebühlstraße 101 70178 stuttgart west" data-school="Wirtschaftsgymnasium West">
+      <div class="path-card-header">
+        <div class="path-number-badge">05</div>
+        <h3 class="path-title">Wirtschaftsgymnasium West</h3>
+        <div class="duration-badge">kaufmännisch</div>
+      </div>
+      <p class="path-description" style="margin-bottom: 10px;">
+        Rotebühlstraße 101, 70178 Stuttgart (West)<br>
+        Telefon 0711 216-34050<br>
+        Web <a href="https://wg-west.de" target="_blank" rel="noopener noreferrer">wg-west.de</a>
+              <br>
+        E-Mail <a href="mailto:wg-west@stuttgart.de">wg-west@stuttgart.de</a>
+      </p>
+      <details class="school-details">
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
+        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+          
+          <div class="school-offers" data-school-offers="Wirtschaftsgymnasium West"></div>
+</div>
+      </details>
+    </div>
+    
+
+    <div class="path-card school-card" data-search="gewerbliche schule für farbe und gestaltung gewerblich leobener straße 97 70469 stuttgart feuerbach" data-school="Gewerbliche Schule für Farbe und Gestaltung">
+      <div class="path-card-header">
+        <div class="path-number-badge">06</div>
+        <h3 class="path-title">Gewerbliche Schule für Farbe und Gestaltung</h3>
+        <div class="duration-badge">gewerblich</div>
+      </div>
+      <p class="path-description" style="margin-bottom: 10px;">
+        Leobener Straße 97, 70469 Stuttgart (Feuerbach)<br>
+        Telefon 0711 216-35200<br>
+        Web <a href="https://farbegestaltung.de" target="_blank" rel="noopener noreferrer">farbegestaltung.de</a>
+              <br>
+        E-Mail <a href="mailto:schule@farbegestaltung.de">schule@farbegestaltung.de</a>
+      </p>
+      <details class="school-details">
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
+        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+          
+          <div class="school-offers" data-school-offers="Gewerbliche Schule für Farbe und Gestaltung"></div>
+</div>
+      </details>
+    </div>
+    
+
+    <div class="path-card school-card" data-search="gewerbliche schule für holztechnik gewerblich leobener straße 95 70469 stuttgart feuerbach" data-school="Gewerbliche Schule für Holztechnik">
+      <div class="path-card-header">
+        <div class="path-number-badge">07</div>
+        <h3 class="path-title">Gewerbliche Schule für Holztechnik</h3>
+        <div class="duration-badge">gewerblich</div>
+      </div>
+      <p class="path-description" style="margin-bottom: 10px;">
+        Leobener Straße 95, 70469 Stuttgart (Feuerbach)<br>
+        Telefon 0711 216-20210<br>
+        Web <a href="https://holztechnikschule-stuttgart.de" target="_blank" rel="noopener noreferrer">holztechnikschule-stuttgart.de</a>
+              <br>
+        E-Mail <a href="mailto:holztechnik.schule@stuttgart.de">holztechnik.schule@stuttgart.de</a>
+      </p>
+      <details class="school-details">
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
+        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+          
+          <div class="school-offers" data-school-offers="Gewerbliche Schule für Holztechnik"></div>
+</div>
+      </details>
+    </div>
+    
+
+    <div class="path-card school-card" data-search="gewerbliche schule im hoppenlau mit technischer oberschule stuttgart gewerblich rosenbergstraße 17 70176 stuttgart west" data-school="Gewerbliche Schule Im Hoppenlau mit Technischer Oberschule Stuttgart">
+      <div class="path-card-header">
+        <div class="path-number-badge">08</div>
+        <h3 class="path-title">Gewerbliche Schule Im Hoppenlau mit Technischer Oberschule Stuttgart</h3>
+        <div class="duration-badge">gewerblich</div>
+      </div>
+      <p class="path-description" style="margin-bottom: 10px;">
+        Rosenbergstraße 17, 70176 Stuttgart (West)<br>
+        Telefon 0711 216-57010<br>
+        Web <a href="https://gsih-mit-to.de" target="_blank" rel="noopener noreferrer">gsih-mit-to.de</a>
+              <br>
+        E-Mail <a href="mailto:gsih-mit-to@hoppenlau.de">gsih-mit-to@hoppenlau.de</a>
+      </p>
+      <details class="school-details">
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
+        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+          <p style="margin-top: 12px;"><strong>Hinweis:</strong> Anmeldung für Technische Oberschule, einjähriges Berufskolleg (Fachhochschulreife) sowie Berufsaufbauschule: Telefon 0711 216-34540.</p>
+        
+          <div class="school-offers" data-school-offers="Gewerbliche Schule Im Hoppenlau mit Technischer Oberschule Stuttgart"></div>
+</div>
+      </details>
+    </div>
+    
+
+    <div class="path-card school-card" data-search="it.schule stuttgart gewerblich breitwiesenstraße 20 – 22 70565 stuttgart möhringen" data-school="it.schule stuttgart">
+      <div class="path-card-header">
+        <div class="path-number-badge">09</div>
+        <h3 class="path-title">it.schule stuttgart</h3>
+        <div class="duration-badge">gewerblich</div>
+      </div>
+      <p class="path-description" style="margin-bottom: 10px;">
+        Breitwiesenstraße 20 – 22, 70565 Stuttgart (Möhringen)<br>
+        Telefon 0711 216-89222<br>
+        Web <a href="https://its-stuttgart.de" target="_blank" rel="noopener noreferrer">its-stuttgart.de</a>
+              <br>
+        E-Mail <a href="mailto:it-schule@stuttgart.de">it-schule@stuttgart.de</a>
+      </p>
+      <details class="school-details">
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
+        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+          
+          <div class="school-offers" data-school-offers="it.schule stuttgart"></div>
+</div>
+      </details>
+    </div>
+    
+
+    <div class="path-card school-card" data-search="johannes-gutenberg-schule gewerblich rostocker straße 25 70376 stuttgart bad cannstatt" data-school="Johannes-Gutenberg-Schule">
+      <div class="path-card-header">
+        <div class="path-number-badge">10</div>
+        <h3 class="path-title">Johannes-Gutenberg-Schule</h3>
+        <div class="duration-badge">gewerblich</div>
+      </div>
+      <p class="path-description" style="margin-bottom: 10px;">
+        Rostocker Straße 25, 70376 Stuttgart (Bad Cannstatt)<br>
+        Telefon 0711 216-34200<br>
+        Web <a href="https://jgs-stuttgart.de" target="_blank" rel="noopener noreferrer">jgs-stuttgart.de</a>
+              <br>
+        E-Mail <a href="mailto:jgs@stuttgart.de">jgs@stuttgart.de</a>
+      </p>
+      <details class="school-details">
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
+        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+          
+          <div class="school-offers" data-school-offers="Johannes-Gutenberg-Schule"></div>
+</div>
+      </details>
+    </div>
+    
+
+    <div class="path-card school-card" data-search="kerschensteinerschule gewerblich steiermärker straße 72 70469 stuttgart feuerbach" data-school="Kerschensteinerschule">
+      <div class="path-card-header">
+        <div class="path-number-badge">11</div>
+        <h3 class="path-title">Kerschensteinerschule</h3>
+        <div class="duration-badge">gewerblich</div>
+      </div>
+      <p class="path-description" style="margin-bottom: 10px;">
+        Steiermärker Straße 72, 70469 Stuttgart (Feuerbach)<br>
+        Telefon 0711 216-33400<br>
+        Web <a href="https://kerschensteinerschule.de" target="_blank" rel="noopener noreferrer">kerschensteinerschule.de</a>
+              <br>
+        E-Mail <a href="mailto:kerschensteinerschule@stuttgart.de">kerschensteinerschule@stuttgart.de</a>
+      </p>
+      <details class="school-details">
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
+        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+          
+          <div class="school-offers" data-school-offers="Kerschensteinerschule"></div>
+</div>
+      </details>
+    </div>
+    
+
+    <div class="path-card school-card" data-search="max-eyth-schule stuttgart gewerblich fritz-elsas-straße 29 70174 stuttgart mitte" data-school="Max-Eyth-Schule Stuttgart">
+      <div class="path-card-header">
+        <div class="path-number-badge">12</div>
+        <h3 class="path-title">Max-Eyth-Schule Stuttgart</h3>
+        <div class="duration-badge">gewerblich</div>
+      </div>
+      <p class="path-description" style="margin-bottom: 10px;">
+        Fritz-Elsas-Straße 29, 70174 Stuttgart (Mitte)<br>
+        Telefon 0711 216-20901<br>
+        Web <a href="https://mes-stuttgart.de" target="_blank" rel="noopener noreferrer">mes-stuttgart.de</a>
+              <br>
+        E-Mail <a href="mailto:info@mes-stuttgart.de">info@mes-stuttgart.de</a>
+      </p>
+      <details class="school-details">
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
+        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+          
+          <div class="school-offers" data-school-offers="Max-Eyth-Schule Stuttgart"></div>
+</div>
+      </details>
+    </div>
+    
+
+    <div class="path-card school-card" data-search="robert-bosch-schule gewerblich hohensteinstraße 25 70435 stuttgart zuffenhausen" data-school="Robert-Bosch-Schule">
+      <div class="path-card-header">
+        <div class="path-number-badge">13</div>
+        <h3 class="path-title">Robert-Bosch-Schule</h3>
+        <div class="duration-badge">gewerblich</div>
+      </div>
+      <p class="path-description" style="margin-bottom: 10px;">
+        Hohensteinstraße 25, 70435 Stuttgart (Zuffenhausen)<br>
+        Telefon 0711 216-33930<br>
+        Web <a href="https://rbs-stuttgart.de" target="_blank" rel="noopener noreferrer">rbs-stuttgart.de</a>
+              <br>
+        E-Mail <a href="mailto:robert-bosch-schule@stuttgart.de">robert-bosch-schule@stuttgart.de</a>
+      </p>
+      <details class="school-details">
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
+        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+          
+          <div class="school-offers" data-school-offers="Robert-Bosch-Schule"></div>
+</div>
+      </details>
+    </div>
+    
+
+    <div class="path-card school-card" data-search="robert-mayer-schule gewerblich weimarstraße 26 70176 stuttgart mitte" data-school="Robert-Mayer-Schule">
+      <div class="path-card-header">
+        <div class="path-number-badge">14</div>
+        <h3 class="path-title">Robert-Mayer-Schule</h3>
+        <div class="duration-badge">gewerblich</div>
+      </div>
+      <p class="path-description" style="margin-bottom: 10px;">
+        Weimarstraße 26, 70176 Stuttgart (Mitte)<br>
+        Telefon 0711 216-57910<br>
+        Web <a href="https://robert-mayer-schule.de" target="_blank" rel="noopener noreferrer">robert-mayer-schule.de</a>
+              <br>
+        E-Mail <a href="mailto:poststelle.robert-mayer-schule@stuttgart.de">poststelle.robert-mayer-schule@stuttgart.de</a>
+      </p>
+      <details class="school-details">
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
+        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+          
+          <div class="school-offers" data-school-offers="Robert-Mayer-Schule"></div>
+</div>
+      </details>
+    </div>
+    
+
+    <div class="path-card school-card" data-search="steinbeisschule gewerblich steinbeisstraße 5 70191 stuttgart nord" data-school="Steinbeisschule">
+      <div class="path-card-header">
+        <div class="path-number-badge">15</div>
+        <h3 class="path-title">Steinbeisschule</h3>
+        <div class="duration-badge">gewerblich</div>
+      </div>
+      <p class="path-description" style="margin-bottom: 10px;">
+        Steinbeisstraße 5, 70191 Stuttgart (Nord)<br>
+        Telefon 0711 216-34300<br>
+        Web <a href="https://steinbeisschule-stuttgart.de" target="_blank" rel="noopener noreferrer">steinbeisschule-stuttgart.de</a>
+              <br>
+        E-Mail <a href="mailto:steinbeisschule@stb-s.de">steinbeisschule@stb-s.de</a>
+      </p>
+      <details class="school-details">
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
+        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+          
+          <div class="school-offers" data-school-offers="Steinbeisschule"></div>
+</div>
+      </details>
+    </div>
+    
+
+    <div class="path-card school-card" data-search="werner-siemens-schule gewerblich heilbronner straße 153 70191 stuttgart nord" data-school="Werner-Siemens-Schule">
+      <div class="path-card-header">
+        <div class="path-number-badge">16</div>
+        <h3 class="path-title">Werner-Siemens-Schule</h3>
+        <div class="duration-badge">gewerblich</div>
+      </div>
+      <p class="path-description" style="margin-bottom: 10px;">
+        Heilbronner Straße 153, 70191 Stuttgart (Nord)<br>
+        Telefon 0711 216-59900<br>
+        Web <a href="https://wss-stuttgart.de" target="_blank" rel="noopener noreferrer">wss-stuttgart.de</a>
+              <br>
+        E-Mail <a href="mailto:wss-verwaltung@stuttgart.de">wss-verwaltung@stuttgart.de</a>
+      </p>
+      <details class="school-details">
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
+        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+          
+          <div class="school-offers" data-school-offers="Werner-Siemens-Schule"></div>
+</div>
+      </details>
+    </div>
+    
+
+    <div class="path-card school-card" data-search="wilhelm-maybach-schule gewerblich gnesener straße 44 70374 stuttgart bad cannstatt" data-school="Wilhelm-Maybach-Schule">
+      <div class="path-card-header">
+        <div class="path-number-badge">17</div>
+        <h3 class="path-title">Wilhelm-Maybach-Schule</h3>
+        <div class="duration-badge">gewerblich</div>
+      </div>
+      <p class="path-description" style="margin-bottom: 10px;">
+        Gnesener Straße 44, 70374 Stuttgart (Bad Cannstatt)<br>
+        Telefon 0711 216-89600<br>
+        Web <a href="https://wilhelm-maybach-schule.de" target="_blank" rel="noopener noreferrer">wilhelm-maybach-schule.de</a>
+              <br>
+        E-Mail <a href="mailto:wilhelm-maybach-schule@stuttgart.de">wilhelm-maybach-schule@stuttgart.de</a>
+      </p>
+      <details class="school-details">
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
+        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+          
+          <div class="school-offers" data-school-offers="Wilhelm-Maybach-Schule"></div>
+</div>
+      </details>
+    </div>
+    
+
+    <div class="path-card school-card" data-search="alexander-fleming-schule hauswirtschaftlich/sozial hedwig-dohm-straße 1 70191 stuttgart nord" data-school="Alexander-Fleming-Schule">
+      <div class="path-card-header">
+        <div class="path-number-badge">18</div>
+        <h3 class="path-title">Alexander-Fleming-Schule</h3>
+        <div class="duration-badge">hauswirtschaftlich/sozial</div>
+      </div>
+      <p class="path-description" style="margin-bottom: 10px;">
+        Hedwig-Dohm-Straße 1, 70191 Stuttgart (Nord)<br>
+        Telefon 0711 216-55200<br>
+        Web <a href="https://flemingschule.de" target="_blank" rel="noopener noreferrer">flemingschule.de</a>
+              <br>
+        E-Mail <a href="mailto:info@flemingschule.de">info@flemingschule.de</a>
+      </p>
+      <details class="school-details">
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
+        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+          
+          <div class="school-offers" data-school-offers="Alexander-Fleming-Schule"></div>
+</div>
+      </details>
+    </div>
+    
+
+    <div class="path-card school-card" data-search="hedwig-dohm-schule hauswirtschaftlich/sozial hedwig-dohm-straße 3 70191 stuttgart nord" data-school="Hedwig-Dohm-Schule">
+      <div class="path-card-header">
+        <div class="path-number-badge">19</div>
+        <h3 class="path-title">Hedwig-Dohm-Schule</h3>
+        <div class="duration-badge">hauswirtschaftlich/sozial</div>
+      </div>
+      <p class="path-description" style="margin-bottom: 10px;">
+        Hedwig-Dohm-Straße 3, 70191 Stuttgart (Nord)<br>
+        Telefon 0711 216-55400<br>
+        Web <a href="https://hedwig-dohm-schule.de" target="_blank" rel="noopener noreferrer">hedwig-dohm-schule.de</a>
+              <br>
+        E-Mail <a href="mailto:hedwig-dohm-schule@stuttgart.de">hedwig-dohm-schule@stuttgart.de</a>
+      </p>
+      <details class="school-details">
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
+        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+          
+          <div class="school-offers" data-school-offers="Hedwig-Dohm-Schule"></div>
+</div>
+      </details>
+    </div>
+    
+
+    <div class="path-card school-card" data-search="landwirtschaftliche schule hohenheim landwirtschaftlich industriestraße 28 70565 stuttgart " data-school="Landwirtschaftliche Schule Hohenheim">
+      <div class="path-card-header">
+        <div class="path-number-badge">20</div>
+        <h3 class="path-title">Landwirtschaftliche Schule Hohenheim</h3>
+        <div class="duration-badge">landwirtschaftlich</div>
+      </div>
+      <p class="path-description" style="margin-bottom: 10px;">
+        Industriestraße 28, 70565 Stuttgart<br>
+        Telefon 0711 216-35300<br>
+        Web <a href="https://lsh-stuttgart.de" target="_blank" rel="noopener noreferrer">lsh-stuttgart.de</a>
+              <br>
+        E-Mail <a href="mailto:lsh@stuttgart.de">lsh@stuttgart.de</a>
+      </p>
+      <details class="school-details">
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
+        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+          
+          <div class="school-offers" data-school-offers="Landwirtschaftliche Schule Hohenheim"></div>
+</div>
+      </details>
+    </div>
+    
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    (function() {
+      const MATRIX_CSV = `﻿Bildungsangebot,Gew. Schule für Farbe und Gestaltung,Gewerbliche Schule für Holztechnik,Gew. Schule im Hoppenlau mit Techn. Oberschule,it.schule stuttgart,Johannes-Gutenberg-Schule,Kerschensteinerschule,Max-Eyth-Schule,Robert-Bosch-Schule,Robert-Mayer-Schule,Steinbeisschule,Werner-Siemens-Schule,Wilhelm-Maybach-Schule,Kaufmännische Schule 1,Kaufmännische Schule Stuttgart-Nord,Louis-Leitz-Schule,Johann-Friedrich-von-Cotta-Schule,Wirtschaftsgymnasium West,Hedwig-Dohm-Schule,Alexander-Fleming-Schule,Landwirtschaftliche Schule
+Agrarwirtschaft,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True
+Bautechnik,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+"Chemie, Physik und Biologie",False,False,False,True,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False
+Drucktechnik,False,False,False,False,True,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Elektrotechnik,False,False,False,False,True,False,False,False,False,False,True,True,False,False,False,False,False,False,False,False
+Ernährung und Hauswirtschaft,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,True,False,False
+Fahrzeugtechnik,False,False,False,False,False,False,True,False,False,False,False,True,False,False,False,False,False,False,False,False
+Farbtechnik und Raumgestaltung,True,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False
+Gesundheit,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,True,False
+Holztechnik,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Körperpflege,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Metalltechnik,False,False,False,False,False,False,True,True,True,False,False,True,False,False,False,False,False,False,False,False
+Textiltechnik und Bekleidung,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+Wirtschaft und Verwaltung,False,False,False,False,False,True,False,False,False,False,False,False,True,True,True,True,False,False,False,False
+Sonderberufsschulen,True,True,True,False,False,True,False,False,False,True,False,False,False,False,False,False,False,True,True,True
+Vorqualifizierungsjahr Arbeit/Beruf mit Schwerpunkt Erwerb von Deutschkenntnissen (VABO),True,True,True,False,True,True,True,True,False,True,True,False,False,True,False,True,False,False,False,False
+Ausbildungsvorbereitung dual (AVdual),True,True,True,False,True,False,True,True,False,True,False,False,False,True,False,False,False,True,False,False
+Bautechnik,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Druck-/Medientechnik,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Fahrzeugtechnik,False,False,False,False,False,False,True,False,False,False,False,True,False,False,False,False,False,False,False,False
+Farbtechnik und Raumgestaltung,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Fotografie,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Glas-/Fensterbau,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Holztechnik,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Informationselektronik,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Körperpflege,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Metalltechnik – Feinwerk- und Metallbautechnik,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+"Sanitär-, Heizungs-, Klimatechnik",False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False
+Elektrotechnik,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False
+Fahrzeugtechnik,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False
+Gesundheit und Pflege,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False
+Hauswirtschaft und Ernährung,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False
+Holztechnik,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Metalltechnik,False,False,False,False,False,False,False,True,True,False,False,False,False,False,False,False,False,False,False,False
+Wirtschaft und Verwaltung (Wirtschaftsschule),False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False,False,False,False
+Berufsfachschule für Sozialpädagogische Assistenz (praxisintegriert),False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False
+"für chemisch-techn., pharmazeutisch-techn., physikalisch-techn. Assistent/-innen (je zwei Jahre)",False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+für elektrotechnische Assistent/-innen (zwei Jahre),False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False
+Grafik-Design (drei Jahre),False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Mode und Design (drei Jahre),False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Produktdesign (zwei Jahre),True,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Technisches Berufskolleg I (ein Jahr),False,False,True,True,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False
+Technisches Berufskolleg II (ein Jahr),False,False,True,True,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False
+Bautechnik,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Elektronik,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False
+Metalltechnik,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False
+"Sanitär-, Heizungs- und Klimatechnik",False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False
+Kaufmännisches Berufskolleg I (Höhere Handelsschule – ein Jahr),False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False
+Kaufmännisches Berufskolleg II (Höhere Handelsschule – Oberstufe – ein Jahr),False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False
+Kaufmännisches Berufskolleg Fremdsprachen (zwei Jahre),False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False
+Kaufmännisches Berufskolleg Wirtschaftsinformatik (zwei Jahre),False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False
+Sport- und Vereinsmanagement (drei Jahre),False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False
+Wirtschaft und Verwaltung – verschiedene (siehe Seite 3),False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,True,False,False,False,False
+Biotechnologische Assistent/-innen (zwei Jahre),False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True
+Ernährung und Haushaltsmanagement I (zwei Jahre),False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False
+Ernährung und Haushaltsmanagement II (ein Jahr),False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False
+Gesundheit und Pflege I (ein Jahr),False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False
+Gesundheit und Pflege II (ein Jahr),False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False
+Sozialpädagogik (ein Jahr),False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False
+Soziales (ein Jahr),False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False
+Sozialpädagogik – praxisintegriert (Fachschule für Sozialpädagogik) (drei Jahre),False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False
+Technisches Gymnasium mit Profil: Angewandte Naturwissenschaften (TGN),False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Technisches Gymnasium mit Profil: Elektro- und Informationstechnik (TGE),False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False
+Technisches Gymnasium mit Profil: Gestaltungs- und Medientechnik (TGG),True,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Technisches Gymnasium mit Profil: Informationstechnik (TGI),False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Technisches Gymnasium mit Profil: Mechatronik (TGM),False,False,False,False,False,False,True,False,False,False,False,True,False,False,False,False,False,False,False,False
+Technisches Gymnasium mit Profil: Technik und Management (TGTM),False,False,False,False,False,False,False,True,False,True,False,False,False,False,False,False,False,False,False,False
+Technisches Gymnasium mit Profil: Technik – sechsjährige Aufbauform ab Klasse 8,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Technisches Gymnasium mit Profil: Umwelttechnik (TGU),False,False,False,False,False,False,True,True,False,False,False,False,False,False,False,False,False,False,False,False
+Wirtschaftswissenschaftliches Gymnasium mit Profil: Internationale Wirtschaft (WGI),False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False
+Wirtschaftswissenschaftliches Gymnasium mit Profil: Wirtschaft (WGW),False,False,False,False,False,False,False,False,False,False,False,False,True,True,True,True,False,False,False,False
+Ernährungswissenschaftliches Gymnasium (EG),False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False
+Sozial- und Gesundheitswissenschaftliches Gymnasium mit Profil: Gesundheit (SGGG),False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False
+Sozial- und Gesundheitswissenschaftliches Gymnasium mit Profil: Soziales (SGGS),False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False
+Berufsaufbauschule zur Fachschulreife führend (gewerblich-technisch oder kaufmännisch),False,False,True,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+"Einjähriges Berufskolleg zur Fachhochschulreife führend (gewerbl./gestalter./kaufm. oder hauswirtschaftliche, landwirtschaftliche, sozialpädagogische Richtung)",False,False,True,False,False,False,False,False,False,False,False,False,True,False,False,False,False,True,False,False
+Technische Oberschule oder Wirtschaftsoberschule,False,False,True,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+Bautechnik,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+"Chemie, Physik und Biologie",False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Drucktechnik,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Ernährung,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Fahrzeugtechnik,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False
+Farbtechnik und Raumgestaltung,True,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False
+Gesundheit,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False
+Gießereitechnik,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False
+Holztechnik,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Installations- und Heizungsbau,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False
+Metalltechnik,False,False,False,False,False,False,False,True,True,False,False,False,False,False,False,False,False,False,False,False
+Textiltechnik und Bekleidung,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+Automatisierungstechnik/Mechatronik,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False
+Bautechnik,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Druck- und Medientechnik,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Elektrotechnik,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False
+Farb- und Lacktechnik,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Gießereitechnik,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False
+"Heizungs-, Lüftungs- und Klimatechnik",False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False
+Holztechnik,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Informationstechnik,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Kraftfahrzeugtechnik,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False
+Maschinentechnik,False,False,False,False,False,False,False,True,True,False,True,False,False,False,False,False,False,False,False,False
+Farbtechnik und Raumgestaltung,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Möbel- und Innenraumgestaltung,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Werbegestaltung,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Management Fachrichtung Hauswirtschaft,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False
+Organisation und Führung,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False
+Visuelle Kommunikation,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Farbtechnik,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+Kursangebote auf Nachfrage,True,True,True,True,True,True,True,True,False,False,True,True,False,False,False,False,False,False,False,False
+`;
+
+      const input = document.getElementById('school-search');
+      const typeSel = document.getElementById('filter-type');
+      const fieldSel = document.getElementById('filter-field');
+
+      const cards = Array.from(document.querySelectorAll('.school-card'));
+      const countEl = document.getElementById('school-search-count');
+
+      function updateCount(n) {
+        if (!countEl) return;
+        countEl.textContent = n === 1 ? '1 Schule gefunden' : n + ' Schulen gefunden';
+      }
+
+      function norm(s) {
+        return (s || '')
+          .toLowerCase()
+          .replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss')
+          .replace(/\(.*?\)/g,' ')
+          .replace(/[^a-z0-9]+/g,' ')
+          .replace(/\s+/g,' ')
+          .trim();
+      }
+
+      const schoolAlias = new Map([
+        ['gew schule fuer farbe und gestaltung', 'gewerbliche schule fuer farbe und gestaltung'],
+        ['gew schule im hoppenlau mit techn oberschule', 'gewerbliche schule im hoppenlau mit technischer oberschule stuttgart'],
+        ['max eyth schule', 'max eyth schule stuttgart'],
+        ['landwirtschaftliche schule', 'landwirtschaftliche schule hohenheim']
+      ]);
+
+      function resolveSchoolName(csvHeaderName) {
+        const n0 = norm(csvHeaderName);
+        const n = schoolAlias.get(n0) || n0;
+        for (const card of cards) {
+          const school = card.getAttribute('data-school') || '';
+          if (norm(school) === n) return school;
+        }
+        return null;
+      }
+
+      function parseCSV(text) {
+        const rows = [];
+        let row = [];
+        let field = '';
+        let inQuotes = false;
+        const s = (text || '').replace(/^﻿/, '');
+
+        for (let i = 0; i < s.length; i++) {
+          const c = s[i];
+          const next = s[i + 1];
+
+          if (inQuotes) {
+            if (c === '"' && next === '"') {
+              field += '"';
+              i++;
+            } else if (c === '"') {
+              inQuotes = false;
+            } else {
+              field += c;
+            }
+            continue;
+          }
+
+          if (c === '"') { inQuotes = true; continue; }
+          if (c === ',') { row.push(field); field = ''; continue; }
+
+          if (c === '
+') {
+            row.push(field);
+            field = '';
+            row = row.map(x => (x || '').replace(/
+/g, ''));
+            if (row.some(x => String(x).trim() !== '')) rows.push(row);
+            row = [];
+            continue;
+          }
+
+          field += c;
+        }
+
+        if (field.length || row.length) {
+          row.push(field);
+          row = row.map(x => (x || '').replace(/
+/g, ''));
+          if (row.some(x => String(x).trim() !== '')) rows.push(row);
+        }
+
+        return rows;
+      }
+
+      function classifyType(angebot) {
+        const a = (angebot || '').toLowerCase();
+        const rules = [
+          ['berufsschule', 'Berufsschule'],
+          ['sonderberufsschule', 'Sonderberufsschule'],
+          ['vabo', 'VABO'],
+          ['avdual', 'AVdual'],
+          ['ausbildungsvorbereitung', 'Ausbildungsvorbereitung'],
+          ['einjährige berufsfachschule', 'Berufsfachschule (1-jährig)'],
+          ['zweijährige berufsfachschule', 'Berufsfachschule (2-jährig)'],
+          ['dreijährige berufsfachschule', 'Berufsfachschule (3-jährig)'],
+          ['berufskolleg', 'Berufskolleg'],
+          ['berufliches gymnasium', 'Berufliches Gymnasium'],
+          ['aufbaugymnasium', 'Berufliches Gymnasium'],
+          ['fachschule', 'Fachschule / Weiterbildung'],
+          ['meister', 'Fachschule / Weiterbildung'],
+          ['techniker', 'Fachschule / Weiterbildung'],
+          ['akademie', 'Fachschule / Weiterbildung'],
+          ['berufsaufbauschule', 'Zweiter Bildungsweg'],
+          ['berufsoberschule', 'Zweiter Bildungsweg'],
+          ['technische oberschule', 'Zweiter Bildungsweg'],
+          ['wirtschaftsoberschule', 'Zweiter Bildungsweg']
+        ];
+        for (const pair of rules) {
+          const key = pair[0];
+          const label = pair[1];
+          if (a.startsWith(key) || a.includes(key)) return label;
+        }
+        return 'Weitere Angebote';
+      }
+
+      function classifyField(angebot) {
+        const a = (angebot || '').toLowerCase();
+        if (a.includes('wirtschaft') || a.includes('kaufm') || a.includes('verwaltung') || a.includes('bank') || a.includes('marketing')) return 'Wirtschaft & Verwaltung';
+        if (a.includes('gesundheit') || a.includes('pflege') || a.includes('medizin')) return 'Gesundheit & Pflege';
+        if (a.includes('sozial') || a.includes('pädagog') || a.includes('erzieh')) return 'Soziales & Pädagogik';
+        if (a.includes('technik') || a.includes('elektro') || a.includes('metall') || a.includes('fahrzeug') || a.includes('mechatron') || a.includes('it') || a.includes('information')) return 'Technik & IT';
+        if (a.includes('gestaltung') || a.includes('grafik') || a.includes('medien') || a.includes('druck') || a.includes('mode') || a.includes('design') || a.includes('farbe')) return 'Gestaltung & Medien';
+        if (a.includes('hauswirtschaft') || a.includes('ernährung') || a.includes('haushalt')) return 'Ernährung & Hauswirtschaft';
+        if (a.includes('agrar') || a.includes('landwirt') || a.includes('gartenbau') || a.includes('forst') || a.includes('umwelt')) return 'Agrar & Umwelt';
+        return 'Sonstiges';
+      }
+
+      function uniqSorted(list) {
+        return Array.from(new Set(list)).sort((a,b) => a.localeCompare(b, 'de'));
+      }
+
+      function setOptions(select, values) {
+        if (!select) return;
+        select.innerHTML = '';
+        const opt0 = document.createElement('option');
+        opt0.value = '';
+        opt0.textContent = 'Alle';
+        select.appendChild(opt0);
+        values.forEach(v => {
+          const o = document.createElement('option');
+          o.value = v;
+          o.textContent = v;
+          select.appendChild(o);
+        });
+      }
+
+      function renderOffers(container, offers, filterActive) {
+        if (!container) return;
+        if (!offers.length) {
+          container.innerHTML = filterActive
+            ? '<p style="margin:0; color: var(--text-gray);">Keine passenden Angebote.</p>'
+            : '<p style="margin:0; color: var(--text-gray);">Keine Angebote in der Matrix gefunden.</p>';
+          return;
+        }
+
+        const groups = {};
+        offers.forEach(o => {
+          if (!groups[o.schulart]) groups[o.schulart] = [];
+          groups[o.schulart].push(o.angebot);
+        });
+
+        const keys = Object.keys(groups).sort((a,b) => a.localeCompare(b, 'de'));
+        let out = '';
+        keys.forEach(k => {
+          const unique = Array.from(new Set(groups[k])).sort((a,b) => a.localeCompare(b, 'de'));
+          out += '<div class="offer-group-title">' + k + ' (' + unique.length + ')</div>';
+          out += '<ul>' + unique.map(x => '<li>' + x + '</li>').join('') + '</ul>';
+        });
+        container.innerHTML = out;
+      }
+
+      // Parse matrix
+      const rows = parseCSV(MATRIX_CSV);
+      if (!rows.length) return;
+
+      const header = rows[0];
+      const csvSchoolCols = header.slice(1);
+      const resolvedSchools = csvSchoolCols.map(resolveSchoolName);
+
+      const offersBySchool = new Map();
+      cards.forEach(card => {
+        const s = card.getAttribute('data-school') || '';
+        offersBySchool.set(s, []);
+      });
+
+      const allOffers = [];
+      for (let r = 1; r < rows.length; r++) {
+        const row = rows[r];
+        const angebot = (row[0] || '').trim();
+        if (!angebot) continue;
+
+        const schools = [];
+        for (let c = 1; c < row.length && c <= resolvedSchools.length; c++) {
+          const val = String(row[c] || '').trim().toLowerCase();
+          if (val === 'true') {
+            const resolved = resolvedSchools[c - 1];
+            if (resolved) schools.push(resolved);
+          }
+        }
+
+        const offerObj = {
+          angebot: angebot,
+          schulart: classifyType(angebot),
+          fach_kat: classifyField(angebot),
+          schools: schools
+        };
+        allOffers.push(offerObj);
+
+        schools.forEach(s => {
+          if (!offersBySchool.has(s)) offersBySchool.set(s, []);
+          offersBySchool.get(s).push(offerObj);
+        });
+      }
+
+      setOptions(typeSel, uniqSorted(allOffers.map(o => o.schulart)));
+      setOptions(fieldSel, uniqSorted(allOffers.map(o => o.fach_kat)));
+
+      function render() {
+        const q = (input && input.value ? input.value : '').trim().toLowerCase();
+        const typeVal = (typeSel && typeSel.value) ? typeSel.value : '';
+        const fieldVal = (fieldSel && fieldSel.value) ? fieldSel.value : '';
+
+        const filterActive = (q.length > 0) || !!typeVal || !!fieldVal;
+
+        let visible = 0;
+        cards.forEach(card => {
+          const schoolName = card.getAttribute('data-school') || '';
+          const schoolHay = ((card.getAttribute('data-search') || '') + ' ' + schoolName).toLowerCase();
+          const schoolMatch = !q || schoolHay.includes(q);
+
+          const base = offersBySchool.get(schoolName) || [];
+          let filtered = base.filter(o => {
+            if (typeVal && o.schulart !== typeVal) return false;
+            if (fieldVal && o.fach_kat !== fieldVal) return false;
+            return true;
+          });
+
+          // Only filter offers by query if the query is not already a direct school match.
+          if (q && !schoolMatch) {
+            filtered = filtered.filter(o => {
+              const hay = (o.angebot + ' ' + o.schulart + ' ' + o.fach_kat).toLowerCase();
+              return hay.includes(q);
+            });
+          }
+
+          const container = card.querySelector('[data-school-offers]');
+          renderOffers(container, filtered, filterActive);
+
+          // Variante 1: When filtering, hide schools without matches.
+          let show = true;
+          if (filterActive) {
+            show = (schoolMatch || filtered.length > 0);
+          } else {
+            show = schoolMatch;
+          }
+
+          card.style.display = show ? 'block' : 'none';
+          if (show) visible += 1;
+        });
+
+        updateCount(visible);
+      }
+
+      if (input) input.addEventListener('input', render);
+      if (typeSel) typeSel.addEventListener('change', render);
+      if (fieldSel) fieldSel.addEventListener('change', render);
+
+      render();
+    })();
+  </script>
+</div>
+
 
 </body>
 </html>
