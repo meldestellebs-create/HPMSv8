@@ -3727,508 +3727,423 @@ updateBerufeDisplay();
 
 
 <!-- TAB 6: Berufliche Schulen (DUMMY Preview) -->
-
 <div id="berufliche-schulen-tab" class="tab-content">
-  <div style="max-width: 1500px; margin: 0 auto; padding: 40px 20px 60px;">
+  <div class="split-container">
+    <div class="split-section left">
+      <div class="section-title">
+        <span class="section-number">1</span>
+        Dein Weg an eine berufliche Schule
+      </div>
+      <p class="section-subtitle">
+        Wähle deinen aktuellen Abschluss – wir zeigen dir passende Schularten und Angebote in Stuttgart.
+      </p>
 
-    <div class="header" style="margin-bottom: 40px;">
-      <h1 style="font-size: 2rem;">Berufliche Schulen in Stuttgart</h1>
-      <p>Finde passende Angebote über die Matrix – und sieh dir darunter alle 20 beruflichen Schulen in Stuttgart an.</p>
-    </div>
+      <div class="select-wrapper">
+        <label class="select-label" for="bs-abschluss">Dein Abschluss</label>
+        <select id="bs-abschluss">
+          <option value="">Bitte wählen</option>
+          <option value="ohne">Ohne Abschluss</option>
+          <option value="hs">Hauptschulabschluss</option>
+          <option value="mr">Mittlere Reife</option>
+          <option value="fhr">Fachhochschulreife</option>
+          <option value="abi">Abitur</option>
+        </select>
+      </div>
 
-    <div style="margin-bottom: 55px;">
-      <h2 style="color: var(--primary-blue); margin-bottom: 10px;">Alles auf einen Blick</h2>
-      <p style="color: var(--text-gray); margin-bottom: 18px;">Wähle Schulart und Fachrichtung, um zu sehen, welche Schulen das jeweilige Angebot führen. Viele Bildungsgänge haben Profile und Schwerpunkte – die Matrix zeigt dir, wo es ein Angebot gibt.</p>
-
-      <div class="results-container" style="margin-top: 10px;">
-        <div class="results-header">Filter</div>
-        <div class="results-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
-
-          <div class="select-wrapper" style="margin-bottom: 0;">
-            <label class="select-label" for="matrix-schulart">Schulart</label>
-            <select id="matrix-schulart">
-              <option value="">Alle</option>
-            </select>
+      <div class="visualization-area">
+        <div class="vis-title">Vorschau (Dummy)</div>
+        <div class="connection-visual">
+          <div class="endpoint">
+            <div class="endpoint-circle start">Dein
+Abschluss</div>
+            <div class="endpoint-label">Start</div>
+            <div class="endpoint-value">(Auswahl)</div>
           </div>
-
-          <div class="select-wrapper" style="margin-bottom: 0;">
-            <label class="select-label" for="matrix-fachrichtung">Fachrichtung</label>
-            <select id="matrix-fachrichtung">
-              <option value="">Alle</option>
-            </select>
+          <div class="connection-line">
+            <div class="connection-arrow"></div>
           </div>
-
-          <div>
-            <label class="select-label" for="matrix-search">Suche im Angebot</label>
-            <input id="matrix-search" type="text" placeholder="z. B. Elektrotechnik, Gymnasium, Pflege…" style="width: 100%; padding: 16px 20px; border: 2px solid var(--border-color); border-radius: 12px; font-size: 1.05rem; background: var(--bg-white);">
+          <div class="endpoint">
+            <div class="endpoint-circle target">Berufliche
+Schulen</div>
+            <div class="endpoint-label">Ergebnis</div>
+            <div class="endpoint-value">(Vorschau)</div>
           </div>
-
         </div>
       </div>
 
-      <div style="margin-top: 18px;">
-        <div id="matrix-count" style="color: var(--text-gray); font-weight: 600; margin-bottom: 12px;"></div>
-        <div id="matrix-results" style="display: grid; gap: 14px;"></div>
+      <div class="info-box">
+        <p><strong>Hinweis:</strong> Das ist eine Dummy-Vorschau. Als Nächstes füllen wir Matrix und Schulen mit echten Daten aus der PDF.</p>
       </div>
     </div>
 
-    <div>
-      <h2 style="color: var(--primary-blue); margin-bottom: 18px;">20 Berufliche Schulen in Stuttgart</h2>
-      <p style="color: var(--text-gray); margin-bottom: 18px;">Hier sind alle Schulen aus der Matrix. In den Details siehst du die Angebote dieser Schule (aus der Matrix).</p>
+    <div class="split-section right">
+      <div class="section-title">
+        <span class="section-number">2</span>
+        Schularten – Beispiele (Dummy)
+      </div>
+      <p class="section-subtitle">
+        Diese Karten zeigen, wie sich Angebote später anfühlen: klickbar, übersichtlich, mit Voraussetzungen.
+      </p>
 
-      <div class="results-container" style="margin-top: 10px;">
-        <div class="results-header">Suche</div>
+      <div class="results-container">
+        <div class="results-header">
+          Beispiel-Kacheln (nur Vorschau)
+        </div>
         <div class="results-content">
-          <label class="select-label" for="school-search">Suche</label>
-          <input id="school-search" type="text" placeholder="z. B. Max-Eyth, it.schule…" style="width: 100%; padding: 16px 20px; border: 2px solid var(--border-color); border-radius: 12px; font-size: 1.05rem; background: var(--bg-white);">
-          <div id="school-search-count" style="margin-top: 12px; color: var(--text-gray); font-weight: 600;"></div>
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">A</div>
+              <h3 class="path-title">Berufliches Gymnasium</h3>
+              <div class="duration-badge">Abitur</div>
+            </div>
+            <p class="path-description">
+              Profile wie Technik, Wirtschaft oder Gesundheit/Soziales – je nach Schule.
+            </p>
+          </div>
+
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">B</div>
+              <h3 class="path-title">Berufskolleg</h3>
+              <div class="duration-badge">Fachhochschulreife</div>
+            </div>
+            <p class="path-description">
+              Vollzeit oder Teilzeit – oft mit starkem Praxisbezug und klaren Zugangsvoraussetzungen.
+            </p>
+          </div>
+
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">C</div>
+              <h3 class="path-title">Berufsschule (duale Ausbildung)</h3>
+              <div class="duration-badge">Berufsabschluss</div>
+            </div>
+            <p class="path-description">
+              Betrieb + Schule – viele Fachrichtungen. Später zeigen wir dir: Welche Schule ist zuständig und welche Berufe passen.
+            </p>
+          </div>
         </div>
       </div>
-
-      <div id="schools-grid" style="margin-top: 18px; display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 18px;">
-        
-    <div class="path-card school-card" data-school="Gew. Schule für Farbe und Gestaltung" data-search="gew. schule für farbe und gestaltung">
-      <div class="path-card-header">
-        <div class="path-number-badge">01</div>
-        <h3 class="path-title">Gew. Schule für Farbe und Gestaltung</h3>
-        <div class="duration-badge">Schule</div>
-      </div>
-      <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
-        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <div class="school-offers" data-school-offers="Gew. Schule für Farbe und Gestaltung"></div>
-        </div>
-      </details>
     </div>
-    
-
-    <div class="path-card school-card" data-school="Gewerbliche Schule für Holztechnik" data-search="gewerbliche schule für holztechnik">
-      <div class="path-card-header">
-        <div class="path-number-badge">02</div>
-        <h3 class="path-title">Gewerbliche Schule für Holztechnik</h3>
-        <div class="duration-badge">Schule</div>
-      </div>
-      <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
-        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <div class="school-offers" data-school-offers="Gewerbliche Schule für Holztechnik"></div>
-        </div>
-      </details>
-    </div>
-    
-
-    <div class="path-card school-card" data-school="Gew. Schule im Hoppenlau mit Techn. Oberschule" data-search="gew. schule im hoppenlau mit techn. oberschule">
-      <div class="path-card-header">
-        <div class="path-number-badge">03</div>
-        <h3 class="path-title">Gew. Schule im Hoppenlau mit Techn. Oberschule</h3>
-        <div class="duration-badge">Schule</div>
-      </div>
-      <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
-        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <div class="school-offers" data-school-offers="Gew. Schule im Hoppenlau mit Techn. Oberschule"></div>
-        </div>
-      </details>
-    </div>
-    
-
-    <div class="path-card school-card" data-school="it.schule stuttgart" data-search="it.schule stuttgart">
-      <div class="path-card-header">
-        <div class="path-number-badge">04</div>
-        <h3 class="path-title">it.schule stuttgart</h3>
-        <div class="duration-badge">Schule</div>
-      </div>
-      <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
-        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <div class="school-offers" data-school-offers="it.schule stuttgart"></div>
-        </div>
-      </details>
-    </div>
-    
-
-    <div class="path-card school-card" data-school="Johannes-Gutenberg-Schule" data-search="johannes-gutenberg-schule">
-      <div class="path-card-header">
-        <div class="path-number-badge">05</div>
-        <h3 class="path-title">Johannes-Gutenberg-Schule</h3>
-        <div class="duration-badge">Schule</div>
-      </div>
-      <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
-        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <div class="school-offers" data-school-offers="Johannes-Gutenberg-Schule"></div>
-        </div>
-      </details>
-    </div>
-    
-
-    <div class="path-card school-card" data-school="Kerschensteinerschule" data-search="kerschensteinerschule">
-      <div class="path-card-header">
-        <div class="path-number-badge">06</div>
-        <h3 class="path-title">Kerschensteinerschule</h3>
-        <div class="duration-badge">Schule</div>
-      </div>
-      <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
-        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <div class="school-offers" data-school-offers="Kerschensteinerschule"></div>
-        </div>
-      </details>
-    </div>
-    
-
-    <div class="path-card school-card" data-school="Max-Eyth-Schule" data-search="max-eyth-schule">
-      <div class="path-card-header">
-        <div class="path-number-badge">07</div>
-        <h3 class="path-title">Max-Eyth-Schule</h3>
-        <div class="duration-badge">Schule</div>
-      </div>
-      <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
-        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <div class="school-offers" data-school-offers="Max-Eyth-Schule"></div>
-        </div>
-      </details>
-    </div>
-    
-
-    <div class="path-card school-card" data-school="Robert-Bosch-Schule" data-search="robert-bosch-schule">
-      <div class="path-card-header">
-        <div class="path-number-badge">08</div>
-        <h3 class="path-title">Robert-Bosch-Schule</h3>
-        <div class="duration-badge">Schule</div>
-      </div>
-      <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
-        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <div class="school-offers" data-school-offers="Robert-Bosch-Schule"></div>
-        </div>
-      </details>
-    </div>
-    
-
-    <div class="path-card school-card" data-school="Robert-Mayer-Schule" data-search="robert-mayer-schule">
-      <div class="path-card-header">
-        <div class="path-number-badge">09</div>
-        <h3 class="path-title">Robert-Mayer-Schule</h3>
-        <div class="duration-badge">Schule</div>
-      </div>
-      <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
-        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <div class="school-offers" data-school-offers="Robert-Mayer-Schule"></div>
-        </div>
-      </details>
-    </div>
-    
-
-    <div class="path-card school-card" data-school="Steinbeisschule" data-search="steinbeisschule">
-      <div class="path-card-header">
-        <div class="path-number-badge">10</div>
-        <h3 class="path-title">Steinbeisschule</h3>
-        <div class="duration-badge">Schule</div>
-      </div>
-      <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
-        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <div class="school-offers" data-school-offers="Steinbeisschule"></div>
-        </div>
-      </details>
-    </div>
-    
-
-    <div class="path-card school-card" data-school="Werner-Siemens-Schule" data-search="werner-siemens-schule">
-      <div class="path-card-header">
-        <div class="path-number-badge">11</div>
-        <h3 class="path-title">Werner-Siemens-Schule</h3>
-        <div class="duration-badge">Schule</div>
-      </div>
-      <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
-        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <div class="school-offers" data-school-offers="Werner-Siemens-Schule"></div>
-        </div>
-      </details>
-    </div>
-    
-
-    <div class="path-card school-card" data-school="Wilhelm-Maybach-Schule" data-search="wilhelm-maybach-schule">
-      <div class="path-card-header">
-        <div class="path-number-badge">12</div>
-        <h3 class="path-title">Wilhelm-Maybach-Schule</h3>
-        <div class="duration-badge">Schule</div>
-      </div>
-      <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
-        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <div class="school-offers" data-school-offers="Wilhelm-Maybach-Schule"></div>
-        </div>
-      </details>
-    </div>
-    
-
-    <div class="path-card school-card" data-school="Kaufmännische Schule 1" data-search="kaufmännische schule 1">
-      <div class="path-card-header">
-        <div class="path-number-badge">13</div>
-        <h3 class="path-title">Kaufmännische Schule 1</h3>
-        <div class="duration-badge">Schule</div>
-      </div>
-      <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
-        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <div class="school-offers" data-school-offers="Kaufmännische Schule 1"></div>
-        </div>
-      </details>
-    </div>
-    
-
-    <div class="path-card school-card" data-school="Kaufmännische Schule Stuttgart-Nord" data-search="kaufmännische schule stuttgart-nord">
-      <div class="path-card-header">
-        <div class="path-number-badge">14</div>
-        <h3 class="path-title">Kaufmännische Schule Stuttgart-Nord</h3>
-        <div class="duration-badge">Schule</div>
-      </div>
-      <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
-        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <div class="school-offers" data-school-offers="Kaufmännische Schule Stuttgart-Nord"></div>
-        </div>
-      </details>
-    </div>
-    
-
-    <div class="path-card school-card" data-school="Louis-Leitz-Schule" data-search="louis-leitz-schule">
-      <div class="path-card-header">
-        <div class="path-number-badge">15</div>
-        <h3 class="path-title">Louis-Leitz-Schule</h3>
-        <div class="duration-badge">Schule</div>
-      </div>
-      <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
-        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <div class="school-offers" data-school-offers="Louis-Leitz-Schule"></div>
-        </div>
-      </details>
-    </div>
-    
-
-    <div class="path-card school-card" data-school="Johann-Friedrich-von-Cotta-Schule" data-search="johann-friedrich-von-cotta-schule">
-      <div class="path-card-header">
-        <div class="path-number-badge">16</div>
-        <h3 class="path-title">Johann-Friedrich-von-Cotta-Schule</h3>
-        <div class="duration-badge">Schule</div>
-      </div>
-      <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
-        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <div class="school-offers" data-school-offers="Johann-Friedrich-von-Cotta-Schule"></div>
-        </div>
-      </details>
-    </div>
-    
-
-    <div class="path-card school-card" data-school="Wirtschaftsgymnasium West" data-search="wirtschaftsgymnasium west">
-      <div class="path-card-header">
-        <div class="path-number-badge">17</div>
-        <h3 class="path-title">Wirtschaftsgymnasium West</h3>
-        <div class="duration-badge">Schule</div>
-      </div>
-      <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
-        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <div class="school-offers" data-school-offers="Wirtschaftsgymnasium West"></div>
-        </div>
-      </details>
-    </div>
-    
-
-    <div class="path-card school-card" data-school="Hedwig-Dohm-Schule" data-search="hedwig-dohm-schule">
-      <div class="path-card-header">
-        <div class="path-number-badge">18</div>
-        <h3 class="path-title">Hedwig-Dohm-Schule</h3>
-        <div class="duration-badge">Schule</div>
-      </div>
-      <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
-        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <div class="school-offers" data-school-offers="Hedwig-Dohm-Schule"></div>
-        </div>
-      </details>
-    </div>
-    
-
-    <div class="path-card school-card" data-school="Alexander-Fleming-Schule" data-search="alexander-fleming-schule">
-      <div class="path-card-header">
-        <div class="path-number-badge">19</div>
-        <h3 class="path-title">Alexander-Fleming-Schule</h3>
-        <div class="duration-badge">Schule</div>
-      </div>
-      <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
-        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <div class="school-offers" data-school-offers="Alexander-Fleming-Schule"></div>
-        </div>
-      </details>
-    </div>
-    
-
-    <div class="path-card school-card" data-school="Landwirtschaftliche Schule" data-search="landwirtschaftliche schule">
-      <div class="path-card-header">
-        <div class="path-number-badge">20</div>
-        <h3 class="path-title">Landwirtschaftliche Schule</h3>
-        <div class="duration-badge">Schule</div>
-      </div>
-      <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
-        <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <div class="school-offers" data-school-offers="Landwirtschaftliche Schule"></div>
-        </div>
-      </details>
-    </div>
-    
-      </div>
-    </div>
-
   </div>
 
-  <script>
-    window.BERUFLICHE_SCHULEN_MATRIX = {"schools": ["Gew. Schule für Farbe und Gestaltung", "Gewerbliche Schule für Holztechnik", "Gew. Schule im Hoppenlau mit Techn. Oberschule", "it.schule stuttgart", "Johannes-Gutenberg-Schule", "Kerschensteinerschule", "Max-Eyth-Schule", "Robert-Bosch-Schule", "Robert-Mayer-Schule", "Steinbeisschule", "Werner-Siemens-Schule", "Wilhelm-Maybach-Schule", "Kaufmännische Schule 1", "Kaufmännische Schule Stuttgart-Nord", "Louis-Leitz-Schule", "Johann-Friedrich-von-Cotta-Schule", "Wirtschaftsgymnasium West", "Hedwig-Dohm-Schule", "Alexander-Fleming-Schule", "Landwirtschaftliche Schule"], "offers": [{"id": "0", "schulart": "Berufsschule", "angebot": "Agrarwirtschaft", "fach_kat": "Agrar/Natur", "schools": ["Landwirtschaftliche Schule"]}, {"id": "1", "schulart": "Berufsschule", "angebot": "Bautechnik", "fach_kat": "Technik", "schools": ["Gew. Schule im Hoppenlau mit Techn. Oberschule"]}, {"id": "2", "schulart": "Berufsschule", "angebot": "Chemie, Physik und Biologie", "fach_kat": "Übergreifend", "schools": ["it.schule stuttgart"]}, {"id": "3", "schulart": "Berufsschule", "angebot": "Drucktechnik", "fach_kat": "Gestaltung/Medien", "schools": ["Johannes-Gutenberg-Schule"]}, {"id": "4", "schulart": "Berufsschule", "angebot": "Elektrotechnik", "fach_kat": "Technik", "schools": ["Werner-Siemens-Schule"]}, {"id": "5", "schulart": "Berufsschule", "angebot": "Ernährung und Hauswirtschaft", "fach_kat": "Gesundheit/Soziales", "schools": ["Kerschensteinerschule", "Hedwig-Dohm-Schule"]}, {"id": "6", "schulart": "Berufsschule", "angebot": "Fahrzeugtechnik", "fach_kat": "Technik", "schools": ["Wilhelm-Maybach-Schule"]}, {"id": "7", "schulart": "Berufsschule", "angebot": "Farbtechnik und Raumgestaltung", "fach_kat": "Gestaltung/Medien", "schools": ["Gew. Schule für Farbe und Gestaltung"]}, {"id": "8", "schulart": "Berufsschule", "angebot": "Gesundheit", "fach_kat": "Gesundheit/Soziales", "schools": ["Alexander-Fleming-Schule"]}, {"id": "9", "schulart": "Berufsschule", "angebot": "Holztechnik", "fach_kat": "Technik", "schools": ["Gewerbliche Schule für Holztechnik"]}, {"id": "10", "schulart": "Berufsschule", "angebot": "Körperpflege", "fach_kat": "Gesundheit/Soziales", "schools": ["Kerschensteinerschule"]}, {"id": "11", "schulart": "Berufsschule", "angebot": "Metalltechnik", "fach_kat": "Technik", "schools": ["Robert-Bosch-Schule", "Robert-Mayer-Schule"]}, {"id": "12", "schulart": "Berufsschule", "angebot": "Textiltechnik und Bekleidung", "fach_kat": "Technik", "schools": ["Robert-Mayer-Schule"]}, {"id": "13", "schulart": "Berufsschule", "angebot": "Wirtschaft und Verwaltung", "fach_kat": "Wirtschaft", "schools": ["Kerschensteinerschule", "Kaufmännische Schule 1", "Kaufmännische Schule Stuttgart-Nord", "Louis-Leitz-Schule", "Johann-Friedrich-von-Cotta-Schule"]}, {"id": "14", "schulart": "Sonderberufsschule", "angebot": "Sonderberufsschulen", "fach_kat": "Übergreifend", "schools": ["Gew. Schule für Farbe und Gestaltung", "Gewerbliche Schule für Holztechnik", "Gew. Schule im Hoppenlau mit Techn. Oberschule", "Kerschensteinerschule", "Steinbeisschule", "Hedwig-Dohm-Schule", "Alexander-Fleming-Schule", "Landwirtschaftliche Schule"]}, {"id": "15", "schulart": "Vorqualifizierungsjahr Arbeit/Beruf (VABO)", "angebot": "Vorqualifizierungsjahr Arbeit/Beruf mit Schwerpunkt Erwerb von Deutschkenntnissen (VABO)", "fach_kat": "Technik", "schools": ["Gew. Schule für Farbe und Gestaltung", "Gewerbliche Schule für Holztechnik", "Gew. Schule im Hoppenlau mit Techn. Oberschule", "Johannes-Gutenberg-Schule", "Kerschensteinerschule", "Max-Eyth-Schule", "Robert-Bosch-Schule", "Steinbeisschule", "Werner-Siemens-Schule", "Kaufmännische Schule Stuttgart-Nord", "Johann-Friedrich-von-Cotta-Schule"]}, {"id": "16", "schulart": "Ausbildungsvorbereitung dual (AVdual)", "angebot": "Ausbildungsvorbereitung dual (AVdual)", "fach_kat": "Technik", "schools": ["Gew. Schule für Farbe und Gestaltung", "Gewerbliche Schule für Holztechnik", "Gew. Schule im Hoppenlau mit Techn. Oberschule", "Johannes-Gutenberg-Schule", "Max-Eyth-Schule", "Robert-Bosch-Schule", "Steinbeisschule", "Kaufmännische Schule Stuttgart-Nord", "Hedwig-Dohm-Schule"]}, {"id": "17", "schulart": "Einjährige Berufsfachschule (1BFS)", "angebot": "Bautechnik", "fach_kat": "Technik", "schools": ["Gew. Schule im Hoppenlau mit Techn. Oberschule"]}, {"id": "18", "schulart": "Einjährige Berufsfachschule (1BFS)", "angebot": "Druck-/Medientechnik", "fach_kat": "Gestaltung/Medien", "schools": ["Johannes-Gutenberg-Schule"]}, {"id": "19", "schulart": "Einjährige Berufsfachschule (1BFS)", "angebot": "Fahrzeugtechnik", "fach_kat": "Technik", "schools": ["Wilhelm-Maybach-Schule"]}, {"id": "20", "schulart": "Einjährige Berufsfachschule (1BFS)", "angebot": "Farbtechnik und Raumgestaltung", "fach_kat": "Gestaltung/Medien", "schools": ["Gew. Schule für Farbe und Gestaltung"]}, {"id": "21", "schulart": "Einjährige Berufsfachschule (1BFS)", "angebot": "Fotografie", "fach_kat": "Gestaltung/Medien", "schools": ["Johannes-Gutenberg-Schule"]}, {"id": "22", "schulart": "Einjährige Berufsfachschule (1BFS)", "angebot": "Glas-/Fensterbau", "fach_kat": "Technik", "schools": ["Gew. Schule im Hoppenlau mit Techn. Oberschule"]}, {"id": "23", "schulart": "Einjährige Berufsfachschule (1BFS)", "angebot": "Holztechnik", "fach_kat": "Technik", "schools": ["Gewerbliche Schule für Holztechnik"]}, {"id": "24", "schulart": "Einjährige Berufsfachschule (1BFS)", "angebot": "Informationselektronik", "fach_kat": "Technik", "schools": ["it.schule stuttgart"]}, {"id": "25", "schulart": "Einjährige Berufsfachschule (1BFS)", "angebot": "Körperpflege", "fach_kat": "Gesundheit/Soziales", "schools": ["Kerschensteinerschule"]}, {"id": "26", "schulart": "Einjährige Berufsfachschule (1BFS)", "angebot": "Metalltechnik – Feinwerk- und Metallbautechnik", "fach_kat": "Technik", "schools": ["Robert-Mayer-Schule"]}, {"id": "27", "schulart": "Einjährige Berufsfachschule (1BFS)", "angebot": "Sanitär-, Heizungs-, Klimatechnik", "fach_kat": "Technik", "schools": ["Steinbeisschule"]}, {"id": "28", "schulart": "Zweijährige Berufsfachschule (2BFS)", "angebot": "Elektrotechnik", "fach_kat": "Technik", "schools": ["Werner-Siemens-Schule"]}, {"id": "29", "schulart": "Zweijährige Berufsfachschule (2BFS)", "angebot": "Fahrzeugtechnik", "fach_kat": "Technik", "schools": ["Wilhelm-Maybach-Schule"]}, {"id": "30", "schulart": "Zweijährige Berufsfachschule (2BFS)", "angebot": "Gesundheit und Pflege", "fach_kat": "Gesundheit/Soziales", "schools": ["Alexander-Fleming-Schule"]}, {"id": "31", "schulart": "Zweijährige Berufsfachschule (2BFS)", "angebot": "Hauswirtschaft und Ernährung", "fach_kat": "Gesundheit/Soziales", "schools": ["Hedwig-Dohm-Schule"]}, {"id": "32", "schulart": "Zweijährige Berufsfachschule (2BFS)", "angebot": "Holztechnik", "fach_kat": "Technik", "schools": ["Gewerbliche Schule für Holztechnik"]}, {"id": "33", "schulart": "Zweijährige Berufsfachschule (2BFS)", "angebot": "Metalltechnik", "fach_kat": "Technik", "schools": ["Robert-Bosch-Schule", "Robert-Mayer-Schule"]}, {"id": "34", "schulart": "Zweijährige Berufsfachschule (2BFS)", "angebot": "Wirtschaft und Verwaltung (Wirtschaftsschule)", "fach_kat": "Wirtschaft", "schools": ["Kaufmännische Schule Stuttgart-Nord", "Louis-Leitz-Schule"]}, {"id": "35", "schulart": "Dreijährige Berufsfachschule (PiA)", "angebot": "Berufsfachschule für Sozialpädagogische Assistenz (praxisintegriert)", "fach_kat": "Gesundheit/Soziales", "schools": ["Hedwig-Dohm-Schule"]}, {"id": "36", "schulart": "Berufskolleg (gewerblich, Vollzeit)", "angebot": "für chemisch-techn., pharmazeutisch-techn., physikalisch-techn. Assistent/-innen (je zwei Jahre)", "fach_kat": "Übergreifend", "schools": ["it.schule stuttgart"]}, {"id": "37", "schulart": "Berufskolleg (gewerblich, Vollzeit)", "angebot": "für elektrotechnische Assistent/-innen (zwei Jahre)", "fach_kat": "Technik", "schools": ["Werner-Siemens-Schule"]}, {"id": "38", "schulart": "Berufskolleg (gewerblich, Vollzeit)", "angebot": "Grafik-Design (drei Jahre)", "fach_kat": "Gestaltung/Medien", "schools": ["Johannes-Gutenberg-Schule"]}, {"id": "39", "schulart": "Berufskolleg (gewerblich, Vollzeit)", "angebot": "Mode und Design (drei Jahre)", "fach_kat": "Gestaltung/Medien", "schools": ["Kerschensteinerschule"]}, {"id": "40", "schulart": "Berufskolleg (gewerblich, Vollzeit)", "angebot": "Produktdesign (zwei Jahre)", "fach_kat": "Gestaltung/Medien", "schools": ["Gew. Schule für Farbe und Gestaltung", "Johannes-Gutenberg-Schule"]}, {"id": "41", "schulart": "Berufskolleg (gewerblich, Vollzeit)", "angebot": "Technisches Berufskolleg I (ein Jahr)", "fach_kat": "Übergreifend", "schools": ["Gew. Schule im Hoppenlau mit Techn. Oberschule", "it.schule stuttgart", "Steinbeisschule"]}, {"id": "42", "schulart": "Berufskolleg (gewerblich, Vollzeit)", "angebot": "Technisches Berufskolleg II (ein Jahr)", "fach_kat": "Übergreifend", "schools": ["Gew. Schule im Hoppenlau mit Techn. Oberschule", "it.schule stuttgart", "Steinbeisschule"]}, {"id": "43", "schulart": "Berufskolleg (gewerblich, dual/Teilzeit)", "angebot": "Bautechnik", "fach_kat": "Technik", "schools": ["Gew. Schule im Hoppenlau mit Techn. Oberschule"]}, {"id": "44", "schulart": "Berufskolleg (gewerblich, dual/Teilzeit)", "angebot": "Elektronik", "fach_kat": "Technik", "schools": ["Werner-Siemens-Schule"]}, {"id": "45", "schulart": "Berufskolleg (gewerblich, dual/Teilzeit)", "angebot": "Metalltechnik", "fach_kat": "Technik", "schools": ["Robert-Bosch-Schule", "Robert-Mayer-Schule"]}, {"id": "46", "schulart": "Berufskolleg (gewerblich, dual/Teilzeit)", "angebot": "Sanitär-, Heizungs- und Klimatechnik", "fach_kat": "Technik", "schools": ["Steinbeisschule"]}, {"id": "47", "schulart": "Berufskolleg (kaufmännisch, Vollzeit)", "angebot": "Kaufmännisches Berufskolleg I (Höhere Handelsschule – ein Jahr)", "fach_kat": "Wirtschaft", "schools": ["Louis-Leitz-Schule"]}, {"id": "48", "schulart": "Berufskolleg (kaufmännisch, Vollzeit)", "angebot": "Kaufmännisches Berufskolleg II (Höhere Handelsschule – Oberstufe – ein Jahr)", "fach_kat": "Wirtschaft", "schools": ["Louis-Leitz-Schule"]}, {"id": "49", "schulart": "Berufskolleg (kaufmännisch, Vollzeit)", "angebot": "Kaufmännisches Berufskolleg Fremdsprachen (zwei Jahre)", "fach_kat": "Wirtschaft", "schools": ["Johann-Friedrich-von-Cotta-Schule"]}, {"id": "50", "schulart": "Berufskolleg (kaufmännisch, Vollzeit)", "angebot": "Kaufmännisches Berufskolleg Wirtschaftsinformatik (zwei Jahre)", "fach_kat": "Wirtschaft", "schools": ["Louis-Leitz-Schule"]}, {"id": "51", "schulart": "Berufskolleg (kaufmännisch, Vollzeit)", "angebot": "Sport- und Vereinsmanagement (drei Jahre)", "fach_kat": "Wirtschaft", "schools": ["Johann-Friedrich-von-Cotta-Schule"]}, {"id": "52", "schulart": "Berufskolleg (kaufmännisch, dual/Teilzeit)", "angebot": "Wirtschaft und Verwaltung – verschiedene (siehe Seite 3)", "fach_kat": "Wirtschaft", "schools": ["Kaufmännische Schule 1", "Kaufmännische Schule Stuttgart-Nord", "Johann-Friedrich-von-Cotta-Schule"]}, {"id": "53", "schulart": "Berufskolleg (hauswirtschaftlich/sozial/landwirtschaftlich)", "angebot": "Biotechnologische Assistent/-innen (zwei Jahre)", "fach_kat": "Agrar/Natur", "schools": ["Landwirtschaftliche Schule"]}, {"id": "54", "schulart": "Berufskolleg (hauswirtschaftlich/sozial/landwirtschaftlich)", "angebot": "Ernährung und Haushaltsmanagement I (zwei Jahre)", "fach_kat": "Gesundheit/Soziales", "schools": ["Hedwig-Dohm-Schule"]}, {"id": "55", "schulart": "Berufskolleg (hauswirtschaftlich/sozial/landwirtschaftlich)", "angebot": "Ernährung und Haushaltsmanagement II (ein Jahr)", "fach_kat": "Gesundheit/Soziales", "schools": ["Hedwig-Dohm-Schule"]}, {"id": "56", "schulart": "Berufskolleg (hauswirtschaftlich/sozial/landwirtschaftlich)", "angebot": "Gesundheit und Pflege I (ein Jahr)", "fach_kat": "Gesundheit/Soziales", "schools": ["Alexander-Fleming-Schule"]}, {"id": "57", "schulart": "Berufskolleg (hauswirtschaftlich/sozial/landwirtschaftlich)", "angebot": "Gesundheit und Pflege II (ein Jahr)", "fach_kat": "Gesundheit/Soziales", "schools": ["Alexander-Fleming-Schule"]}, {"id": "58", "schulart": "Berufskolleg (hauswirtschaftlich/sozial/landwirtschaftlich)", "angebot": "Sozialpädagogik (ein Jahr)", "fach_kat": "Gesundheit/Soziales", "schools": ["Hedwig-Dohm-Schule"]}, {"id": "59", "schulart": "Berufskolleg (hauswirtschaftlich/sozial/landwirtschaftlich)", "angebot": "Soziales (ein Jahr)", "fach_kat": "Gesundheit/Soziales", "schools": ["Hedwig-Dohm-Schule"]}, {"id": "60", "schulart": "Berufskolleg (hauswirtschaftlich/sozial/landwirtschaftlich)", "angebot": "Sozialpädagogik – praxisintegriert (Fachschule für Sozialpädagogik) (drei Jahre)", "fach_kat": "Gesundheit/Soziales", "schools": ["Hedwig-Dohm-Schule"]}, {"id": "61", "schulart": "Berufliches Gymnasium", "angebot": "Technisches Gymnasium mit Profil: Angewandte Naturwissenschaften (TGN)", "fach_kat": "Technik", "schools": ["it.schule stuttgart"]}, {"id": "62", "schulart": "Berufliches Gymnasium", "angebot": "Technisches Gymnasium mit Profil: Elektro- und Informationstechnik (TGE)", "fach_kat": "Technik", "schools": ["Werner-Siemens-Schule"]}, {"id": "63", "schulart": "Berufliches Gymnasium", "angebot": "Technisches Gymnasium mit Profil: Gestaltungs- und Medientechnik (TGG)", "fach_kat": "Gestaltung/Medien", "schools": ["Gew. Schule für Farbe und Gestaltung", "Johannes-Gutenberg-Schule"]}, {"id": "64", "schulart": "Berufliches Gymnasium", "angebot": "Technisches Gymnasium mit Profil: Informationstechnik (TGI)", "fach_kat": "Technik", "schools": ["it.schule stuttgart"]}, {"id": "65", "schulart": "Berufliches Gymnasium", "angebot": "Technisches Gymnasium mit Profil: Mechatronik (TGM)", "fach_kat": "Technik", "schools": ["Max-Eyth-Schule", "Wilhelm-Maybach-Schule"]}, {"id": "66", "schulart": "Berufliches Gymnasium", "angebot": "Technisches Gymnasium mit Profil: Technik und Management (TGTM)", "fach_kat": "Technik", "schools": ["Robert-Bosch-Schule", "Steinbeisschule"]}, {"id": "67", "schulart": "Berufliches Gymnasium", "angebot": "Technisches Gymnasium mit Profil: Technik – sechsjährige Aufbauform ab Klasse 8", "fach_kat": "Technik", "schools": ["Johannes-Gutenberg-Schule"]}, {"id": "68", "schulart": "Berufliches Gymnasium", "angebot": "Technisches Gymnasium mit Profil: Umwelttechnik (TGU)", "fach_kat": "Agrar/Natur", "schools": ["Max-Eyth-Schule", "Robert-Bosch-Schule"]}, {"id": "69", "schulart": "Berufliches Gymnasium", "angebot": "Wirtschaftswissenschaftliches Gymnasium mit Profil: Internationale Wirtschaft (WGI)", "fach_kat": "Wirtschaft", "schools": ["Johann-Friedrich-von-Cotta-Schule"]}, {"id": "70", "schulart": "Berufliches Gymnasium", "angebot": "Wirtschaftswissenschaftliches Gymnasium mit Profil: Wirtschaft (WGW)", "fach_kat": "Wirtschaft", "schools": ["Kaufmännische Schule 1", "Kaufmännische Schule Stuttgart-Nord", "Louis-Leitz-Schule", "Johann-Friedrich-von-Cotta-Schule"]}, {"id": "71", "schulart": "Berufliches Gymnasium", "angebot": "Ernährungswissenschaftliches Gymnasium (EG)", "fach_kat": "Gesundheit/Soziales", "schools": ["Hedwig-Dohm-Schule"]}, {"id": "72", "schulart": "Berufliches Gymnasium", "angebot": "Sozial- und Gesundheitswissenschaftliches Gymnasium mit Profil: Gesundheit (SGGG)", "fach_kat": "Gesundheit/Soziales", "schools": ["Alexander-Fleming-Schule"]}, {"id": "73", "schulart": "Berufliches Gymnasium", "angebot": "Sozial- und Gesundheitswissenschaftliches Gymnasium mit Profil: Soziales (SGGS)", "fach_kat": "Gesundheit/Soziales", "schools": ["Hedwig-Dohm-Schule"]}, {"id": "74", "schulart": "Zweiter Bildungsweg", "angebot": "Berufsaufbauschule zur Fachschulreife führend (gewerblich-technisch oder kaufmännisch)", "fach_kat": "Wirtschaft", "schools": ["Gew. Schule im Hoppenlau mit Techn. Oberschule", "Kaufmännische Schule 1"]}, {"id": "75", "schulart": "Zweiter Bildungsweg", "angebot": "Einjähriges Berufskolleg zur Fachhochschulreife führend (gewerbl./gestalter./kaufm. oder hauswirtschaftliche, landwirtschaftliche, sozialpädagogische Richtung)", "fach_kat": "Agrar/Natur", "schools": ["Gew. Schule im Hoppenlau mit Techn. Oberschule", "Kaufmännische Schule 1", "Hedwig-Dohm-Schule"]}, {"id": "76", "schulart": "Zweiter Bildungsweg", "angebot": "Technische Oberschule oder Wirtschaftsoberschule", "fach_kat": "Wirtschaft", "schools": ["Gew. Schule im Hoppenlau mit Techn. Oberschule", "Kaufmännische Schule 1"]}, {"id": "77", "schulart": "Fachschule / Meisterschule", "angebot": "Bautechnik", "fach_kat": "Technik", "schools": ["Gew. Schule im Hoppenlau mit Techn. Oberschule"]}, {"id": "78", "schulart": "Fachschule / Meisterschule", "angebot": "Chemie, Physik und Biologie", "fach_kat": "Übergreifend", "schools": ["it.schule stuttgart"]}, {"id": "79", "schulart": "Fachschule / Meisterschule", "angebot": "Drucktechnik", "fach_kat": "Gestaltung/Medien", "schools": ["Johannes-Gutenberg-Schule"]}, {"id": "80", "schulart": "Fachschule / Meisterschule", "angebot": "Ernährung", "fach_kat": "Gesundheit/Soziales", "schools": ["Kerschensteinerschule"]}, {"id": "81", "schulart": "Fachschule / Meisterschule", "angebot": "Fahrzeugtechnik", "fach_kat": "Technik", "schools": ["Wilhelm-Maybach-Schule"]}, {"id": "82", "schulart": "Fachschule / Meisterschule", "angebot": "Farbtechnik und Raumgestaltung", "fach_kat": "Gestaltung/Medien", "schools": ["Gew. Schule für Farbe und Gestaltung"]}, {"id": "83", "schulart": "Fachschule / Meisterschule", "angebot": "Gesundheit", "fach_kat": "Gesundheit/Soziales", "schools": ["Alexander-Fleming-Schule"]}, {"id": "84", "schulart": "Fachschule / Meisterschule", "angebot": "Gießereitechnik", "fach_kat": "Technik", "schools": ["Max-Eyth-Schule"]}, {"id": "85", "schulart": "Fachschule / Meisterschule", "angebot": "Holztechnik", "fach_kat": "Technik", "schools": ["Gewerbliche Schule für Holztechnik"]}, {"id": "86", "schulart": "Fachschule / Meisterschule", "angebot": "Installations- und Heizungsbau", "fach_kat": "Technik", "schools": ["Steinbeisschule"]}, {"id": "87", "schulart": "Fachschule / Meisterschule", "angebot": "Metalltechnik", "fach_kat": "Technik", "schools": ["Robert-Bosch-Schule", "Robert-Mayer-Schule"]}, {"id": "88", "schulart": "Fachschule / Meisterschule", "angebot": "Textiltechnik und Bekleidung", "fach_kat": "Technik", "schools": ["Robert-Mayer-Schule"]}, {"id": "89", "schulart": "Fachschule für Technik (Technikerschule)", "angebot": "Automatisierungstechnik/Mechatronik", "fach_kat": "Technik", "schools": ["Werner-Siemens-Schule"]}, {"id": "90", "schulart": "Fachschule für Technik (Technikerschule)", "angebot": "Bautechnik", "fach_kat": "Technik", "schools": ["Gew. Schule im Hoppenlau mit Techn. Oberschule"]}, {"id": "91", "schulart": "Fachschule für Technik (Technikerschule)", "angebot": "Druck- und Medientechnik", "fach_kat": "Gestaltung/Medien", "schools": ["Johannes-Gutenberg-Schule"]}, {"id": "92", "schulart": "Fachschule für Technik (Technikerschule)", "angebot": "Elektrotechnik", "fach_kat": "Technik", "schools": ["Werner-Siemens-Schule"]}, {"id": "93", "schulart": "Fachschule für Technik (Technikerschule)", "angebot": "Farb- und Lacktechnik", "fach_kat": "Technik", "schools": ["Gew. Schule für Farbe und Gestaltung"]}, {"id": "94", "schulart": "Fachschule für Technik (Technikerschule)", "angebot": "Gießereitechnik", "fach_kat": "Technik", "schools": ["Max-Eyth-Schule"]}, {"id": "95", "schulart": "Fachschule für Technik (Technikerschule)", "angebot": "Heizungs-, Lüftungs- und Klimatechnik", "fach_kat": "Technik", "schools": ["Steinbeisschule"]}, {"id": "96", "schulart": "Fachschule für Technik (Technikerschule)", "angebot": "Holztechnik", "fach_kat": "Technik", "schools": ["Gewerbliche Schule für Holztechnik"]}, {"id": "97", "schulart": "Fachschule für Technik (Technikerschule)", "angebot": "Informationstechnik", "fach_kat": "Technik", "schools": ["it.schule stuttgart"]}, {"id": "98", "schulart": "Fachschule für Technik (Technikerschule)", "angebot": "Kraftfahrzeugtechnik", "fach_kat": "Technik", "schools": ["Wilhelm-Maybach-Schule"]}, {"id": "99", "schulart": "Fachschule für Technik (Technikerschule)", "angebot": "Maschinentechnik", "fach_kat": "Technik", "schools": ["Robert-Bosch-Schule", "Robert-Mayer-Schule", "Werner-Siemens-Schule"]}, {"id": "100", "schulart": "Fachschule für Gestaltung", "angebot": "Farbtechnik und Raumgestaltung", "fach_kat": "Gestaltung/Medien", "schools": ["Gew. Schule für Farbe und Gestaltung"]}, {"id": "101", "schulart": "Fachschule für Gestaltung", "angebot": "Möbel- und Innenraumgestaltung", "fach_kat": "Gestaltung/Medien", "schools": ["Gewerbliche Schule für Holztechnik"]}, {"id": "102", "schulart": "Fachschule für Gestaltung", "angebot": "Werbegestaltung", "fach_kat": "Gestaltung/Medien", "schools": ["Johannes-Gutenberg-Schule"]}, {"id": "103", "schulart": "Sonstige Fachschulen / Angebote", "angebot": "Management Fachrichtung Hauswirtschaft", "fach_kat": "Gesundheit/Soziales", "schools": ["Hedwig-Dohm-Schule"]}, {"id": "104", "schulart": "Sonstige Fachschulen / Angebote", "angebot": "Organisation und Führung", "fach_kat": "Übergreifend", "schools": ["Alexander-Fleming-Schule"]}, {"id": "105", "schulart": "Sonstige Fachschulen / Angebote", "angebot": "Visuelle Kommunikation", "fach_kat": "Gestaltung/Medien", "schools": ["Johannes-Gutenberg-Schule"]}, {"id": "106", "schulart": "Sonstige Fachschulen / Angebote", "angebot": "Farbtechnik", "fach_kat": "Technik", "schools": ["Gew. Schule für Farbe und Gestaltung"]}, {"id": "107", "schulart": "Sonstige Fachschulen / Angebote", "angebot": "Kursangebote auf Nachfrage", "fach_kat": "Übergreifend", "schools": ["Gew. Schule für Farbe und Gestaltung", "Gewerbliche Schule für Holztechnik", "Gew. Schule im Hoppenlau mit Techn. Oberschule", "it.schule stuttgart", "Johannes-Gutenberg-Schule", "Kerschensteinerschule", "Max-Eyth-Schule", "Robert-Bosch-Schule", "Werner-Siemens-Schule", "Wilhelm-Maybach-Schule"]}], "schularten": ["Ausbildungsvorbereitung dual (AVdual)", "Berufliches Gymnasium", "Berufskolleg (gewerblich, Vollzeit)", "Berufskolleg (gewerblich, dual/Teilzeit)", "Berufskolleg (hauswirtschaftlich/sozial/landwirtschaftlich)", "Berufskolleg (kaufmännisch, Vollzeit)", "Berufskolleg (kaufmännisch, dual/Teilzeit)", "Berufsschule", "Dreijährige Berufsfachschule (PiA)", "Einjährige Berufsfachschule (1BFS)", "Fachschule / Meisterschule", "Fachschule für Gestaltung", "Fachschule für Technik (Technikerschule)", "Sonderberufsschule", "Sonstige Fachschulen / Angebote", "Vorqualifizierungsjahr Arbeit/Beruf (VABO)", "Zweijährige Berufsfachschule (2BFS)", "Zweiter Bildungsweg"], "fachkats": []};
+  <div style="max-width: 1500px; margin: 0 auto; padding: 40px 20px;">
+    <div class="header" style="margin-bottom: 40px;">
+      <h1 style="font-size: 2rem;">🧩 Alles auf einen Blick</h1>
+      <p>Vorschau für die spätere Matrix-Ansicht: Filter auswählen → passende Schularten/Fachrichtungen sehen.</p>
+    </div>
 
-    (function() {
-      const data = window.BERUFLICHE_SCHULEN_MATRIX;
-      const schulartSelect = document.getElementById('matrix-schulart');
-      const fachSelect = document.getElementById('matrix-fachrichtung');
-      const searchInput = document.getElementById('matrix-search');
-      const resultsEl = document.getElementById('matrix-results');
-      const countEl = document.getElementById('matrix-count');
+    <div class="results-container">
+      <div class="results-header">
+        Filter (Dummy)
+      </div>
+      <div class="results-content">
+        <div class="split-container" style="grid-template-columns: 1fr 1fr 1fr; min-height: auto;">
+          <div class="split-section" style="padding: 0; background: transparent;">
+            <div class="select-wrapper" style="margin-bottom: 0;">
+              <label class="select-label" for="matrix-abschluss">Vorhandener Abschluss</label>
+              <select id="matrix-abschluss">
+                <option value="">Alle</option>
+                <option value="ohne">Ohne Abschluss</option>
+                <option value="hs">Hauptschulabschluss</option>
+                <option value="mr">Mittlere Reife</option>
+                <option value="fhr">Fachhochschulreife</option>
+                <option value="abi">Abitur</option>
+              </select>
+            </div>
+          </div>
 
-      function makeOption(text, value) {
-        const o = document.createElement('option');
-        o.textContent = text;
-        o.value = value;
-        return o;
-      }
+          <div class="split-section" style="padding: 0; background: transparent;">
+            <div class="select-wrapper" style="margin-bottom: 0;">
+              <label class="select-label" for="matrix-schulart">Schulart</label>
+              <select id="matrix-schulart">
+                <option value="">Alle</option>
+                <option value="berufsschule">Berufsschule</option>
+                <option value="berufsfachschule">Berufsfachschule</option>
+                <option value="berufskolleg">Berufskolleg</option>
+                <option value="berufliches-gymnasium">Berufliches Gymnasium</option>
+                <option value="fachschule">Fachschule / Meisterschule</option>
+                <option value="zweiter-bildungsweg">Zweiter Bildungsweg</option>
+              </select>
+            </div>
+          </div>
 
-      // init selects
-      data.schularten.forEach(s => schulartSelect.appendChild(makeOption(s, s)));
-      data.fach_kats.forEach(f => fachSelect.appendChild(makeOption(f, f)));
+          <div class="split-section" style="padding: 0; background: transparent;">
+            <div class="select-wrapper" style="margin-bottom: 0;">
+              <label class="select-label" for="matrix-fachrichtung">Fachrichtung</label>
+              <select id="matrix-fachrichtung">
+                <option value="">Alle</option>
+                <option value="technik">Technik</option>
+                <option value="wirtschaft">Wirtschaft & Verwaltung</option>
+                <option value="gesundheit">Gesundheit / Soziales</option>
+                <option value="gestaltung">Gestaltung / Medien</option>
+                <option value="agrar">Agrar / Landwirtschaft</option>
+              </select>
+            </div>
+          </div>
+        </div>
 
-      function renderMatrix() {
-        const schulart = schulartSelect.value;
-        const fach = fachSelect.value;
-        const q = (searchInput.value || '').trim().toLowerCase();
+        <div style="height: 25px;"></div>
 
-        const filtered = data.offers.filter(o => {
-          if (schulart && o.schulart !== schulart) return false;
-          if (fach && o.fach_kat !== fach) return false;
-          if (q) {
-            const hay = (String(o.angebot) + ' ' + String(o.schulart) + ' ' + String(o.fach_kat)).toLowerCase();
-            if (!hay.includes(q)) return false;
-          }
-          return true;
-        });
+        <div class="vis-title" style="text-align: left; margin-bottom: 12px;">Ergebnis (Dummy-Kacheln)</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px;">
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">1</div>
+              <h3 class="path-title">Berufsschule</h3>
+              <div class="duration-badge">Technik</div>
+            </div>
+            <div class="path-steps">
+              <span class="step">Ausbildungsvertrag</span><span class="arrow">→</span><span class="step">Berufsschule</span>
+            </div>
+          </div>
 
-        countEl.textContent = filtered.length === 1 ? '1 Eintrag' : (filtered.length + ' Einträge');
-        resultsEl.innerHTML = '';
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">2</div>
+              <h3 class="path-title">Berufsfachschule</h3>
+              <div class="duration-badge">Gesundheit</div>
+            </div>
+            <div class="path-steps">
+              <span class="step">Hauptschulabschluss</span><span class="arrow">→</span><span class="step">Vollzeit</span>
+            </div>
+          </div>
 
-        filtered.forEach((o, idx) => {
-          const wrap = document.createElement('details');
-          wrap.className = 'path-card';
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">3</div>
+              <h3 class="path-title">Berufskolleg I</h3>
+              <div class="duration-badge">Wirtschaft</div>
+            </div>
+            <div class="path-steps">
+              <span class="step">Mittlere Reife</span><span class="arrow">→</span><span class="step">Grundbildung</span>
+            </div>
+          </div>
 
-          const schools = o.schools || [];
-          const chips = schools.map(s => (
-            '<span class="step" style="background: #fff; border: 1px solid rgba(11, 123, 179, 0.25); color: var(--text-dark); font-weight: 600;">' + s + '</span>'
-          )).join('');
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">4</div>
+              <h3 class="path-title">Berufskolleg II</h3>
+              <div class="duration-badge">FH-Reife</div>
+            </div>
+            <div class="path-steps">
+              <span class="step">BK I</span><span class="arrow">→</span><span class="step">Fachhochschulreife</span>
+            </div>
+          </div>
 
-          wrap.innerHTML =
-            '<summary style="cursor: pointer; list-style: none;">' +
-              '<div class="path-card-header" style="margin-bottom: 0;">' +
-                '<div class="path-number-badge">' + String(idx+1).padStart(2,'0') + '</div>' +
-                '<h3 class="path-title" style="margin: 0 15px;">' + o.angebot + '</h3>' +
-                '<div class="duration-badge">' + o.schulart + '</div>' +
-              '</div>' +
-              '<div class="path-steps" style="margin-top: 12px;">' +
-                '<span class="step">' + o.fach_kat + '</span>' +
-                '<span class="step" style="background: #F5F7FA; color: var(--text-gray);">' + schools.length + ' Schulen</span>' +
-              '</div>' +
-            '</summary>' +
-            '<div style="margin-top: 14px;">' +
-              '<div class="path-steps" style="gap: 10px;">' + (chips || '<span style="color: var(--text-gray);">Keine Schulen gefunden.</span>') + '</div>' +
-            '</div>';
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">5</div>
+              <h3 class="path-title">Berufliches Gymnasium</h3>
+              <div class="duration-badge">Technik</div>
+            </div>
+            <div class="path-steps">
+              <span class="step">Mittlere Reife</span><span class="arrow">→</span><span class="step">Abitur</span>
+            </div>
+          </div>
 
-          resultsEl.appendChild(wrap);
-        });
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">6</div>
+              <h3 class="path-title">Fachschule / Meisterschule</h3>
+              <div class="duration-badge">Weiterbildung</div>
+            </div>
+            <div class="path-steps">
+              <span class="step">Berufsabschluss</span><span class="arrow">→</span><span class="step">Aufstieg</span>
+            </div>
+          </div>
 
-        renderSchoolOffers();
-      }
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">7</div>
+              <h3 class="path-title">Zweiter Bildungsweg</h3>
+              <div class="duration-badge">Oberschule</div>
+            </div>
+            <div class="path-steps">
+              <span class="step">Ausbildung</span><span class="arrow">→</span><span class="step">Hochschulreife</span>
+            </div>
+          </div>
 
-      function renderSchoolOffers() {
-        const offersBySchool = {};
-        data.schools.forEach(s => offersBySchool[s] = []);
-        data.offers.forEach(o => {
-          (o.schools || []).forEach(s => offersBySchool[s].push(o));
-        });
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">8</div>
+              <h3 class="path-title">Gestaltung / Medien</h3>
+              <div class="duration-badge">Design</div>
+            </div>
+            <div class="path-steps">
+              <span class="step">Mittlere Reife</span><span class="arrow">→</span><span class="step">Vollzeit</span>
+            </div>
+          </div>
+        </div>
 
-        document.querySelectorAll('[data-school-offers]').forEach(el => {
-          const school = el.getAttribute('data-school-offers');
-          const list = offersBySchool[school] || [];
-          if (!list.length) {
-            el.innerHTML = '<p style="margin:0; color: var(--text-gray);">Keine Angebote in der Matrix gefunden.</p>';
-            return;
-          }
+        <div class="info-box" style="margin-top: 25px;">
+          <p><strong>Was kommt als Nächstes?</strong> In Schritt 4 ersetzen wir die Dummy-Kacheln durch die echte „Alles auf einen Blick“-Matrix aus der PDF und machen sie filterbar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-          // group by schulart
-          const groups = {};
-          list.forEach(o => {
-            if (!groups[o.schulart]) groups[o.schulart] = [];
-            groups[o.schulart].push(o.angebot);
-          });
+  <div style="max-width: 1500px; margin: 0 auto; padding: 40px 20px 60px;">
+    <div class="header" style="margin-bottom: 40px;">
+      <h1 style="font-size: 2rem;">🏫 Alle Schulen in Stuttgart (Übersicht)</h1>
+      <p>Vorschau für das spätere Schul-Verzeichnis: suchen, filtern, und dann Kontaktdaten + Details pro Schule ansehen.</p>
+    </div>
 
-          const schularten = Object.keys(groups).sort();
-          let out = '';
-          schularten.forEach(k => {
-            const unique = Array.from(new Set(groups[k])).sort();
-            out += '<details style="margin-bottom:10px;">' +
-                     '<summary style="cursor:pointer; font-weight:700; color: var(--primary-blue);">' + k + ' (' + unique.length + ')</summary>' +
-                     '<ul style="margin:10px 0 0 18px; color: var(--text-dark);">' +
-                       unique.map(x => '<li>' + x + '</li>').join('') +
-                     '</ul>' +
-                   '</details>';
-          });
+    <div class="results-container">
+      <div class="results-header">
+        Suche & Filter (Dummy)
+      </div>
+      <div class="results-content">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: end;">
+          <div>
+            <label class="select-label" for="school-search">Suche (Name, Fachrichtung, Adresse)</label>
+            <input id="school-search" type="text" placeholder="z.B. IT, Wirtschaft, Feuerbach..."
+              style="width: 100%; padding: 16px 20px; border: 2px solid var(--border-color); border-radius: 12px; font-size: 1.05rem; background: var(--bg-white);"
+            />
+          </div>
+          <div>
+            <div class="select-label">Filterchips (Dummy)</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <span class="beruf-tag" style="cursor: default;">gewerblich</span>
+              <span class="beruf-tag" style="cursor: default;">kaufmännisch</span>
+              <span class="beruf-tag" style="cursor: default;">Gesundheit &amp; Soziales</span>
+              <span class="beruf-tag" style="cursor: default;">Landwirtschaft</span>
+            </div>
+          </div>
+        </div>
 
-          el.innerHTML = out;
-        });
-      }
+        <div style="height: 25px;"></div>
 
-      schulartSelect.addEventListener('change', renderMatrix);
-      fachSelect.addEventListener('change', renderMatrix);
-      searchInput.addEventListener('input', renderMatrix);
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px;">
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">01</div>
+              <h3 class="path-title">Beispielschule Gewerblich</h3>
+              <div class="duration-badge">gewerblich</div>
+            </div>
+            <p class="path-description">Adresse: Musterstraße 1, 70100 Stuttgart<br>Telefon: 0711 000000<br>Web: beispielschule-1.de</p>
+            <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+              <strong>Schwerpunkte (vorläufig):</strong> wird im nächsten Schritt aus echten Daten befüllt (Matrix + Schulprofil).
+            </div>
+            <div style="display: flex; justify-content: flex-end;">
+              <button class="btn btn-secondary" style="flex: 0 0 auto; padding: 10px 16px; font-size: 0.95rem;">Details</button>
+            </div>
+          </div>
 
-      // School search
-      const schoolInput = document.getElementById('school-search');
-      const schoolCards = Array.from(document.querySelectorAll('.school-card'));
-      const schoolCount = document.getElementById('school-search-count');
-      function schoolFilter() {
-        const q = (schoolInput.value || '').trim().toLowerCase();
-        let visible = 0;
-        schoolCards.forEach(card => {
-          const hay = (card.getAttribute('data-search') || '');
-          const match = !q || hay.includes(q);
-          card.style.display = match ? 'block' : 'none';
-          if (match) visible += 1;
-        });
-        schoolCount.textContent = visible === 1 ? '1 Schule gefunden' : (visible + ' Schulen gefunden');
-      }
-      schoolInput.addEventListener('input', schoolFilter);
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">02</div>
+              <h3 class="path-title">Beispielschule Kaufmännisch</h3>
+              <div class="duration-badge">kaufmännisch</div>
+            </div>
+            <p class="path-description">Adresse: Musterstraße 2, 70100 Stuttgart<br>Telefon: 0711 000000<br>Web: beispielschule-2.de</p>
+            <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+              <strong>Schwerpunkte (vorläufig):</strong> wird im nächsten Schritt aus echten Daten befüllt (Matrix + Schulprofil).
+            </div>
+            <div style="display: flex; justify-content: flex-end;">
+              <button class="btn btn-secondary" style="flex: 0 0 auto; padding: 10px 16px; font-size: 0.95rem;">Details</button>
+            </div>
+          </div>
 
-      // initial
-      renderMatrix();
-      schoolFilter();
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">03</div>
+              <h3 class="path-title">Beispielschule Gesundheit</h3>
+              <div class="duration-badge">Gesundheit</div>
+            </div>
+            <p class="path-description">Adresse: Musterstraße 3, 70100 Stuttgart<br>Telefon: 0711 000000<br>Web: beispielschule-3.de</p>
+            <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+              <strong>Schwerpunkte (vorläufig):</strong> wird im nächsten Schritt aus echten Daten befüllt (Matrix + Schulprofil).
+            </div>
+            <div style="display: flex; justify-content: flex-end;">
+              <button class="btn btn-secondary" style="flex: 0 0 auto; padding: 10px 16px; font-size: 0.95rem;">Details</button>
+            </div>
+          </div>
 
-    })();
-  </script>
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">04</div>
+              <h3 class="path-title">Beispielschule Soziales</h3>
+              <div class="duration-badge">Soziales</div>
+            </div>
+            <p class="path-description">Adresse: Musterstraße 4, 70100 Stuttgart<br>Telefon: 0711 000000<br>Web: beispielschule-4.de</p>
+            <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+              <strong>Schwerpunkte (vorläufig):</strong> wird im nächsten Schritt aus echten Daten befüllt (Matrix + Schulprofil).
+            </div>
+            <div style="display: flex; justify-content: flex-end;">
+              <button class="btn btn-secondary" style="flex: 0 0 auto; padding: 10px 16px; font-size: 0.95rem;">Details</button>
+            </div>
+          </div>
+
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">05</div>
+              <h3 class="path-title">Beispielschule Landwirtschaft</h3>
+              <div class="duration-badge">Landwirtschaft</div>
+            </div>
+            <p class="path-description">Adresse: Musterstraße 5, 70100 Stuttgart<br>Telefon: 0711 000000<br>Web: beispielschule-5.de</p>
+            <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+              <strong>Schwerpunkte (vorläufig):</strong> wird im nächsten Schritt aus echten Daten befüllt (Matrix + Schulprofil).
+            </div>
+            <div style="display: flex; justify-content: flex-end;">
+              <button class="btn btn-secondary" style="flex: 0 0 auto; padding: 10px 16px; font-size: 0.95rem;">Details</button>
+            </div>
+          </div>
+
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">06</div>
+              <h3 class="path-title">Beispielschule Technik/IT</h3>
+              <div class="duration-badge">gewerblich</div>
+            </div>
+            <p class="path-description">Adresse: Musterstraße 6, 70100 Stuttgart<br>Telefon: 0711 000000<br>Web: beispielschule-6.de</p>
+            <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+              <strong>Schwerpunkte (vorläufig):</strong> wird im nächsten Schritt aus echten Daten befüllt (Matrix + Schulprofil).
+            </div>
+            <div style="display: flex; justify-content: flex-end;">
+              <button class="btn btn-secondary" style="flex: 0 0 auto; padding: 10px 16px; font-size: 0.95rem;">Details</button>
+            </div>
+          </div>
+
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">07</div>
+              <h3 class="path-title">Beispielschule Wirtschaft</h3>
+              <div class="duration-badge">kaufmännisch</div>
+            </div>
+            <p class="path-description">Adresse: Musterstraße 7, 70100 Stuttgart<br>Telefon: 0711 000000<br>Web: beispielschule-7.de</p>
+            <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+              <strong>Schwerpunkte (vorläufig):</strong> wird im nächsten Schritt aus echten Daten befüllt (Matrix + Schulprofil).
+            </div>
+            <div style="display: flex; justify-content: flex-end;">
+              <button class="btn btn-secondary" style="flex: 0 0 auto; padding: 10px 16px; font-size: 0.95rem;">Details</button>
+            </div>
+          </div>
+
+          <div class="path-card">
+            <div class="path-card-header">
+              <div class="path-number-badge">08</div>
+              <h3 class="path-title">Beispielschule Pflege</h3>
+              <div class="duration-badge">Gesundheit</div>
+            </div>
+            <p class="path-description">Adresse: Musterstraße 8, 70100 Stuttgart<br>Telefon: 0711 000000<br>Web: beispielschule-8.de</p>
+            <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
+              <strong>Schwerpunkte (vorläufig):</strong> wird im nächsten Schritt aus echten Daten befüllt (Matrix + Schulprofil).
+            </div>
+            <div style="display: flex; justify-content: flex-end;">
+              <button class="btn btn-secondary" style="flex: 0 0 auto; padding: 10px 16px; font-size: 0.95rem;">Details</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="info-box" style="margin-top: 25px;">
+          <p><strong>Hinweis:</strong> In der finalen Version sind hier alle Schulen aus der PDF enthalten (inkl. echte Adressen, Ansprechpartner und Links).</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
 
 </body>
 </html>
