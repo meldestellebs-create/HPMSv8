@@ -3733,525 +3733,355 @@ updateBerufeDisplay();
 
     <div class="header" style="margin-bottom: 40px;">
       <h1 style="font-size: 2rem;">Berufliche Schulen in Stuttgart</h1>
-      <p>Hier findest du einen Überblick über die Schularten im beruflichen System sowie die Kontaktdaten der 20 beruflichen Schulen der Landeshauptstadt Stuttgart.</p>
+      <p>Finde passende Angebote über die Matrix – und sieh dir darunter alle 20 beruflichen Schulen in Stuttgart an.</p>
     </div>
 
     <div style="margin-bottom: 55px;">
-      <h2 style="color: var(--primary-blue); margin-bottom: 18px;">Alles auf einen Blick</h2>
-      <p style="color: var(--text-gray); margin-bottom: 22px;">Dieser Überblick erklärt die Schularten. Er macht keine Aussage dazu, welche Schule welche Fachbereiche anbietet.</p>
+      <h2 style="color: var(--primary-blue); margin-bottom: 10px;">Alles auf einen Blick</h2>
+      <p style="color: var(--text-gray); margin-bottom: 18px;">Wähle Schulart und Fachrichtung, um zu sehen, welche Schulen das jeweilige Angebot führen. Viele Bildungsgänge haben Profile und Schwerpunkte – die Matrix zeigt dir, wo es ein Angebot gibt.</p>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px;">
-        <div class="path-card">
-          <div class="path-card-header">
-            <div class="path-number-badge">A</div>
-            <h3 class="path-title">Berufsschule (duale Ausbildung)</h3>
-            <div class="duration-badge">Kernstück</div>
-          </div>
-          <p class="path-description">Praxis im Ausbildungsbetrieb und Theorie in der Berufsschule; Dauer meist 2 bis 3,5 Jahre.</p>
-        </div>
+      <div class="results-container" style="margin-top: 10px;">
+        <div class="results-header">Filter</div>
+        <div class="results-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
 
-        <div class="path-card">
-          <div class="path-card-header">
-            <div class="path-number-badge">B</div>
-            <h3 class="path-title">Berufsfachschule</h3>
-            <div class="duration-badge">Vollzeit/Teilzeit</div>
+          <div class="select-wrapper" style="margin-bottom: 0;">
+            <label class="select-label" for="matrix-schulart">Schulart</label>
+            <select id="matrix-schulart">
+              <option value="">Alle</option>
+            </select>
           </div>
-          <p class="path-description">Schulische Ausbildung oder Vorbereitung; je nach Bildungsgang kann auch ein allgemeinbildender Abschluss erreichbar sein.</p>
-        </div>
 
-        <div class="path-card">
-          <div class="path-card-header">
-            <div class="path-number-badge">C</div>
-            <h3 class="path-title">Berufskolleg</h3>
-            <div class="duration-badge">Praxisnah</div>
+          <div class="select-wrapper" style="margin-bottom: 0;">
+            <label class="select-label" for="matrix-fachrichtung">Fachrichtung</label>
+            <select id="matrix-fachrichtung">
+              <option value="">Alle</option>
+            </select>
           </div>
-          <p class="path-description">Berufliche Grundbildung und weiterführende Abschlüsse; Angebote gibt es in Vollzeit und Teilzeit.</p>
-        </div>
 
-        <div class="path-card">
-          <div class="path-card-header">
-            <div class="path-number-badge">D</div>
-            <h3 class="path-title">Berufliches Gymnasium</h3>
-            <div class="duration-badge">Abitur</div>
+          <div>
+            <label class="select-label" for="matrix-search">Suche im Angebot</label>
+            <input id="matrix-search" type="text" placeholder="z. B. Elektrotechnik, Gymnasium, Pflege…" style="width: 100%; padding: 16px 20px; border: 2px solid var(--border-color); border-radius: 12px; font-size: 1.05rem; background: var(--bg-white);">
           </div>
-          <p class="path-description">Führt zur allgemeinen Hochschulreife und hat berufliche Profile/Schwerpunkte.</p>
-        </div>
 
-        <div class="path-card">
-          <div class="path-card-header">
-            <div class="path-number-badge">E</div>
-            <h3 class="path-title">Fachschule / Meisterschule</h3>
-            <div class="duration-badge">Weiterbildung</div>
-          </div>
-          <p class="path-description">Aufbauend auf Berufsabschluss und Berufspraxis; z. B. Techniker- oder Meisterabschlüsse (je nach Fachrichtung und Organisation).</p>
-        </div>
-
-        <div class="path-card">
-          <div class="path-card-header">
-            <div class="path-number-badge">F</div>
-            <h3 class="path-title">Zweiter Bildungsweg</h3>
-            <div class="duration-badge">Aufbau</div>
-          </div>
-          <p class="path-description">Wege wie Berufsaufbauschule oder Berufsoberschule können – mit entsprechenden Voraussetzungen – zu höheren Abschlüssen führen.</p>
         </div>
       </div>
 
-      <div class="info-box" style="margin-top: 22px;">
-        <p><strong>Anmeldung:</strong> Für berufliche Vollzeitschulen müssen Anmeldungen nach Ausgabe des Halbjahreszeugnisses spätestens bis 1. März 2026 vorliegen.</p>
-        <p style="margin-top: 10px;"><strong>BewO:</strong> Für eine zweijährige Berufsfachschule, ein Berufskolleg oder ein dreijähriges Berufliches Gymnasium (öffentliche Trägerschaft) erfolgt die Bewerbung – mit wenigen Ausnahmen – über das Bewerberonlineverfahren (BewO).</p>
+      <div style="margin-top: 18px;">
+        <div id="matrix-count" style="color: var(--text-gray); font-weight: 600; margin-bottom: 12px;"></div>
+        <div id="matrix-results" style="display: grid; gap: 14px;"></div>
       </div>
     </div>
 
     <div>
-      <h2 style="color: var(--primary-blue); margin-bottom: 18px;">Alle Schulen in Stuttgart</h2>
-      <p style="color: var(--text-gray); margin-bottom: 18px;">Suche nach Name oder Stadtteil. Die Daten (Adresse, Telefon, Website, Schulleitung, E-Mail) stammen aus dem Infoblatt der Landeshauptstadt Stuttgart.</p>
+      <h2 style="color: var(--primary-blue); margin-bottom: 18px;">20 Berufliche Schulen in Stuttgart</h2>
+      <p style="color: var(--text-gray); margin-bottom: 18px;">Hier sind alle Schulen aus der Matrix. In den Details siehst du die Angebote dieser Schule (aus der Matrix).</p>
 
       <div class="results-container" style="margin-top: 10px;">
         <div class="results-header">Suche</div>
         <div class="results-content">
           <label class="select-label" for="school-search">Suche</label>
-          <input id="school-search" type="text" placeholder="z. B. Feuerbach, kaufmännisch, Max-Eyth…" style="width: 100%; padding: 16px 20px; border: 2px solid var(--border-color); border-radius: 12px; font-size: 1.05rem; background: var(--bg-white);">
+          <input id="school-search" type="text" placeholder="z. B. Max-Eyth, it.schule…" style="width: 100%; padding: 16px 20px; border: 2px solid var(--border-color); border-radius: 12px; font-size: 1.05rem; background: var(--bg-white);">
           <div id="school-search-count" style="margin-top: 12px; color: var(--text-gray); font-weight: 600;"></div>
         </div>
       </div>
 
       <div id="schools-grid" style="margin-top: 18px; display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 18px;">
         
-    <div class="path-card school-card" data-search="kaufmännische schule 1 kaufmännisch hasenbergstraße 26 70178 stuttgart west">
+    <div class="path-card school-card" data-school="Gew. Schule für Farbe und Gestaltung" data-search="gew. schule für farbe und gestaltung">
       <div class="path-card-header">
         <div class="path-number-badge">01</div>
-        <h3 class="path-title">Kaufmännische Schule 1</h3>
-        <div class="duration-badge">kaufmännisch</div>
+        <h3 class="path-title">Gew. Schule für Farbe und Gestaltung</h3>
+        <div class="duration-badge">Schule</div>
       </div>
-      <p class="path-description" style="margin-bottom: 10px;">
-        Hasenbergstraße 26, 70178 Stuttgart (West)<br>
-        Telefon 0711 216-34000<br>
-        Web <a href="https://ks1-stuttgart.de" target="_blank" rel="noopener noreferrer">ks1-stuttgart.de</a>
-      </p>
       <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Details</summary>
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
         <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <p style="margin: 0;"><strong>Schulleitung:</strong> Uwe Peleikis</p>
-          <p style="margin: 8px 0 0 0;"><strong>E-Mail:</strong> <a href="mailto:kaufmaennische.schule.1@stuttgart.de">kaufmaennische.schule.1@stuttgart.de</a></p>
-          
+          <div class="school-offers" data-school-offers="Gew. Schule für Farbe und Gestaltung"></div>
         </div>
       </details>
     </div>
     
 
-    <div class="path-card school-card" data-search="kaufmännische schule stuttgart-nord kaufmännisch heilbronner straße 155 70191 stuttgart nord">
+    <div class="path-card school-card" data-school="Gewerbliche Schule für Holztechnik" data-search="gewerbliche schule für holztechnik">
       <div class="path-card-header">
         <div class="path-number-badge">02</div>
-        <h3 class="path-title">Kaufmännische Schule Stuttgart-Nord</h3>
-        <div class="duration-badge">kaufmännisch</div>
+        <h3 class="path-title">Gewerbliche Schule für Holztechnik</h3>
+        <div class="duration-badge">Schule</div>
       </div>
-      <p class="path-description" style="margin-bottom: 10px;">
-        Heilbronner Straße 155, 70191 Stuttgart (Nord)<br>
-        Telefon 0711 216-92300<br>
-        Web <a href="https://ksn-stuttgart.de" target="_blank" rel="noopener noreferrer">ksn-stuttgart.de</a>
-      </p>
       <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Details</summary>
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
         <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <p style="margin: 0;"><strong>Schulleitung:</strong> Rainer Denz</p>
-          <p style="margin: 8px 0 0 0;"><strong>E-Mail:</strong> <a href="mailto:ksn@stuttgart.de">ksn@stuttgart.de</a></p>
-          
+          <div class="school-offers" data-school-offers="Gewerbliche Schule für Holztechnik"></div>
         </div>
       </details>
     </div>
     
 
-    <div class="path-card school-card" data-search="louis-leitz-schule kaufmännisch wiener straße 51 70469 stuttgart feuerbach">
+    <div class="path-card school-card" data-school="Gew. Schule im Hoppenlau mit Techn. Oberschule" data-search="gew. schule im hoppenlau mit techn. oberschule">
       <div class="path-card-header">
         <div class="path-number-badge">03</div>
-        <h3 class="path-title">Louis-Leitz-Schule</h3>
-        <div class="duration-badge">kaufmännisch</div>
+        <h3 class="path-title">Gew. Schule im Hoppenlau mit Techn. Oberschule</h3>
+        <div class="duration-badge">Schule</div>
       </div>
-      <p class="path-description" style="margin-bottom: 10px;">
-        Wiener Straße 51, 70469 Stuttgart (Feuerbach)<br>
-        Telefon 0711 216-25260<br>
-        Web <a href="https://louis-leitz-schule.de" target="_blank" rel="noopener noreferrer">louis-leitz-schule.de</a>
-      </p>
       <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Details</summary>
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
         <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <p style="margin: 0;"><strong>Schulleitung:</strong> Marc van Bergen</p>
-          <p style="margin: 8px 0 0 0;"><strong>E-Mail:</strong> <a href="mailto:louis-leitz-schule@stuttgart.de">louis-leitz-schule@stuttgart.de</a></p>
-          
+          <div class="school-offers" data-school-offers="Gew. Schule im Hoppenlau mit Techn. Oberschule"></div>
         </div>
       </details>
     </div>
     
 
-    <div class="path-card school-card" data-search="johann-friedrich-von-cotta-schule kaufmännisch sickstraße 165 70190 stuttgart ost">
+    <div class="path-card school-card" data-school="it.schule stuttgart" data-search="it.schule stuttgart">
       <div class="path-card-header">
         <div class="path-number-badge">04</div>
-        <h3 class="path-title">Johann-Friedrich-von-Cotta-Schule</h3>
-        <div class="duration-badge">kaufmännisch</div>
+        <h3 class="path-title">it.schule stuttgart</h3>
+        <div class="duration-badge">Schule</div>
       </div>
-      <p class="path-description" style="margin-bottom: 10px;">
-        Sickstraße 165, 70190 Stuttgart (Ost)<br>
-        Telefon 0711 216-60030<br>
-        Web <a href="https://cotta-schule.de" target="_blank" rel="noopener noreferrer">cotta-schule.de</a>
-      </p>
       <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Details</summary>
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
         <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <p style="margin: 0;"><strong>Schulleitung:</strong> Birgit Jaeger-Gollwitzer</p>
-          <p style="margin: 8px 0 0 0;"><strong>E-Mail:</strong> <a href="mailto:cotta.schule@stuttgart.de">cotta.schule@stuttgart.de</a></p>
-          
+          <div class="school-offers" data-school-offers="it.schule stuttgart"></div>
         </div>
       </details>
     </div>
     
 
-    <div class="path-card school-card" data-search="wirtschaftsgymnasium west kaufmännisch rotebühlstraße 101 70178 stuttgart west">
+    <div class="path-card school-card" data-school="Johannes-Gutenberg-Schule" data-search="johannes-gutenberg-schule">
       <div class="path-card-header">
         <div class="path-number-badge">05</div>
-        <h3 class="path-title">Wirtschaftsgymnasium West</h3>
-        <div class="duration-badge">kaufmännisch</div>
+        <h3 class="path-title">Johannes-Gutenberg-Schule</h3>
+        <div class="duration-badge">Schule</div>
       </div>
-      <p class="path-description" style="margin-bottom: 10px;">
-        Rotebühlstraße 101, 70178 Stuttgart (West)<br>
-        Telefon 0711 216-34050<br>
-        Web <a href="https://wg-west.de" target="_blank" rel="noopener noreferrer">wg-west.de</a>
-      </p>
       <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Details</summary>
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
         <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <p style="margin: 0;"><strong>Schulleitung:</strong> Birte Reiser</p>
-          <p style="margin: 8px 0 0 0;"><strong>E-Mail:</strong> <a href="mailto:wg-west@stuttgart.de">wg-west@stuttgart.de</a></p>
-          
+          <div class="school-offers" data-school-offers="Johannes-Gutenberg-Schule"></div>
         </div>
       </details>
     </div>
     
 
-    <div class="path-card school-card" data-search="gewerbliche schule für farbe und gestaltung gewerblich leobener straße 97 70469 stuttgart feuerbach">
+    <div class="path-card school-card" data-school="Kerschensteinerschule" data-search="kerschensteinerschule">
       <div class="path-card-header">
         <div class="path-number-badge">06</div>
-        <h3 class="path-title">Gewerbliche Schule für Farbe und Gestaltung</h3>
-        <div class="duration-badge">gewerblich</div>
+        <h3 class="path-title">Kerschensteinerschule</h3>
+        <div class="duration-badge">Schule</div>
       </div>
-      <p class="path-description" style="margin-bottom: 10px;">
-        Leobener Straße 97, 70469 Stuttgart (Feuerbach)<br>
-        Telefon 0711 216-35200<br>
-        Web <a href="https://farbegestaltung.de" target="_blank" rel="noopener noreferrer">farbegestaltung.de</a>
-      </p>
       <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Details</summary>
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
         <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <p style="margin: 0;"><strong>Schulleitung:</strong> Felix Winkler</p>
-          <p style="margin: 8px 0 0 0;"><strong>E-Mail:</strong> <a href="mailto:schule@farbegestaltung.de">schule@farbegestaltung.de</a></p>
-          
+          <div class="school-offers" data-school-offers="Kerschensteinerschule"></div>
         </div>
       </details>
     </div>
     
 
-    <div class="path-card school-card" data-search="gewerbliche schule für holztechnik gewerblich leobener straße 95 70469 stuttgart feuerbach">
+    <div class="path-card school-card" data-school="Max-Eyth-Schule" data-search="max-eyth-schule">
       <div class="path-card-header">
         <div class="path-number-badge">07</div>
-        <h3 class="path-title">Gewerbliche Schule für Holztechnik</h3>
-        <div class="duration-badge">gewerblich</div>
+        <h3 class="path-title">Max-Eyth-Schule</h3>
+        <div class="duration-badge">Schule</div>
       </div>
-      <p class="path-description" style="margin-bottom: 10px;">
-        Leobener Straße 95, 70469 Stuttgart (Feuerbach)<br>
-        Telefon 0711 216-20210<br>
-        Web <a href="https://holztechnikschule-stuttgart.de" target="_blank" rel="noopener noreferrer">holztechnikschule-stuttgart.de</a>
-      </p>
       <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Details</summary>
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
         <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <p style="margin: 0;"><strong>Schulleitung:</strong> Matthias Siehler</p>
-          <p style="margin: 8px 0 0 0;"><strong>E-Mail:</strong> <a href="mailto:holztechnik.schule@stuttgart.de">holztechnik.schule@stuttgart.de</a></p>
-          
+          <div class="school-offers" data-school-offers="Max-Eyth-Schule"></div>
         </div>
       </details>
     </div>
     
 
-    <div class="path-card school-card" data-search="gewerbliche schule im hoppenlau mit technischer oberschule stuttgart gewerblich rosenbergstraße 17 70176 stuttgart west">
+    <div class="path-card school-card" data-school="Robert-Bosch-Schule" data-search="robert-bosch-schule">
       <div class="path-card-header">
         <div class="path-number-badge">08</div>
-        <h3 class="path-title">Gewerbliche Schule Im Hoppenlau mit Technischer Oberschule Stuttgart</h3>
-        <div class="duration-badge">gewerblich</div>
+        <h3 class="path-title">Robert-Bosch-Schule</h3>
+        <div class="duration-badge">Schule</div>
       </div>
-      <p class="path-description" style="margin-bottom: 10px;">
-        Rosenbergstraße 17, 70176 Stuttgart (West)<br>
-        Telefon 0711 216-57010<br>
-        Web <a href="https://gsih-mit-to.de" target="_blank" rel="noopener noreferrer">gsih-mit-to.de</a>
-      </p>
       <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Details</summary>
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
         <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <p style="margin: 0;"><strong>Schulleitung:</strong> Dr. Andreas Baitinger</p>
-          <p style="margin: 8px 0 0 0;"><strong>E-Mail:</strong> <a href="mailto:gsih-mit-to@hoppenlau.de">gsih-mit-to@hoppenlau.de</a></p>
-          <p style="margin-top: 12px;"><strong>Hinweis:</strong> Anmeldung für Technische Oberschule, einjähriges Berufskolleg (Fachhochschulreife) sowie Berufsaufbauschule: Telefon 0711 216-34540.</p>
+          <div class="school-offers" data-school-offers="Robert-Bosch-Schule"></div>
         </div>
       </details>
     </div>
     
 
-    <div class="path-card school-card" data-search="it.schule stuttgart gewerblich breitwiesenstraße 20 – 22 70565 stuttgart möhringen">
+    <div class="path-card school-card" data-school="Robert-Mayer-Schule" data-search="robert-mayer-schule">
       <div class="path-card-header">
         <div class="path-number-badge">09</div>
-        <h3 class="path-title">it.schule stuttgart</h3>
-        <div class="duration-badge">gewerblich</div>
+        <h3 class="path-title">Robert-Mayer-Schule</h3>
+        <div class="duration-badge">Schule</div>
       </div>
-      <p class="path-description" style="margin-bottom: 10px;">
-        Breitwiesenstraße 20 – 22, 70565 Stuttgart (Möhringen)<br>
-        Telefon 0711 216-89222<br>
-        Web <a href="https://its-stuttgart.de" target="_blank" rel="noopener noreferrer">its-stuttgart.de</a>
-      </p>
       <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Details</summary>
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
         <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <p style="margin: 0;"><strong>Schulleitung:</strong> Florian Leopold</p>
-          <p style="margin: 8px 0 0 0;"><strong>E-Mail:</strong> <a href="mailto:it-schule@stuttgart.de">it-schule@stuttgart.de</a></p>
-          
+          <div class="school-offers" data-school-offers="Robert-Mayer-Schule"></div>
         </div>
       </details>
     </div>
     
 
-    <div class="path-card school-card" data-search="johannes-gutenberg-schule gewerblich rostocker straße 25 70376 stuttgart bad cannstatt">
+    <div class="path-card school-card" data-school="Steinbeisschule" data-search="steinbeisschule">
       <div class="path-card-header">
         <div class="path-number-badge">10</div>
-        <h3 class="path-title">Johannes-Gutenberg-Schule</h3>
-        <div class="duration-badge">gewerblich</div>
+        <h3 class="path-title">Steinbeisschule</h3>
+        <div class="duration-badge">Schule</div>
       </div>
-      <p class="path-description" style="margin-bottom: 10px;">
-        Rostocker Straße 25, 70376 Stuttgart (Bad Cannstatt)<br>
-        Telefon 0711 216-34200<br>
-        Web <a href="https://jgs-stuttgart.de" target="_blank" rel="noopener noreferrer">jgs-stuttgart.de</a>
-      </p>
       <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Details</summary>
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
         <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <p style="margin: 0;"><strong>Schulleitung:</strong> Thomas Dulisch</p>
-          <p style="margin: 8px 0 0 0;"><strong>E-Mail:</strong> <a href="mailto:jgs@stuttgart.de">jgs@stuttgart.de</a></p>
-          
+          <div class="school-offers" data-school-offers="Steinbeisschule"></div>
         </div>
       </details>
     </div>
     
 
-    <div class="path-card school-card" data-search="kerschensteinerschule gewerblich steiermärker straße 72 70469 stuttgart feuerbach">
+    <div class="path-card school-card" data-school="Werner-Siemens-Schule" data-search="werner-siemens-schule">
       <div class="path-card-header">
         <div class="path-number-badge">11</div>
-        <h3 class="path-title">Kerschensteinerschule</h3>
-        <div class="duration-badge">gewerblich</div>
+        <h3 class="path-title">Werner-Siemens-Schule</h3>
+        <div class="duration-badge">Schule</div>
       </div>
-      <p class="path-description" style="margin-bottom: 10px;">
-        Steiermärker Straße 72, 70469 Stuttgart (Feuerbach)<br>
-        Telefon 0711 216-33400<br>
-        Web <a href="https://kerschensteinerschule.de" target="_blank" rel="noopener noreferrer">kerschensteinerschule.de</a>
-      </p>
       <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Details</summary>
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
         <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <p style="margin: 0;"><strong>Schulleitung:</strong> Martina Schiller</p>
-          <p style="margin: 8px 0 0 0;"><strong>E-Mail:</strong> <a href="mailto:kerschensteinerschule@stuttgart.de">kerschensteinerschule@stuttgart.de</a></p>
-          
+          <div class="school-offers" data-school-offers="Werner-Siemens-Schule"></div>
         </div>
       </details>
     </div>
     
 
-    <div class="path-card school-card" data-search="max-eyth-schule stuttgart gewerblich fritz-elsas-straße 29 70174 stuttgart mitte">
+    <div class="path-card school-card" data-school="Wilhelm-Maybach-Schule" data-search="wilhelm-maybach-schule">
       <div class="path-card-header">
         <div class="path-number-badge">12</div>
-        <h3 class="path-title">Max-Eyth-Schule Stuttgart</h3>
-        <div class="duration-badge">gewerblich</div>
+        <h3 class="path-title">Wilhelm-Maybach-Schule</h3>
+        <div class="duration-badge">Schule</div>
       </div>
-      <p class="path-description" style="margin-bottom: 10px;">
-        Fritz-Elsas-Straße 29, 70174 Stuttgart (Mitte)<br>
-        Telefon 0711 216-20901<br>
-        Web <a href="https://mes-stuttgart.de" target="_blank" rel="noopener noreferrer">mes-stuttgart.de</a>
-      </p>
       <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Details</summary>
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
         <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <p style="margin: 0;"><strong>Schulleitung:</strong> Anne Gsell</p>
-          <p style="margin: 8px 0 0 0;"><strong>E-Mail:</strong> <a href="mailto:info@mes-stuttgart.de">info@mes-stuttgart.de</a></p>
-          
+          <div class="school-offers" data-school-offers="Wilhelm-Maybach-Schule"></div>
         </div>
       </details>
     </div>
     
 
-    <div class="path-card school-card" data-search="robert-bosch-schule gewerblich hohensteinstraße 25 70435 stuttgart zuffenhausen">
+    <div class="path-card school-card" data-school="Kaufmännische Schule 1" data-search="kaufmännische schule 1">
       <div class="path-card-header">
         <div class="path-number-badge">13</div>
-        <h3 class="path-title">Robert-Bosch-Schule</h3>
-        <div class="duration-badge">gewerblich</div>
+        <h3 class="path-title">Kaufmännische Schule 1</h3>
+        <div class="duration-badge">Schule</div>
       </div>
-      <p class="path-description" style="margin-bottom: 10px;">
-        Hohensteinstraße 25, 70435 Stuttgart (Zuffenhausen)<br>
-        Telefon 0711 216-33930<br>
-        Web <a href="https://rbs-stuttgart.de" target="_blank" rel="noopener noreferrer">rbs-stuttgart.de</a>
-      </p>
       <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Details</summary>
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
         <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <p style="margin: 0;"><strong>Schulleitung:</strong> Frank Roskamp</p>
-          <p style="margin: 8px 0 0 0;"><strong>E-Mail:</strong> <a href="mailto:robert-bosch-schule@stuttgart.de">robert-bosch-schule@stuttgart.de</a></p>
-          
+          <div class="school-offers" data-school-offers="Kaufmännische Schule 1"></div>
         </div>
       </details>
     </div>
     
 
-    <div class="path-card school-card" data-search="robert-mayer-schule gewerblich weimarstraße 26 70176 stuttgart mitte">
+    <div class="path-card school-card" data-school="Kaufmännische Schule Stuttgart-Nord" data-search="kaufmännische schule stuttgart-nord">
       <div class="path-card-header">
         <div class="path-number-badge">14</div>
-        <h3 class="path-title">Robert-Mayer-Schule</h3>
-        <div class="duration-badge">gewerblich</div>
+        <h3 class="path-title">Kaufmännische Schule Stuttgart-Nord</h3>
+        <div class="duration-badge">Schule</div>
       </div>
-      <p class="path-description" style="margin-bottom: 10px;">
-        Weimarstraße 26, 70176 Stuttgart (Mitte)<br>
-        Telefon 0711 216-57910<br>
-        Web <a href="https://robert-mayer-schule.de" target="_blank" rel="noopener noreferrer">robert-mayer-schule.de</a>
-      </p>
       <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Details</summary>
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
         <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <p style="margin: 0;"><strong>Schulleitung:</strong> Axel Huber</p>
-          <p style="margin: 8px 0 0 0;"><strong>E-Mail:</strong> <a href="mailto:poststelle.robert-mayer-schule@stuttgart.de">poststelle.robert-mayer-schule@stuttgart.de</a></p>
-          
+          <div class="school-offers" data-school-offers="Kaufmännische Schule Stuttgart-Nord"></div>
         </div>
       </details>
     </div>
     
 
-    <div class="path-card school-card" data-search="steinbeisschule gewerblich steinbeisstraße 5 70191 stuttgart nord">
+    <div class="path-card school-card" data-school="Louis-Leitz-Schule" data-search="louis-leitz-schule">
       <div class="path-card-header">
         <div class="path-number-badge">15</div>
-        <h3 class="path-title">Steinbeisschule</h3>
-        <div class="duration-badge">gewerblich</div>
+        <h3 class="path-title">Louis-Leitz-Schule</h3>
+        <div class="duration-badge">Schule</div>
       </div>
-      <p class="path-description" style="margin-bottom: 10px;">
-        Steinbeisstraße 5, 70191 Stuttgart (Nord)<br>
-        Telefon 0711 216-34300<br>
-        Web <a href="https://steinbeisschule-stuttgart.de" target="_blank" rel="noopener noreferrer">steinbeisschule-stuttgart.de</a>
-      </p>
       <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Details</summary>
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
         <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <p style="margin: 0;"><strong>Schulleitung:</strong> Bernd Jänicke</p>
-          <p style="margin: 8px 0 0 0;"><strong>E-Mail:</strong> <a href="mailto:steinbeisschule@stb-s.de">steinbeisschule@stb-s.de</a></p>
-          
+          <div class="school-offers" data-school-offers="Louis-Leitz-Schule"></div>
         </div>
       </details>
     </div>
     
 
-    <div class="path-card school-card" data-search="werner-siemens-schule gewerblich heilbronner straße 153 70191 stuttgart nord">
+    <div class="path-card school-card" data-school="Johann-Friedrich-von-Cotta-Schule" data-search="johann-friedrich-von-cotta-schule">
       <div class="path-card-header">
         <div class="path-number-badge">16</div>
-        <h3 class="path-title">Werner-Siemens-Schule</h3>
-        <div class="duration-badge">gewerblich</div>
+        <h3 class="path-title">Johann-Friedrich-von-Cotta-Schule</h3>
+        <div class="duration-badge">Schule</div>
       </div>
-      <p class="path-description" style="margin-bottom: 10px;">
-        Heilbronner Straße 153, 70191 Stuttgart (Nord)<br>
-        Telefon 0711 216-59900<br>
-        Web <a href="https://wss-stuttgart.de" target="_blank" rel="noopener noreferrer">wss-stuttgart.de</a>
-      </p>
       <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Details</summary>
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
         <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <p style="margin: 0;"><strong>Schulleitung:</strong> Rainer Klaus</p>
-          <p style="margin: 8px 0 0 0;"><strong>E-Mail:</strong> <a href="mailto:wss-verwaltung@stuttgart.de">wss-verwaltung@stuttgart.de</a></p>
-          
+          <div class="school-offers" data-school-offers="Johann-Friedrich-von-Cotta-Schule"></div>
         </div>
       </details>
     </div>
     
 
-    <div class="path-card school-card" data-search="wilhelm-maybach-schule gewerblich gnesener straße 44 70374 stuttgart bad cannstatt">
+    <div class="path-card school-card" data-school="Wirtschaftsgymnasium West" data-search="wirtschaftsgymnasium west">
       <div class="path-card-header">
         <div class="path-number-badge">17</div>
-        <h3 class="path-title">Wilhelm-Maybach-Schule</h3>
-        <div class="duration-badge">gewerblich</div>
+        <h3 class="path-title">Wirtschaftsgymnasium West</h3>
+        <div class="duration-badge">Schule</div>
       </div>
-      <p class="path-description" style="margin-bottom: 10px;">
-        Gnesener Straße 44, 70374 Stuttgart (Bad Cannstatt)<br>
-        Telefon 0711 216-89600<br>
-        Web <a href="https://wilhelm-maybach-schule.de" target="_blank" rel="noopener noreferrer">wilhelm-maybach-schule.de</a>
-      </p>
       <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Details</summary>
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
         <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <p style="margin: 0;"><strong>Schulleitung:</strong> Jochen Mann</p>
-          <p style="margin: 8px 0 0 0;"><strong>E-Mail:</strong> <a href="mailto:wilhelm-maybach-schule@stuttgart.de">wilhelm-maybach-schule@stuttgart.de</a></p>
-          
+          <div class="school-offers" data-school-offers="Wirtschaftsgymnasium West"></div>
         </div>
       </details>
     </div>
     
 
-    <div class="path-card school-card" data-search="alexander-fleming-schule hauswirtschaftlich/sozial hedwig-dohm-straße 1 70191 stuttgart nord">
+    <div class="path-card school-card" data-school="Hedwig-Dohm-Schule" data-search="hedwig-dohm-schule">
       <div class="path-card-header">
         <div class="path-number-badge">18</div>
-        <h3 class="path-title">Alexander-Fleming-Schule</h3>
-        <div class="duration-badge">hauswirtschaftlich/sozial</div>
+        <h3 class="path-title">Hedwig-Dohm-Schule</h3>
+        <div class="duration-badge">Schule</div>
       </div>
-      <p class="path-description" style="margin-bottom: 10px;">
-        Hedwig-Dohm-Straße 1, 70191 Stuttgart (Nord)<br>
-        Telefon 0711 216-55200<br>
-        Web <a href="https://flemingschule.de" target="_blank" rel="noopener noreferrer">flemingschule.de</a>
-      </p>
       <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Details</summary>
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
         <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <p style="margin: 0;"><strong>Schulleitung:</strong> Markus Rebmann</p>
-          <p style="margin: 8px 0 0 0;"><strong>E-Mail:</strong> <a href="mailto:info@flemingschule.de">info@flemingschule.de</a></p>
-          
+          <div class="school-offers" data-school-offers="Hedwig-Dohm-Schule"></div>
         </div>
       </details>
     </div>
     
 
-    <div class="path-card school-card" data-search="hedwig-dohm-schule hauswirtschaftlich/sozial hedwig-dohm-straße 3 70191 stuttgart nord">
+    <div class="path-card school-card" data-school="Alexander-Fleming-Schule" data-search="alexander-fleming-schule">
       <div class="path-card-header">
         <div class="path-number-badge">19</div>
-        <h3 class="path-title">Hedwig-Dohm-Schule</h3>
-        <div class="duration-badge">hauswirtschaftlich/sozial</div>
+        <h3 class="path-title">Alexander-Fleming-Schule</h3>
+        <div class="duration-badge">Schule</div>
       </div>
-      <p class="path-description" style="margin-bottom: 10px;">
-        Hedwig-Dohm-Straße 3, 70191 Stuttgart (Nord)<br>
-        Telefon 0711 216-55400<br>
-        Web <a href="https://hedwig-dohm-schule.de" target="_blank" rel="noopener noreferrer">hedwig-dohm-schule.de</a>
-      </p>
       <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Details</summary>
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
         <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <p style="margin: 0;"><strong>Schulleitung:</strong> Sven Brockmeier</p>
-          <p style="margin: 8px 0 0 0;"><strong>E-Mail:</strong> <a href="mailto:hedwig-dohm-schule@stuttgart.de">hedwig-dohm-schule@stuttgart.de</a></p>
-          
+          <div class="school-offers" data-school-offers="Alexander-Fleming-Schule"></div>
         </div>
       </details>
     </div>
     
 
-    <div class="path-card school-card" data-search="landwirtschaftliche schule hohenheim landwirtschaftlich industriestraße 28 70565 stuttgart ">
+    <div class="path-card school-card" data-school="Landwirtschaftliche Schule" data-search="landwirtschaftliche schule">
       <div class="path-card-header">
         <div class="path-number-badge">20</div>
-        <h3 class="path-title">Landwirtschaftliche Schule Hohenheim</h3>
-        <div class="duration-badge">landwirtschaftlich</div>
+        <h3 class="path-title">Landwirtschaftliche Schule</h3>
+        <div class="duration-badge">Schule</div>
       </div>
-      <p class="path-description" style="margin-bottom: 10px;">
-        Industriestraße 28, 70565 Stuttgart<br>
-        Telefon 0711 216-35300<br>
-        Web <a href="https://lsh-stuttgart.de" target="_blank" rel="noopener noreferrer">lsh-stuttgart.de</a>
-      </p>
       <details class="school-details">
-        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Details</summary>
+        <summary class="btn btn-secondary" style="display: inline-block; padding: 10px 16px; font-size: 0.95rem;">Angebote anzeigen</summary>
         <div class="path-note" style="margin-top: 12px; background: #F5F7FA; border-left-color: var(--primary-purple);">
-          <p style="margin: 0;"><strong>Schulleitung:</strong> Dr. Dorothea Gärtner</p>
-          <p style="margin: 8px 0 0 0;"><strong>E-Mail:</strong> <a href="mailto:lsh@stuttgart.de">lsh@stuttgart.de</a></p>
-          
+          <div class="school-offers" data-school-offers="Landwirtschaftliche Schule"></div>
         </div>
       </details>
     </div>
@@ -4262,32 +4092,139 @@ updateBerufeDisplay();
   </div>
 
   <script>
-    (function() {
-      const input = document.getElementById('school-search');
-      const cards = Array.from(document.querySelectorAll('.school-card'));
-      const countEl = document.getElementById('school-search-count');
+    window.BERUFLICHE_SCHULEN_MATRIX = {"schools": ["Gew. Schule für Farbe und Gestaltung", "Gewerbliche Schule für Holztechnik", "Gew. Schule im Hoppenlau mit Techn. Oberschule", "it.schule stuttgart", "Johannes-Gutenberg-Schule", "Kerschensteinerschule", "Max-Eyth-Schule", "Robert-Bosch-Schule", "Robert-Mayer-Schule", "Steinbeisschule", "Werner-Siemens-Schule", "Wilhelm-Maybach-Schule", "Kaufmännische Schule 1", "Kaufmännische Schule Stuttgart-Nord", "Louis-Leitz-Schule", "Johann-Friedrich-von-Cotta-Schule", "Wirtschaftsgymnasium West", "Hedwig-Dohm-Schule", "Alexander-Fleming-Schule", "Landwirtschaftliche Schule"], "offers": [{"id": "0", "schulart": "Berufsschule", "angebot": "Agrarwirtschaft", "fach_kat": "Agrar/Natur", "schools": ["Landwirtschaftliche Schule"]}, {"id": "1", "schulart": "Berufsschule", "angebot": "Bautechnik", "fach_kat": "Technik", "schools": ["Gew. Schule im Hoppenlau mit Techn. Oberschule"]}, {"id": "2", "schulart": "Berufsschule", "angebot": "Chemie, Physik und Biologie", "fach_kat": "Übergreifend", "schools": ["it.schule stuttgart"]}, {"id": "3", "schulart": "Berufsschule", "angebot": "Drucktechnik", "fach_kat": "Gestaltung/Medien", "schools": ["Johannes-Gutenberg-Schule"]}, {"id": "4", "schulart": "Berufsschule", "angebot": "Elektrotechnik", "fach_kat": "Technik", "schools": ["Werner-Siemens-Schule"]}, {"id": "5", "schulart": "Berufsschule", "angebot": "Ernährung und Hauswirtschaft", "fach_kat": "Gesundheit/Soziales", "schools": ["Kerschensteinerschule", "Hedwig-Dohm-Schule"]}, {"id": "6", "schulart": "Berufsschule", "angebot": "Fahrzeugtechnik", "fach_kat": "Technik", "schools": ["Wilhelm-Maybach-Schule"]}, {"id": "7", "schulart": "Berufsschule", "angebot": "Farbtechnik und Raumgestaltung", "fach_kat": "Gestaltung/Medien", "schools": ["Gew. Schule für Farbe und Gestaltung"]}, {"id": "8", "schulart": "Berufsschule", "angebot": "Gesundheit", "fach_kat": "Gesundheit/Soziales", "schools": ["Alexander-Fleming-Schule"]}, {"id": "9", "schulart": "Berufsschule", "angebot": "Holztechnik", "fach_kat": "Technik", "schools": ["Gewerbliche Schule für Holztechnik"]}, {"id": "10", "schulart": "Berufsschule", "angebot": "Körperpflege", "fach_kat": "Gesundheit/Soziales", "schools": ["Kerschensteinerschule"]}, {"id": "11", "schulart": "Berufsschule", "angebot": "Metalltechnik", "fach_kat": "Technik", "schools": ["Robert-Bosch-Schule", "Robert-Mayer-Schule"]}, {"id": "12", "schulart": "Berufsschule", "angebot": "Textiltechnik und Bekleidung", "fach_kat": "Technik", "schools": ["Robert-Mayer-Schule"]}, {"id": "13", "schulart": "Berufsschule", "angebot": "Wirtschaft und Verwaltung", "fach_kat": "Wirtschaft", "schools": ["Kerschensteinerschule", "Kaufmännische Schule 1", "Kaufmännische Schule Stuttgart-Nord", "Louis-Leitz-Schule", "Johann-Friedrich-von-Cotta-Schule"]}, {"id": "14", "schulart": "Sonderberufsschule", "angebot": "Sonderberufsschulen", "fach_kat": "Übergreifend", "schools": ["Gew. Schule für Farbe und Gestaltung", "Gewerbliche Schule für Holztechnik", "Gew. Schule im Hoppenlau mit Techn. Oberschule", "Kerschensteinerschule", "Steinbeisschule", "Hedwig-Dohm-Schule", "Alexander-Fleming-Schule", "Landwirtschaftliche Schule"]}, {"id": "15", "schulart": "Vorqualifizierungsjahr Arbeit/Beruf (VABO)", "angebot": "Vorqualifizierungsjahr Arbeit/Beruf mit Schwerpunkt Erwerb von Deutschkenntnissen (VABO)", "fach_kat": "Technik", "schools": ["Gew. Schule für Farbe und Gestaltung", "Gewerbliche Schule für Holztechnik", "Gew. Schule im Hoppenlau mit Techn. Oberschule", "Johannes-Gutenberg-Schule", "Kerschensteinerschule", "Max-Eyth-Schule", "Robert-Bosch-Schule", "Steinbeisschule", "Werner-Siemens-Schule", "Kaufmännische Schule Stuttgart-Nord", "Johann-Friedrich-von-Cotta-Schule"]}, {"id": "16", "schulart": "Ausbildungsvorbereitung dual (AVdual)", "angebot": "Ausbildungsvorbereitung dual (AVdual)", "fach_kat": "Technik", "schools": ["Gew. Schule für Farbe und Gestaltung", "Gewerbliche Schule für Holztechnik", "Gew. Schule im Hoppenlau mit Techn. Oberschule", "Johannes-Gutenberg-Schule", "Max-Eyth-Schule", "Robert-Bosch-Schule", "Steinbeisschule", "Kaufmännische Schule Stuttgart-Nord", "Hedwig-Dohm-Schule"]}, {"id": "17", "schulart": "Einjährige Berufsfachschule (1BFS)", "angebot": "Bautechnik", "fach_kat": "Technik", "schools": ["Gew. Schule im Hoppenlau mit Techn. Oberschule"]}, {"id": "18", "schulart": "Einjährige Berufsfachschule (1BFS)", "angebot": "Druck-/Medientechnik", "fach_kat": "Gestaltung/Medien", "schools": ["Johannes-Gutenberg-Schule"]}, {"id": "19", "schulart": "Einjährige Berufsfachschule (1BFS)", "angebot": "Fahrzeugtechnik", "fach_kat": "Technik", "schools": ["Wilhelm-Maybach-Schule"]}, {"id": "20", "schulart": "Einjährige Berufsfachschule (1BFS)", "angebot": "Farbtechnik und Raumgestaltung", "fach_kat": "Gestaltung/Medien", "schools": ["Gew. Schule für Farbe und Gestaltung"]}, {"id": "21", "schulart": "Einjährige Berufsfachschule (1BFS)", "angebot": "Fotografie", "fach_kat": "Gestaltung/Medien", "schools": ["Johannes-Gutenberg-Schule"]}, {"id": "22", "schulart": "Einjährige Berufsfachschule (1BFS)", "angebot": "Glas-/Fensterbau", "fach_kat": "Technik", "schools": ["Gew. Schule im Hoppenlau mit Techn. Oberschule"]}, {"id": "23", "schulart": "Einjährige Berufsfachschule (1BFS)", "angebot": "Holztechnik", "fach_kat": "Technik", "schools": ["Gewerbliche Schule für Holztechnik"]}, {"id": "24", "schulart": "Einjährige Berufsfachschule (1BFS)", "angebot": "Informationselektronik", "fach_kat": "Technik", "schools": ["it.schule stuttgart"]}, {"id": "25", "schulart": "Einjährige Berufsfachschule (1BFS)", "angebot": "Körperpflege", "fach_kat": "Gesundheit/Soziales", "schools": ["Kerschensteinerschule"]}, {"id": "26", "schulart": "Einjährige Berufsfachschule (1BFS)", "angebot": "Metalltechnik – Feinwerk- und Metallbautechnik", "fach_kat": "Technik", "schools": ["Robert-Mayer-Schule"]}, {"id": "27", "schulart": "Einjährige Berufsfachschule (1BFS)", "angebot": "Sanitär-, Heizungs-, Klimatechnik", "fach_kat": "Technik", "schools": ["Steinbeisschule"]}, {"id": "28", "schulart": "Zweijährige Berufsfachschule (2BFS)", "angebot": "Elektrotechnik", "fach_kat": "Technik", "schools": ["Werner-Siemens-Schule"]}, {"id": "29", "schulart": "Zweijährige Berufsfachschule (2BFS)", "angebot": "Fahrzeugtechnik", "fach_kat": "Technik", "schools": ["Wilhelm-Maybach-Schule"]}, {"id": "30", "schulart": "Zweijährige Berufsfachschule (2BFS)", "angebot": "Gesundheit und Pflege", "fach_kat": "Gesundheit/Soziales", "schools": ["Alexander-Fleming-Schule"]}, {"id": "31", "schulart": "Zweijährige Berufsfachschule (2BFS)", "angebot": "Hauswirtschaft und Ernährung", "fach_kat": "Gesundheit/Soziales", "schools": ["Hedwig-Dohm-Schule"]}, {"id": "32", "schulart": "Zweijährige Berufsfachschule (2BFS)", "angebot": "Holztechnik", "fach_kat": "Technik", "schools": ["Gewerbliche Schule für Holztechnik"]}, {"id": "33", "schulart": "Zweijährige Berufsfachschule (2BFS)", "angebot": "Metalltechnik", "fach_kat": "Technik", "schools": ["Robert-Bosch-Schule", "Robert-Mayer-Schule"]}, {"id": "34", "schulart": "Zweijährige Berufsfachschule (2BFS)", "angebot": "Wirtschaft und Verwaltung (Wirtschaftsschule)", "fach_kat": "Wirtschaft", "schools": ["Kaufmännische Schule Stuttgart-Nord", "Louis-Leitz-Schule"]}, {"id": "35", "schulart": "Dreijährige Berufsfachschule (PiA)", "angebot": "Berufsfachschule für Sozialpädagogische Assistenz (praxisintegriert)", "fach_kat": "Gesundheit/Soziales", "schools": ["Hedwig-Dohm-Schule"]}, {"id": "36", "schulart": "Berufskolleg (gewerblich, Vollzeit)", "angebot": "für chemisch-techn., pharmazeutisch-techn., physikalisch-techn. Assistent/-innen (je zwei Jahre)", "fach_kat": "Übergreifend", "schools": ["it.schule stuttgart"]}, {"id": "37", "schulart": "Berufskolleg (gewerblich, Vollzeit)", "angebot": "für elektrotechnische Assistent/-innen (zwei Jahre)", "fach_kat": "Technik", "schools": ["Werner-Siemens-Schule"]}, {"id": "38", "schulart": "Berufskolleg (gewerblich, Vollzeit)", "angebot": "Grafik-Design (drei Jahre)", "fach_kat": "Gestaltung/Medien", "schools": ["Johannes-Gutenberg-Schule"]}, {"id": "39", "schulart": "Berufskolleg (gewerblich, Vollzeit)", "angebot": "Mode und Design (drei Jahre)", "fach_kat": "Gestaltung/Medien", "schools": ["Kerschensteinerschule"]}, {"id": "40", "schulart": "Berufskolleg (gewerblich, Vollzeit)", "angebot": "Produktdesign (zwei Jahre)", "fach_kat": "Gestaltung/Medien", "schools": ["Gew. Schule für Farbe und Gestaltung", "Johannes-Gutenberg-Schule"]}, {"id": "41", "schulart": "Berufskolleg (gewerblich, Vollzeit)", "angebot": "Technisches Berufskolleg I (ein Jahr)", "fach_kat": "Übergreifend", "schools": ["Gew. Schule im Hoppenlau mit Techn. Oberschule", "it.schule stuttgart", "Steinbeisschule"]}, {"id": "42", "schulart": "Berufskolleg (gewerblich, Vollzeit)", "angebot": "Technisches Berufskolleg II (ein Jahr)", "fach_kat": "Übergreifend", "schools": ["Gew. Schule im Hoppenlau mit Techn. Oberschule", "it.schule stuttgart", "Steinbeisschule"]}, {"id": "43", "schulart": "Berufskolleg (gewerblich, dual/Teilzeit)", "angebot": "Bautechnik", "fach_kat": "Technik", "schools": ["Gew. Schule im Hoppenlau mit Techn. Oberschule"]}, {"id": "44", "schulart": "Berufskolleg (gewerblich, dual/Teilzeit)", "angebot": "Elektronik", "fach_kat": "Technik", "schools": ["Werner-Siemens-Schule"]}, {"id": "45", "schulart": "Berufskolleg (gewerblich, dual/Teilzeit)", "angebot": "Metalltechnik", "fach_kat": "Technik", "schools": ["Robert-Bosch-Schule", "Robert-Mayer-Schule"]}, {"id": "46", "schulart": "Berufskolleg (gewerblich, dual/Teilzeit)", "angebot": "Sanitär-, Heizungs- und Klimatechnik", "fach_kat": "Technik", "schools": ["Steinbeisschule"]}, {"id": "47", "schulart": "Berufskolleg (kaufmännisch, Vollzeit)", "angebot": "Kaufmännisches Berufskolleg I (Höhere Handelsschule – ein Jahr)", "fach_kat": "Wirtschaft", "schools": ["Louis-Leitz-Schule"]}, {"id": "48", "schulart": "Berufskolleg (kaufmännisch, Vollzeit)", "angebot": "Kaufmännisches Berufskolleg II (Höhere Handelsschule – Oberstufe – ein Jahr)", "fach_kat": "Wirtschaft", "schools": ["Louis-Leitz-Schule"]}, {"id": "49", "schulart": "Berufskolleg (kaufmännisch, Vollzeit)", "angebot": "Kaufmännisches Berufskolleg Fremdsprachen (zwei Jahre)", "fach_kat": "Wirtschaft", "schools": ["Johann-Friedrich-von-Cotta-Schule"]}, {"id": "50", "schulart": "Berufskolleg (kaufmännisch, Vollzeit)", "angebot": "Kaufmännisches Berufskolleg Wirtschaftsinformatik (zwei Jahre)", "fach_kat": "Wirtschaft", "schools": ["Louis-Leitz-Schule"]}, {"id": "51", "schulart": "Berufskolleg (kaufmännisch, Vollzeit)", "angebot": "Sport- und Vereinsmanagement (drei Jahre)", "fach_kat": "Wirtschaft", "schools": ["Johann-Friedrich-von-Cotta-Schule"]}, {"id": "52", "schulart": "Berufskolleg (kaufmännisch, dual/Teilzeit)", "angebot": "Wirtschaft und Verwaltung – verschiedene (siehe Seite 3)", "fach_kat": "Wirtschaft", "schools": ["Kaufmännische Schule 1", "Kaufmännische Schule Stuttgart-Nord", "Johann-Friedrich-von-Cotta-Schule"]}, {"id": "53", "schulart": "Berufskolleg (hauswirtschaftlich/sozial/landwirtschaftlich)", "angebot": "Biotechnologische Assistent/-innen (zwei Jahre)", "fach_kat": "Agrar/Natur", "schools": ["Landwirtschaftliche Schule"]}, {"id": "54", "schulart": "Berufskolleg (hauswirtschaftlich/sozial/landwirtschaftlich)", "angebot": "Ernährung und Haushaltsmanagement I (zwei Jahre)", "fach_kat": "Gesundheit/Soziales", "schools": ["Hedwig-Dohm-Schule"]}, {"id": "55", "schulart": "Berufskolleg (hauswirtschaftlich/sozial/landwirtschaftlich)", "angebot": "Ernährung und Haushaltsmanagement II (ein Jahr)", "fach_kat": "Gesundheit/Soziales", "schools": ["Hedwig-Dohm-Schule"]}, {"id": "56", "schulart": "Berufskolleg (hauswirtschaftlich/sozial/landwirtschaftlich)", "angebot": "Gesundheit und Pflege I (ein Jahr)", "fach_kat": "Gesundheit/Soziales", "schools": ["Alexander-Fleming-Schule"]}, {"id": "57", "schulart": "Berufskolleg (hauswirtschaftlich/sozial/landwirtschaftlich)", "angebot": "Gesundheit und Pflege II (ein Jahr)", "fach_kat": "Gesundheit/Soziales", "schools": ["Alexander-Fleming-Schule"]}, {"id": "58", "schulart": "Berufskolleg (hauswirtschaftlich/sozial/landwirtschaftlich)", "angebot": "Sozialpädagogik (ein Jahr)", "fach_kat": "Gesundheit/Soziales", "schools": ["Hedwig-Dohm-Schule"]}, {"id": "59", "schulart": "Berufskolleg (hauswirtschaftlich/sozial/landwirtschaftlich)", "angebot": "Soziales (ein Jahr)", "fach_kat": "Gesundheit/Soziales", "schools": ["Hedwig-Dohm-Schule"]}, {"id": "60", "schulart": "Berufskolleg (hauswirtschaftlich/sozial/landwirtschaftlich)", "angebot": "Sozialpädagogik – praxisintegriert (Fachschule für Sozialpädagogik) (drei Jahre)", "fach_kat": "Gesundheit/Soziales", "schools": ["Hedwig-Dohm-Schule"]}, {"id": "61", "schulart": "Berufliches Gymnasium", "angebot": "Technisches Gymnasium mit Profil: Angewandte Naturwissenschaften (TGN)", "fach_kat": "Technik", "schools": ["it.schule stuttgart"]}, {"id": "62", "schulart": "Berufliches Gymnasium", "angebot": "Technisches Gymnasium mit Profil: Elektro- und Informationstechnik (TGE)", "fach_kat": "Technik", "schools": ["Werner-Siemens-Schule"]}, {"id": "63", "schulart": "Berufliches Gymnasium", "angebot": "Technisches Gymnasium mit Profil: Gestaltungs- und Medientechnik (TGG)", "fach_kat": "Gestaltung/Medien", "schools": ["Gew. Schule für Farbe und Gestaltung", "Johannes-Gutenberg-Schule"]}, {"id": "64", "schulart": "Berufliches Gymnasium", "angebot": "Technisches Gymnasium mit Profil: Informationstechnik (TGI)", "fach_kat": "Technik", "schools": ["it.schule stuttgart"]}, {"id": "65", "schulart": "Berufliches Gymnasium", "angebot": "Technisches Gymnasium mit Profil: Mechatronik (TGM)", "fach_kat": "Technik", "schools": ["Max-Eyth-Schule", "Wilhelm-Maybach-Schule"]}, {"id": "66", "schulart": "Berufliches Gymnasium", "angebot": "Technisches Gymnasium mit Profil: Technik und Management (TGTM)", "fach_kat": "Technik", "schools": ["Robert-Bosch-Schule", "Steinbeisschule"]}, {"id": "67", "schulart": "Berufliches Gymnasium", "angebot": "Technisches Gymnasium mit Profil: Technik – sechsjährige Aufbauform ab Klasse 8", "fach_kat": "Technik", "schools": ["Johannes-Gutenberg-Schule"]}, {"id": "68", "schulart": "Berufliches Gymnasium", "angebot": "Technisches Gymnasium mit Profil: Umwelttechnik (TGU)", "fach_kat": "Agrar/Natur", "schools": ["Max-Eyth-Schule", "Robert-Bosch-Schule"]}, {"id": "69", "schulart": "Berufliches Gymnasium", "angebot": "Wirtschaftswissenschaftliches Gymnasium mit Profil: Internationale Wirtschaft (WGI)", "fach_kat": "Wirtschaft", "schools": ["Johann-Friedrich-von-Cotta-Schule"]}, {"id": "70", "schulart": "Berufliches Gymnasium", "angebot": "Wirtschaftswissenschaftliches Gymnasium mit Profil: Wirtschaft (WGW)", "fach_kat": "Wirtschaft", "schools": ["Kaufmännische Schule 1", "Kaufmännische Schule Stuttgart-Nord", "Louis-Leitz-Schule", "Johann-Friedrich-von-Cotta-Schule"]}, {"id": "71", "schulart": "Berufliches Gymnasium", "angebot": "Ernährungswissenschaftliches Gymnasium (EG)", "fach_kat": "Gesundheit/Soziales", "schools": ["Hedwig-Dohm-Schule"]}, {"id": "72", "schulart": "Berufliches Gymnasium", "angebot": "Sozial- und Gesundheitswissenschaftliches Gymnasium mit Profil: Gesundheit (SGGG)", "fach_kat": "Gesundheit/Soziales", "schools": ["Alexander-Fleming-Schule"]}, {"id": "73", "schulart": "Berufliches Gymnasium", "angebot": "Sozial- und Gesundheitswissenschaftliches Gymnasium mit Profil: Soziales (SGGS)", "fach_kat": "Gesundheit/Soziales", "schools": ["Hedwig-Dohm-Schule"]}, {"id": "74", "schulart": "Zweiter Bildungsweg", "angebot": "Berufsaufbauschule zur Fachschulreife führend (gewerblich-technisch oder kaufmännisch)", "fach_kat": "Wirtschaft", "schools": ["Gew. Schule im Hoppenlau mit Techn. Oberschule", "Kaufmännische Schule 1"]}, {"id": "75", "schulart": "Zweiter Bildungsweg", "angebot": "Einjähriges Berufskolleg zur Fachhochschulreife führend (gewerbl./gestalter./kaufm. oder hauswirtschaftliche, landwirtschaftliche, sozialpädagogische Richtung)", "fach_kat": "Agrar/Natur", "schools": ["Gew. Schule im Hoppenlau mit Techn. Oberschule", "Kaufmännische Schule 1", "Hedwig-Dohm-Schule"]}, {"id": "76", "schulart": "Zweiter Bildungsweg", "angebot": "Technische Oberschule oder Wirtschaftsoberschule", "fach_kat": "Wirtschaft", "schools": ["Gew. Schule im Hoppenlau mit Techn. Oberschule", "Kaufmännische Schule 1"]}, {"id": "77", "schulart": "Fachschule / Meisterschule", "angebot": "Bautechnik", "fach_kat": "Technik", "schools": ["Gew. Schule im Hoppenlau mit Techn. Oberschule"]}, {"id": "78", "schulart": "Fachschule / Meisterschule", "angebot": "Chemie, Physik und Biologie", "fach_kat": "Übergreifend", "schools": ["it.schule stuttgart"]}, {"id": "79", "schulart": "Fachschule / Meisterschule", "angebot": "Drucktechnik", "fach_kat": "Gestaltung/Medien", "schools": ["Johannes-Gutenberg-Schule"]}, {"id": "80", "schulart": "Fachschule / Meisterschule", "angebot": "Ernährung", "fach_kat": "Gesundheit/Soziales", "schools": ["Kerschensteinerschule"]}, {"id": "81", "schulart": "Fachschule / Meisterschule", "angebot": "Fahrzeugtechnik", "fach_kat": "Technik", "schools": ["Wilhelm-Maybach-Schule"]}, {"id": "82", "schulart": "Fachschule / Meisterschule", "angebot": "Farbtechnik und Raumgestaltung", "fach_kat": "Gestaltung/Medien", "schools": ["Gew. Schule für Farbe und Gestaltung"]}, {"id": "83", "schulart": "Fachschule / Meisterschule", "angebot": "Gesundheit", "fach_kat": "Gesundheit/Soziales", "schools": ["Alexander-Fleming-Schule"]}, {"id": "84", "schulart": "Fachschule / Meisterschule", "angebot": "Gießereitechnik", "fach_kat": "Technik", "schools": ["Max-Eyth-Schule"]}, {"id": "85", "schulart": "Fachschule / Meisterschule", "angebot": "Holztechnik", "fach_kat": "Technik", "schools": ["Gewerbliche Schule für Holztechnik"]}, {"id": "86", "schulart": "Fachschule / Meisterschule", "angebot": "Installations- und Heizungsbau", "fach_kat": "Technik", "schools": ["Steinbeisschule"]}, {"id": "87", "schulart": "Fachschule / Meisterschule", "angebot": "Metalltechnik", "fach_kat": "Technik", "schools": ["Robert-Bosch-Schule", "Robert-Mayer-Schule"]}, {"id": "88", "schulart": "Fachschule / Meisterschule", "angebot": "Textiltechnik und Bekleidung", "fach_kat": "Technik", "schools": ["Robert-Mayer-Schule"]}, {"id": "89", "schulart": "Fachschule für Technik (Technikerschule)", "angebot": "Automatisierungstechnik/Mechatronik", "fach_kat": "Technik", "schools": ["Werner-Siemens-Schule"]}, {"id": "90", "schulart": "Fachschule für Technik (Technikerschule)", "angebot": "Bautechnik", "fach_kat": "Technik", "schools": ["Gew. Schule im Hoppenlau mit Techn. Oberschule"]}, {"id": "91", "schulart": "Fachschule für Technik (Technikerschule)", "angebot": "Druck- und Medientechnik", "fach_kat": "Gestaltung/Medien", "schools": ["Johannes-Gutenberg-Schule"]}, {"id": "92", "schulart": "Fachschule für Technik (Technikerschule)", "angebot": "Elektrotechnik", "fach_kat": "Technik", "schools": ["Werner-Siemens-Schule"]}, {"id": "93", "schulart": "Fachschule für Technik (Technikerschule)", "angebot": "Farb- und Lacktechnik", "fach_kat": "Technik", "schools": ["Gew. Schule für Farbe und Gestaltung"]}, {"id": "94", "schulart": "Fachschule für Technik (Technikerschule)", "angebot": "Gießereitechnik", "fach_kat": "Technik", "schools": ["Max-Eyth-Schule"]}, {"id": "95", "schulart": "Fachschule für Technik (Technikerschule)", "angebot": "Heizungs-, Lüftungs- und Klimatechnik", "fach_kat": "Technik", "schools": ["Steinbeisschule"]}, {"id": "96", "schulart": "Fachschule für Technik (Technikerschule)", "angebot": "Holztechnik", "fach_kat": "Technik", "schools": ["Gewerbliche Schule für Holztechnik"]}, {"id": "97", "schulart": "Fachschule für Technik (Technikerschule)", "angebot": "Informationstechnik", "fach_kat": "Technik", "schools": ["it.schule stuttgart"]}, {"id": "98", "schulart": "Fachschule für Technik (Technikerschule)", "angebot": "Kraftfahrzeugtechnik", "fach_kat": "Technik", "schools": ["Wilhelm-Maybach-Schule"]}, {"id": "99", "schulart": "Fachschule für Technik (Technikerschule)", "angebot": "Maschinentechnik", "fach_kat": "Technik", "schools": ["Robert-Bosch-Schule", "Robert-Mayer-Schule", "Werner-Siemens-Schule"]}, {"id": "100", "schulart": "Fachschule für Gestaltung", "angebot": "Farbtechnik und Raumgestaltung", "fach_kat": "Gestaltung/Medien", "schools": ["Gew. Schule für Farbe und Gestaltung"]}, {"id": "101", "schulart": "Fachschule für Gestaltung", "angebot": "Möbel- und Innenraumgestaltung", "fach_kat": "Gestaltung/Medien", "schools": ["Gewerbliche Schule für Holztechnik"]}, {"id": "102", "schulart": "Fachschule für Gestaltung", "angebot": "Werbegestaltung", "fach_kat": "Gestaltung/Medien", "schools": ["Johannes-Gutenberg-Schule"]}, {"id": "103", "schulart": "Sonstige Fachschulen / Angebote", "angebot": "Management Fachrichtung Hauswirtschaft", "fach_kat": "Gesundheit/Soziales", "schools": ["Hedwig-Dohm-Schule"]}, {"id": "104", "schulart": "Sonstige Fachschulen / Angebote", "angebot": "Organisation und Führung", "fach_kat": "Übergreifend", "schools": ["Alexander-Fleming-Schule"]}, {"id": "105", "schulart": "Sonstige Fachschulen / Angebote", "angebot": "Visuelle Kommunikation", "fach_kat": "Gestaltung/Medien", "schools": ["Johannes-Gutenberg-Schule"]}, {"id": "106", "schulart": "Sonstige Fachschulen / Angebote", "angebot": "Farbtechnik", "fach_kat": "Technik", "schools": ["Gew. Schule für Farbe und Gestaltung"]}, {"id": "107", "schulart": "Sonstige Fachschulen / Angebote", "angebot": "Kursangebote auf Nachfrage", "fach_kat": "Übergreifend", "schools": ["Gew. Schule für Farbe und Gestaltung", "Gewerbliche Schule für Holztechnik", "Gew. Schule im Hoppenlau mit Techn. Oberschule", "it.schule stuttgart", "Johannes-Gutenberg-Schule", "Kerschensteinerschule", "Max-Eyth-Schule", "Robert-Bosch-Schule", "Werner-Siemens-Schule", "Wilhelm-Maybach-Schule"]}], "schularten": ["Ausbildungsvorbereitung dual (AVdual)", "Berufliches Gymnasium", "Berufskolleg (gewerblich, Vollzeit)", "Berufskolleg (gewerblich, dual/Teilzeit)", "Berufskolleg (hauswirtschaftlich/sozial/landwirtschaftlich)", "Berufskolleg (kaufmännisch, Vollzeit)", "Berufskolleg (kaufmännisch, dual/Teilzeit)", "Berufsschule", "Dreijährige Berufsfachschule (PiA)", "Einjährige Berufsfachschule (1BFS)", "Fachschule / Meisterschule", "Fachschule für Gestaltung", "Fachschule für Technik (Technikerschule)", "Sonderberufsschule", "Sonstige Fachschulen / Angebote", "Vorqualifizierungsjahr Arbeit/Beruf (VABO)", "Zweijährige Berufsfachschule (2BFS)", "Zweiter Bildungsweg"], "fachkats": []};
 
-      function updateCount(visible) {
-        if (!countEl) return;
-        countEl.textContent = visible === 1 ? '1 Schule gefunden' : `${visible} Schulen gefunden`;
+    (function() {
+      const data = window.BERUFLICHE_SCHULEN_MATRIX;
+      const schulartSelect = document.getElementById('matrix-schulart');
+      const fachSelect = document.getElementById('matrix-fachrichtung');
+      const searchInput = document.getElementById('matrix-search');
+      const resultsEl = document.getElementById('matrix-results');
+      const countEl = document.getElementById('matrix-count');
+
+      function makeOption(text, value) {
+        const o = document.createElement('option');
+        o.textContent = text;
+        o.value = value;
+        return o;
       }
 
-      function filter() {
-        const q = (input.value || '').trim().toLowerCase();
+      // init selects
+      data.schularten.forEach(s => schulartSelect.appendChild(makeOption(s, s)));
+      data.fach_kats.forEach(f => fachSelect.appendChild(makeOption(f, f)));
+
+      function renderMatrix() {
+        const schulart = schulartSelect.value;
+        const fach = fachSelect.value;
+        const q = (searchInput.value || '').trim().toLowerCase();
+
+        const filtered = data.offers.filter(o => {
+          if (schulart && o.schulart !== schulart) return false;
+          if (fach && o.fach_kat !== fach) return false;
+          if (q) {
+            const hay = (String(o.angebot) + ' ' + String(o.schulart) + ' ' + String(o.fach_kat)).toLowerCase();
+            if (!hay.includes(q)) return false;
+          }
+          return true;
+        });
+
+        countEl.textContent = filtered.length === 1 ? '1 Eintrag' : (filtered.length + ' Einträge');
+        resultsEl.innerHTML = '';
+
+        filtered.forEach((o, idx) => {
+          const wrap = document.createElement('details');
+          wrap.className = 'path-card';
+
+          const schools = o.schools || [];
+          const chips = schools.map(s => (
+            '<span class="step" style="background: #fff; border: 1px solid rgba(11, 123, 179, 0.25); color: var(--text-dark); font-weight: 600;">' + s + '</span>'
+          )).join('');
+
+          wrap.innerHTML =
+            '<summary style="cursor: pointer; list-style: none;">' +
+              '<div class="path-card-header" style="margin-bottom: 0;">' +
+                '<div class="path-number-badge">' + String(idx+1).padStart(2,'0') + '</div>' +
+                '<h3 class="path-title" style="margin: 0 15px;">' + o.angebot + '</h3>' +
+                '<div class="duration-badge">' + o.schulart + '</div>' +
+              '</div>' +
+              '<div class="path-steps" style="margin-top: 12px;">' +
+                '<span class="step">' + o.fach_kat + '</span>' +
+                '<span class="step" style="background: #F5F7FA; color: var(--text-gray);">' + schools.length + ' Schulen</span>' +
+              '</div>' +
+            '</summary>' +
+            '<div style="margin-top: 14px;">' +
+              '<div class="path-steps" style="gap: 10px;">' + (chips || '<span style="color: var(--text-gray);">Keine Schulen gefunden.</span>') + '</div>' +
+            '</div>';
+
+          resultsEl.appendChild(wrap);
+        });
+
+        renderSchoolOffers();
+      }
+
+      function renderSchoolOffers() {
+        const offersBySchool = {};
+        data.schools.forEach(s => offersBySchool[s] = []);
+        data.offers.forEach(o => {
+          (o.schools || []).forEach(s => offersBySchool[s].push(o));
+        });
+
+        document.querySelectorAll('[data-school-offers]').forEach(el => {
+          const school = el.getAttribute('data-school-offers');
+          const list = offersBySchool[school] || [];
+          if (!list.length) {
+            el.innerHTML = '<p style="margin:0; color: var(--text-gray);">Keine Angebote in der Matrix gefunden.</p>';
+            return;
+          }
+
+          // group by schulart
+          const groups = {};
+          list.forEach(o => {
+            if (!groups[o.schulart]) groups[o.schulart] = [];
+            groups[o.schulart].push(o.angebot);
+          });
+
+          const schularten = Object.keys(groups).sort();
+          let out = '';
+          schularten.forEach(k => {
+            const unique = Array.from(new Set(groups[k])).sort();
+            out += '<details style="margin-bottom:10px;">' +
+                     '<summary style="cursor:pointer; font-weight:700; color: var(--primary-blue);">' + k + ' (' + unique.length + ')</summary>' +
+                     '<ul style="margin:10px 0 0 18px; color: var(--text-dark);">' +
+                       unique.map(x => '<li>' + x + '</li>').join('') +
+                     '</ul>' +
+                   '</details>';
+          });
+
+          el.innerHTML = out;
+        });
+      }
+
+      schulartSelect.addEventListener('change', renderMatrix);
+      fachSelect.addEventListener('change', renderMatrix);
+      searchInput.addEventListener('input', renderMatrix);
+
+      // School search
+      const schoolInput = document.getElementById('school-search');
+      const schoolCards = Array.from(document.querySelectorAll('.school-card'));
+      const schoolCount = document.getElementById('school-search-count');
+      function schoolFilter() {
+        const q = (schoolInput.value || '').trim().toLowerCase();
         let visible = 0;
-        cards.forEach(card => {
+        schoolCards.forEach(card => {
           const hay = (card.getAttribute('data-search') || '');
           const match = !q || hay.includes(q);
           card.style.display = match ? 'block' : 'none';
           if (match) visible += 1;
         });
-        updateCount(visible);
+        schoolCount.textContent = visible === 1 ? '1 Schule gefunden' : (visible + ' Schulen gefunden');
       }
+      schoolInput.addEventListener('input', schoolFilter);
 
-      if (input) {
-        input.addEventListener('input', filter);
-      }
-      filter();
+      // initial
+      renderMatrix();
+      schoolFilter();
+
     })();
   </script>
 </div>
